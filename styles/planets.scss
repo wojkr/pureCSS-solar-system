@@ -1,0 +1,468 @@
+//https://www.universetoday.com/36649/planets-in-order-of-size/
+// Jupiter (69,911 km / 43,441 miles) – 1,120% the size of Earth
+// Saturn (58,232 km / 36,184 miles) – 945% the size of Earth
+// Uranus (25,362 km / 15,759 miles) – 400% the size of Earth
+// Neptune (24,622 km / 15,299 miles) – 388% the size of Earth
+// Earth (6,371 km / 3,959 miles)
+// Venus (6,052 km / 3,761 miles) – 95% the size of Earth
+// Mars (3,390 km / 2,460 miles) – 53% the size of Earth
+// Mercury (2,440 km / 1,516 miles) – 38% the size of Earth
+
+$DU: 1rem;//*10^6miles
+$TU: 0.04s;//*24h
+$hoursToDays: 1 / 24 *48; 
+$sunZoom: 10;
+$planetZoom: 200;
+$orbitZoom: 0.13;
+$orbitMoonZoom: 1;
+$elipse-orbit-coefficient: 0.2;
+
+$earth-size: 0.007926;//*10^6miles
+$earth-orbit: 93*0.67;//*10^6miles
+$earth-tilt: 23.5;//*1deg
+$earth-year: 365;//*24hours
+$earth-day: 24;//*1hour
+  $earth-moon-size: 0.27*$earth-size;//*10^6miles
+  $earth-moon-orbit: $earth-size*$planetZoom /1.5+$earth-moon-size;//*10^6miles
+  $earth-moon-tilt: 1.5;//*1deg
+  $earth-moon-year: 27.3;//*24hours
+  $earth-moon-day: 27.3 * 24;//*1hour
+
+$sun-size: 109*$earth-size;//*10^6miles
+$sun-orbit: 0;//*10^6miles
+$sun-tilt: 7.3;//*1deg
+$sun-year: 2000;//*24hours
+$sun-day: 250;//*1hour
+
+$mercury-size: 0.38*$earth-size;//*10^6miles
+$mercury-orbit: 36;//*10^6miles
+$mercury-tilt: 2;//1*deg
+$mercury-year: 88;//*24hours
+$mercury-day: 116;//*1hour
+
+$venus-size: 0.95*$earth-size;//*10^6miles
+$venus-orbit: 67 *0.7;//*10^6miles
+$venus-tilt: 2.6;//1*deg
+$venus-year: 225;//*24hours
+$venus-day: 584;//*1hour
+
+$mars-size: 0.53*$earth-size;//*10^6miles
+$mars-orbit: 142 *0.53;//*10^6miles
+$mars-tilt: 25.0;//1*deg
+$mars-year: 687;//*24hours
+$mars-day: 24.66;//*1hour
+  //Fobos
+  $mars-moon-size: 0.2*$mars-size;//*10^6miles
+  $mars-moon-orbit: ($mars-size *0.5 +$mars-moon-size)*$planetZoom ;//*10^6miles
+  $mars-moon-tilt: 0;//1*deg //nd
+  $mars-moon-year: 39;//*24hours
+  $mars-moon-day: 20 *24;//*1hour
+    //Deimos
+    $mars-2-moon-size: 0.3*$mars-size;//*10^6miles
+    $mars-2-moon-orbit: $mars-moon-orbit +$mars-moon-size;//*10^6miles
+    $mars-2-moon-tilt: 0;//1*deg //nd
+    $mars-2-moon-year: 50;//*24hours
+    $mars-2-moon-day: 25 *24;//*1hour
+
+$jupiter-size: 11.2*$earth-size /4;//*10^6miles
+$jupiter-orbit: 483 /4;//*10^6miles
+$jupiter-tilt: 3.13;//1*deg
+$jupiter-year: $mars-year *1.9;//*24hours
+$jupiter-day: 9.93;//*1hour
+  //Io
+  $jupiter-moon-size: 1.5*$earth-moon-size;//*10^6miles
+  $jupiter-moon-orbit: ($jupiter-size*0.5 +$jupiter-moon-size) *$planetZoom ;//*10^6miles
+  $jupiter-moon-tilt: 0;//1*deg
+  $jupiter-moon-year: 50;//*24hours
+  $jupiter-moon-day: 50 *24;//*1hour
+    //Europa
+    $jupiter-2-moon-size: 1.4*$earth-moon-size;//*10^6miles
+    $jupiter-2-moon-orbit: ($jupiter-size * 0.5 + $jupiter-moon-size * 2)* $planetZoom;//*10^6miles
+    $jupiter-2-moon-tilt: 0.1;//1*deg
+    $jupiter-2-moon-year: 55;//*24hours
+    $jupiter-2-moon-day: 55 *24;//*1hour
+      //Ganimedes
+      $jupiter-3-moon-size: 2.3*$earth-moon-size;//*10^6miles
+      $jupiter-3-moon-orbit: ($jupiter-size *0.5 +$jupiter-moon-size*3) * $planetZoom;//*10^6miles
+      $jupiter-3-moon-tilt: 0.3;//1*deg
+      $jupiter-3-moon-year: 61;//*24hours
+      $jupiter-3-moon-day: 61 *24;//*1hour
+        //Callisto
+        $jupiter-4-moon-size: 2*$earth-moon-size;//*10^6miles
+        $jupiter-4-moon-orbit: ($jupiter-size *0.5 +$jupiter-moon-size *5)* $planetZoom;//*10^6miles
+        $jupiter-4-moon-tilt: 0;//1*deg
+        $jupiter-4-moon-year: 99;//*24hours
+        $jupiter-4-moon-day: 99 *24;//*1hour
+
+$saturn-size: 9.45*$earth-size /4;//*10^6miles
+$saturn-orbit: 836.6 /5;//*10^6miles
+$saturn-tilt: 26.73;//1*deg
+$saturn-year: $jupiter-year *1.2;//*24hours
+$saturn-day: 10.75;//*1hour
+  //Tethys 
+  $saturn-moon-size: 0.5* $earth-moon-size;//*10^6miles
+  $saturn-moon-orbit: ($saturn-size*0.5 +$saturn-moon-size) *$planetZoom ;//*10^6miles
+  $saturn-moon-tilt: 0;//1*deg
+  $saturn-moon-year: 44;//*24hours
+  $saturn-moon-day: 50 *24;//*1hour
+    //Dione
+    $saturn-2-moon-size: 0.9*$earth-moon-size;//*10^6miles
+    $saturn-2-moon-orbit: ($saturn-size * 0.5 + $earth-moon-size * 3)* $planetZoom;//*10^6miles
+    $saturn-2-moon-tilt: 0;//1*deg
+    $saturn-2-moon-year: 55;//*24hours
+    $saturn-2-moon-day: 55 *24;//*1hour
+      //Rhea
+      $saturn-3-moon-size: $earth-moon-size;//*10^6miles
+      $saturn-3-moon-orbit: ($saturn-size*0.5 +$earth-moon-size *5) *$planetZoom ;//*10^6miles
+      $saturn-3-moon-tilt: 0;//1*deg
+      $saturn-3-moon-year: 71;//*24hours
+      $saturn-3-moon-day: 50 *24;//*1hour
+        //Titan
+        $saturn-4-moon-size: 2*$earth-moon-size;//*10^6miles
+        $saturn-4-moon-orbit: ($saturn-size * 0.5 + $earth-moon-size * 8)* $planetZoom;//*10^6miles
+        $saturn-4-moon-tilt: 0;//1*deg
+        $saturn-4-moon-year: 89;//*24hours
+        $saturn-4-moon-day: 78 *24;//*1hour
+        //Lapetus
+          $saturn-5-moon-size: $earth-moon-size;//*10^6miles
+          $saturn-5-moon-orbit: ($saturn-size * 0.5 + $earth-moon-size * 10)* $planetZoom;//*10^6miles
+          $saturn-5-moon-tilt: 0;//1*deg
+          $saturn-5-moon-year: 95;//*24hours
+          $saturn-5-moon-day: 70 *24;//*1hour
+
+$uranus-size: 4*$earth-size /3;//*10^6miles
+$uranus-orbit: 1859 /9;//*10^6miles
+$uranus-tilt: 97.7;//1*deg
+$uranus-year: $saturn-year *1.2;//*24hours
+$uranus-day: 17.25;//*1hour
+  //Titania
+  $uranus-moon-size: 0.7*$earth-moon-size;//*10^6miles
+  $uranus-moon-orbit: ($uranus-size*0.5 +$uranus-moon-size *1.2) *$planetZoom ;//*10^6miles
+  $uranus-moon-tilt: 0;//1*deg
+  $uranus-moon-year: 44;//*24hours
+  $uranus-moon-day: 50 *24;//*1hour
+    //Oberon
+    $uranus-2-moon-size: 0.75*$earth-moon-size;//*10^6miles
+    $uranus-2-moon-orbit: ($uranus-size * 0.5 + $uranus-2-moon-size * 5)* $planetZoom;//*10^6miles
+    $uranus-2-moon-tilt: 0;//1*deg
+    $uranus-2-moon-year: 55;//*24hours
+    $uranus-2-moon-day: 55 *24;//*1hour
+    
+$neptune-size: 3.8*$earth-size /3;//*10^6miles
+$neptune-orbit: 2798 /12;//*10^6miles
+$neptune-tilt: 28;//1*deg
+$neptune-year: $uranus-year *1.1;//*24hours
+$neptune-day: 160 *24;//*1hour
+  //Triton
+  $neptune-moon-size: 1.2 *$earth-moon-size;//*10^6miles
+  $neptune-moon-orbit: ($neptune-size*0.5 +$neptune-moon-size *1.3) *$planetZoom ;//*10^6miles
+  $neptune-moon-tilt: 0;//1*deg
+  $neptune-moon-year: 98;//*24hours
+  $neptune-moon-day: 98 *24;//*1hour
+
+$planets: (
+    //planet and orbit relative sizes       
+    sun-index: 1,
+    sun-width: $sun-size*$sunZoom*$DU, 
+    sun-height: $sun-size*$sunZoom*$DU,
+    sun-background-color: #ff0,
+    sun-antialiasing-color: #ff0c,
+    sun-background-image: url('https://res.cloudinary.com/b789b130931413a/image/upload/v1634475224/solar-system-img/sun_ottvmh.jpg'),
+    sun-rotateZ: $sun-tilt *1deg,
+    sun-animation-duration: $sun-day*$hoursToDays*$TU,  
+    sun-orbit-x: $sun-orbit*$orbitZoom*$DU,
+    sun-orbit-y: $sun-orbit*$orbitZoom*$elipse-orbit-coefficient*$DU,
+    sun-orbit-period: $sun-year*$TU,
+    sun-z-index: 0,
+  
+    mercury-index: 2,
+    mercury-width: $mercury-size*$planetZoom*$DU, 
+    mercury-height: $mercury-size*$planetZoom*$DU,
+    mercury-background-color: #f00,
+    mercury-antialiasing-color: #000,
+    mercury-background-image: url('https://res.cloudinary.com/b789b130931413a/image/upload/v1634475223/solar-system-img/mercury-light_ohlqdb.jpg'),
+    mercury-rotateZ: $mercury-tilt *1deg,
+    mercury-animation-duration: $mercury-day*$hoursToDays*$TU,
+    mercury-orbit-x: $mercury-orbit*$orbitZoom*$DU,
+    mercury-orbit-y: $mercury-orbit*$orbitZoom*$elipse-orbit-coefficient*$DU,
+    mercury-orbit-period: $mercury-year*$TU,
+    mercury-z-index: 2,
+    
+    venus-index: 3,
+    venus-width: $venus-size*$planetZoom*$DU, 
+    venus-height: $venus-size*$planetZoom*$DU,
+    venus-background-color: #00f,
+    venus-antialiasing-color: #000,
+    venus-background-image: url('https://res.cloudinary.com/b789b130931413a/image/upload/v1634475222/solar-system-img/venus_uey10e.jpg'),
+    venus-rotateZ: $venus-tilt *1deg,
+    venus-animation-duration: $venus-day*$hoursToDays*$TU,
+    venus-orbit-x: $venus-orbit*$orbitZoom*$DU,
+    venus-orbit-y: $venus-orbit*$orbitZoom*$elipse-orbit-coefficient*$DU,
+    venus-orbit-period: $venus-year*$TU,
+    venus-z-index: 3,
+
+    earth-index: 4,
+    earth-width: $earth-size*$planetZoom*$DU, 
+    earth-height: $earth-size*$planetZoom*$DU,
+    earth-background-color: #00f,
+    earth-antialiasing-color: #000,    
+    earth-background-image: url('https://res.cloudinary.com/b789b130931413a/image/upload/v1634475222/solar-system-img/earth_egmisg.jpg'),
+    earth-rotateZ: $earth-tilt *1deg,
+    earth-animation-duration: $earth-day*$hoursToDays*$TU,
+    earth-orbit-x: $earth-orbit*$orbitZoom*$DU,
+    earth-orbit-y: $earth-orbit*$orbitZoom*$elipse-orbit-coefficient*$DU,
+    earth-orbit-period: $earth-year*$TU,
+    earth-z-index: 4,
+    
+    earth-moon-index: 1,
+    earth-moon-width: $earth-moon-size*$planetZoom*$DU, 
+    earth-moon-height: $earth-moon-size*$planetZoom*$DU,
+    earth-moon-background-color: #00f,
+    earth-moon-antialiasing-color: #000,
+    earth-moon-background-image: url('https://res.cloudinary.com/b789b130931413a/image/upload/v1634475223/solar-system-img/earth-moon_keme45.jpg'),
+    earth-moon-rotateZ: $earth-moon-tilt *1deg,
+    earth-moon-animation-duration: $earth-moon-day*$hoursToDays*$TU,
+    earth-moon-orbit-x: $earth-moon-orbit*$orbitMoonZoom*$DU,
+    earth-moon-orbit-y: $earth-moon-orbit*$orbitMoonZoom*$elipse-orbit-coefficient*$DU,
+    earth-moon-orbit-period: $earth-moon-year*$TU,
+    earth-moon-z-index: 0.1,
+
+    mars-index: 5,
+    mars-width: $mars-size*$planetZoom*$DU, 
+    mars-height: $mars-size*$planetZoom*$DU,
+    mars-background-color: #f00,
+    mars-antialiasing-color: #000,    
+    mars-background-image: url('https://res.cloudinary.com/b789b130931413a/image/upload/v1634475223/solar-system-img/mars_cc6mgs.jpg'),
+    mars-rotateZ: $mars-tilt *1deg,
+    mars-animation-duration: $mars-day*$hoursToDays*$TU,    
+    mars-orbit-x: $mars-orbit*$orbitZoom*$DU,
+    mars-orbit-y: $mars-orbit*$orbitZoom*$elipse-orbit-coefficient*$DU,
+    mars-orbit-period: $mars-year*$TU,
+    mars-z-index: 5,
+      mars-moon-index: 1,
+      mars-moon-width: $mars-moon-size*$planetZoom*$DU, 
+      mars-moon-height: $mars-moon-size*$planetZoom*$DU,
+      mars-moon-background-color: #fff,
+      mars-moon-antialiasing-color: #000,    
+      mars-moon-background-image: url('https://res.cloudinary.com/b789b130931413a/image/upload/v1634475223/solar-system-img/mars-moon_mr40tt.jpg'),
+      mars-moon-rotateZ: $mars-moon-tilt *1deg,
+      mars-moon-animation-duration: $mars-moon-day*$hoursToDays*$TU,    
+      mars-moon-orbit-x: $mars-moon-orbit*$orbitMoonZoom*$DU,
+      mars-moon-orbit-y: $mars-moon-orbit*$orbitMoonZoom*$elipse-orbit-coefficient*$DU,
+      mars-moon-orbit-period: $mars-moon-year*$TU,
+      mars-moon-z-index: 0.2,
+        mars-2-moon-index: 2,
+        mars-2-moon-width: $mars-2-moon-size*$planetZoom*$DU, 
+        mars-2-moon-height: $mars-2-moon-size*$planetZoom*$DU,
+        mars-2-moon-background-color: #fff,
+        mars-2-moon-antialiasing-color: #000,    
+        mars-2-moon-background-image: url('https://res.cloudinary.com/b789b130931413a/image/upload/v1634475223/solar-system-img/mars-2-moon_aegpyv.jpg'),
+        mars-2-moon-rotateZ: $mars-2-moon-tilt *1deg,
+        mars-2-moon-animation-duration: $mars-2-moon-day*$hoursToDays*$TU,    
+        mars-2-moon-orbit-x: $mars-2-moon-orbit*$orbitMoonZoom*$DU,
+        mars-2-moon-orbit-y: $mars-2-moon-orbit*$orbitMoonZoom*$elipse-orbit-coefficient*$DU,
+        mars-2-moon-orbit-period: $mars-2-moon-year*$TU,
+        mars-2-moon-z-index: 0.1,
+
+  jupiter-index: 6,
+  jupiter-width: $jupiter-size*$planetZoom*$DU, 
+  jupiter-height: $jupiter-size*$planetZoom*$DU,
+  jupiter-background-color: #f00,
+  jupiter-antialiasing-color: #000,  
+  jupiter-background-image: url('https://res.cloudinary.com/b789b130931413a/image/upload/v1634475223/solar-system-img/jupiter_oxdbeg.jpg'),
+  jupiter-rotateZ: $jupiter-tilt *1deg,
+  jupiter-animation-duration: $jupiter-day*$hoursToDays*$TU,  
+  jupiter-orbit-x: $jupiter-orbit*$orbitZoom*$DU,
+  jupiter-orbit-y: $jupiter-orbit*$orbitZoom*$elipse-orbit-coefficient*$DU,
+  jupiter-orbit-period: $jupiter-year*$TU,
+  jupiter-z-index: 6,
+    jupiter-moon-index: 1,
+    jupiter-moon-width: $jupiter-moon-size*$planetZoom*$DU, 
+    jupiter-moon-height: $jupiter-moon-size*$planetZoom*$DU,
+    jupiter-moon-background-color: #fff,
+    jupiter-moon-antialiasing-color: #000,
+    jupiter-moon-background-image: url('https://res.cloudinary.com/b789b130931413a/image/upload/v1634475223/solar-system-img/jupiter-moon_sucefr.jpg'),
+    jupiter-moon-rotateZ: $jupiter-moon-tilt *1deg,
+    jupiter-moon-animation-duration: $jupiter-moon-day*$hoursToDays*$TU,
+    jupiter-moon-orbit-x: $jupiter-moon-orbit*$orbitMoonZoom*$DU,
+    jupiter-moon-orbit-y: $jupiter-moon-orbit*$orbitMoonZoom*$elipse-orbit-coefficient*$DU,
+    jupiter-moon-orbit-period: $jupiter-moon-year*$TU,
+    jupiter-moon-z-index: 0.1,
+      jupiter-2-moon-index: 2,
+      jupiter-2-moon-width: $jupiter-2-moon-size*$planetZoom*$DU, 
+      jupiter-2-moon-height: $jupiter-2-moon-size*$planetZoom*$DU,
+      jupiter-2-moon-background-color: #fff,
+      jupiter-2-moon-antialiasing-color: #000,
+      jupiter-2-moon-background-image: url('https://res.cloudinary.com/b789b130931413a/image/upload/v1634475223/solar-system-img/jupiter-2-moon_ryhfps.jpg'),
+      jupiter-2-moon-rotateZ: $jupiter-2-moon-tilt *1deg,
+      jupiter-2-moon-animation-duration: $jupiter-2-moon-day*$hoursToDays*$TU,
+      jupiter-2-moon-orbit-x: $jupiter-2-moon-orbit*$orbitMoonZoom*$DU,
+      jupiter-2-moon-orbit-y: $jupiter-2-moon-orbit*$orbitMoonZoom*$elipse-orbit-coefficient*$DU,
+      jupiter-2-moon-orbit-period: $jupiter-2-moon-year*$TU,
+      jupiter-2-moon-z-index: 0.2,    
+        jupiter-3-moon-index: 3,
+        jupiter-3-moon-width: $jupiter-3-moon-size*$planetZoom*$DU, 
+        jupiter-3-moon-height: $jupiter-3-moon-size*$planetZoom*$DU,
+        jupiter-3-moon-background-color: #fff,
+        jupiter-3-moon-antialiasing-color: #000,
+        jupiter-3-moon-background-image: url('https://res.cloudinary.com/b789b130931413a/image/upload/v1634475223/solar-system-img/jupiter-3-moon_vvvjuc.jpg'),
+        jupiter-3-moon-rotateZ: $jupiter-3-moon-tilt *1deg,
+        jupiter-3-moon-animation-duration: $jupiter-3-moon-day*$hoursToDays*$TU,
+        jupiter-3-moon-orbit-x: $jupiter-3-moon-orbit*$orbitMoonZoom*$DU,
+        jupiter-3-moon-orbit-y: $jupiter-3-moon-orbit*$orbitMoonZoom*$elipse-orbit-coefficient*$DU,
+        jupiter-3-moon-orbit-period: $jupiter-3-moon-year*$TU,
+        jupiter-3-moon-z-index: 0.3,
+          jupiter-4-moon-index: 4,
+          jupiter-4-moon-width: $jupiter-4-moon-size*$planetZoom*$DU, 
+          jupiter-4-moon-height: $jupiter-4-moon-size*$planetZoom*$DU,
+          jupiter-4-moon-background-color: #fff,
+          jupiter-4-moon-antialiasing-color: #000,
+          jupiter-4-moon-background-image: url('https://res.cloudinary.com/b789b130931413a/image/upload/v1634475223/solar-system-img/jupiter-4-moon_jlazz4.jpg'),
+          jupiter-4-moon-rotateZ: $jupiter-4-moon-tilt *1deg,
+          jupiter-4-moon-animation-duration: $jupiter-4-moon-day*$hoursToDays*$TU,
+          jupiter-4-moon-orbit-x: $jupiter-4-moon-orbit*$orbitMoonZoom*$DU,
+          jupiter-4-moon-orbit-y: $jupiter-4-moon-orbit*$orbitMoonZoom*$elipse-orbit-coefficient*$DU,
+          jupiter-4-moon-orbit-period: $jupiter-4-moon-year*$TU,
+          jupiter-4-moon-z-index: 0.4,
+      
+  saturn-index: 7,
+  saturn-width: $saturn-size*$planetZoom*$DU, 
+  saturn-height: $saturn-size*$planetZoom*$DU,
+  saturn-size-no-DU: $saturn-size*$planetZoom,
+  saturn-background-color: #f00,
+  saturn-antialiasing-color: #000,
+  saturn-ring-color: #fffab229,
+  saturn-ring-small-color: #0009,
+  saturn-background-image: url('https://res.cloudinary.com/b789b130931413a/image/upload/v1634475224/solar-system-img/saturn_uxjic5.jpg'),
+  saturn-rotateZ: $saturn-tilt *1deg,
+  saturn-animation-duration: $saturn-day*$hoursToDays*$TU,
+  saturn-orbit-x: $saturn-orbit*$orbitZoom*$DU,
+  saturn-orbit-y: $saturn-orbit*$orbitZoom*$elipse-orbit-coefficient*$DU,
+  saturn-orbit-period: $saturn-year*$TU,
+  saturn-z-index: 7,
+    saturn-moon-index: 1,
+    saturn-moon-width: $saturn-moon-size*$planetZoom*$DU, 
+    saturn-moon-height: $saturn-moon-size*$planetZoom*$DU,
+    saturn-moon-background-color: #fff,
+    saturn-moon-antialiasing-color: #000,
+    saturn-moon-background-image: url('https://res.cloudinary.com/b789b130931413a/image/upload/v1634475224/solar-system-img/saturn-moon_eiiwkc.jpg'),
+    saturn-moon-rotateZ: $saturn-moon-tilt *1deg,
+    saturn-moon-animation-duration: $saturn-moon-day*$hoursToDays*$TU,
+    saturn-moon-orbit-x: $saturn-moon-orbit*$orbitMoonZoom*$DU,
+    saturn-moon-orbit-y: $saturn-moon-orbit*$orbitMoonZoom*$elipse-orbit-coefficient*$DU,
+    saturn-moon-orbit-period: $saturn-moon-year*$TU,
+    saturn-moon-z-index: 0.1,
+      saturn-2-moon-index: 2,
+      saturn-2-moon-width: $saturn-2-moon-size*$planetZoom*$DU, 
+      saturn-2-moon-height: $saturn-2-moon-size*$planetZoom*$DU,
+      saturn-2-moon-background-color: #fff,
+      saturn-2-moon-antialiasing-color: #000,
+      saturn-2-moon-background-image: url('https://res.cloudinary.com/b789b130931413a/image/upload/v1634475222/solar-system-img/saturn-2-moon_urffpw.jpg'),
+      saturn-2-moon-rotateZ: $saturn-2-moon-tilt *1deg,
+      saturn-2-moon-animation-duration: $saturn-2-moon-day*$hoursToDays*$TU,
+      saturn-2-moon-orbit-x: $saturn-2-moon-orbit*$orbitMoonZoom*$DU,
+      saturn-2-moon-orbit-y: $saturn-2-moon-orbit*$orbitMoonZoom*$elipse-orbit-coefficient*$DU,
+      saturn-2-moon-orbit-period: $saturn-2-moon-year*$TU,
+      saturn-2-moon-z-index: 0.2,    
+        saturn-3-moon-index: 3,
+        saturn-3-moon-width: $saturn-3-moon-size*$planetZoom*$DU, 
+        saturn-3-moon-height: $saturn-3-moon-size*$planetZoom*$DU,
+        saturn-3-moon-background-color: #fff,
+        saturn-3-moon-antialiasing-color: #000,
+        saturn-3-moon-background-image: url('https://res.cloudinary.com/b789b130931413a/image/upload/v1634475222/solar-system-img/saturn-3-moon_ptrwjl.jpg'),
+        saturn-3-moon-rotateZ: $saturn-3-moon-tilt *1deg,
+        saturn-3-moon-animation-duration: $saturn-3-moon-day*$hoursToDays*$TU,
+        saturn-3-moon-orbit-x: $saturn-3-moon-orbit*$orbitMoonZoom*$DU,
+        saturn-3-moon-orbit-y: $saturn-3-moon-orbit*$orbitMoonZoom*$elipse-orbit-coefficient*$DU,
+        saturn-3-moon-orbit-period: $saturn-3-moon-year*$TU,
+        saturn-3-moon-z-index: 0.3,
+          saturn-4-moon-index: 4,
+          saturn-4-moon-width: $saturn-4-moon-size*$planetZoom*$DU, 
+          saturn-4-moon-height: $saturn-4-moon-size*$planetZoom*$DU,
+          saturn-4-moon-background-color: #fff,
+          saturn-4-moon-antialiasing-color: #000,
+          saturn-4-moon-background-image: url('https://res.cloudinary.com/b789b130931413a/image/upload/v1634475222/solar-system-img/saturn-4-moon_nuny9a.jpg'),
+          saturn-4-moon-rotateZ: $saturn-4-moon-tilt *1deg,
+          saturn-4-moon-animation-duration: $saturn-4-moon-day*$hoursToDays*$TU,
+          saturn-4-moon-orbit-x: $saturn-4-moon-orbit*$orbitMoonZoom*$DU,
+          saturn-4-moon-orbit-y: $saturn-4-moon-orbit*$orbitMoonZoom*$elipse-orbit-coefficient*$DU,
+          saturn-4-moon-orbit-period: $saturn-4-moon-year*$TU,
+          saturn-4-moon-z-index: 0.4,
+            saturn-5-moon-index: 5,
+            saturn-5-moon-width: $saturn-5-moon-size*$planetZoom*$DU, 
+            saturn-5-moon-height: $saturn-5-moon-size*$planetZoom*$DU,
+            saturn-5-moon-background-color: #fff,
+            saturn-5-moon-antialiasing-color: #000,
+            saturn-5-moon-background-image: url('https://res.cloudinary.com/b789b130931413a/image/upload/v1634475222/solar-system-img/saturn-5-moon_erfwpq.jpg'),
+            saturn-5-moon-rotateZ: $saturn-5-moon-tilt *1deg,
+            saturn-5-moon-animation-duration: $saturn-5-moon-day*$hoursToDays*$TU,
+            saturn-5-moon-orbit-x: $saturn-5-moon-orbit*$orbitMoonZoom*$DU,
+            saturn-5-moon-orbit-y: $saturn-5-moon-orbit*$orbitMoonZoom*$elipse-orbit-coefficient*$DU,
+            saturn-5-moon-orbit-period: $saturn-5-moon-year*$TU,
+            saturn-5-moon-z-index: 0.5,
+
+  uranus-index: 8,
+  uranus-width: $uranus-size*$planetZoom*$DU, 
+  uranus-height: $uranus-size*$planetZoom*$DU,
+  uranus-size-no-DU: $uranus-size*$planetZoom,
+  uranus-background-color: #00f,
+  uranus-antialiasing-color: #000,
+  uranus-ring-color: transparent,
+  uranus-ring-small-color: #fff4,
+  uranus-background-image: url('https://res.cloudinary.com/b789b130931413a/image/upload/v1634475223/solar-system-img/uranus_nd5opg.jpg'),
+  uranus-rotateZ: $uranus-tilt *1deg,
+  uranus-animation-duration: $uranus-day*$hoursToDays*$TU,
+  uranus-orbit-x: $uranus-orbit*$orbitZoom*$DU,
+  uranus-orbit-y: $uranus-orbit*$orbitZoom*$elipse-orbit-coefficient*$DU,
+  uranus-orbit-period: $uranus-year*$TU,
+  uranus-z-index: 8,
+    uranus-moon-index: 1,
+    uranus-moon-width: $uranus-moon-size*$planetZoom*$DU, 
+    uranus-moon-height: $uranus-moon-size*$planetZoom*$DU,
+    uranus-moon-background-color: #fff,
+    uranus-moon-antialiasing-color: #000,
+    uranus-moon-background-image: url('https://res.cloudinary.com/b789b130931413a/image/upload/v1634475224/solar-system-img/uranus-moon_rlnqmd.jpg'),
+    uranus-moon-rotateZ: $uranus-moon-tilt *1deg,
+    uranus-moon-animation-duration: $uranus-moon-day*$hoursToDays*$TU,
+    uranus-moon-orbit-x: $uranus-moon-orbit*$orbitMoonZoom*$DU,
+    uranus-moon-orbit-y: $uranus-moon-orbit*$orbitMoonZoom*$elipse-orbit-coefficient*$DU,
+    uranus-moon-orbit-period: $uranus-moon-year*$TU,
+    uranus-moon-z-index: 0.1,
+      uranus-2-moon-index: 2,
+      uranus-2-moon-width: $uranus-2-moon-size*$planetZoom*$DU, 
+      uranus-2-moon-height: $uranus-2-moon-size*$planetZoom*$DU,
+      uranus-2-moon-background-color: #fff,
+      uranus-2-moon-antialiasing-color: #000,
+      uranus-2-moon-background-image: url('https://res.cloudinary.com/b789b130931413a/image/upload/v1634475224/solar-system-img/uranus-2-moon_x4kecd.jpg'),
+      uranus-2-moon-rotateZ: $uranus-2-moon-tilt *1deg,
+      uranus-2-moon-animation-duration: $uranus-2-moon-day*$hoursToDays*$TU,
+      uranus-2-moon-orbit-x: $uranus-2-moon-orbit*$orbitMoonZoom*$DU,
+      uranus-2-moon-orbit-y: $uranus-2-moon-orbit*$orbitMoonZoom*$elipse-orbit-coefficient*$DU,
+      uranus-2-moon-orbit-period: $uranus-2-moon-year*$TU,
+      uranus-2-moon-z-index: 0.2,    
+
+  neptune-index: 9,
+  neptune-width: $neptune-size*$planetZoom*$DU, 
+  neptune-height: $neptune-size*$planetZoom*$DU,
+  neptune-background-color: #f00,
+  neptune-antialiasing-color: #000,  
+  neptune-background-image: url('https://res.cloudinary.com/b789b130931413a/image/upload/v1634475223/solar-system-img/neptune_pqhrab.jpg'),
+  neptune-rotateZ: $neptune-tilt *1deg,
+  neptune-animation-duration: $neptune-day*$hoursToDays*$TU,  
+  neptune-orbit-x: $neptune-orbit*$orbitZoom*$DU,
+  neptune-orbit-y: $neptune-orbit*$orbitZoom*$elipse-orbit-coefficient*$DU,
+  neptune-orbit-period: $neptune-year*$TU,
+  neptune-z-index: 9,    
+    neptune-moon-index: 1,
+    neptune-moon-width: $neptune-moon-size*$planetZoom*$DU, 
+    neptune-moon-height: $neptune-moon-size*$planetZoom*$DU,
+    neptune-moon-background-color: #fff,
+    neptune-moon-antialiasing-color: #000,
+    neptune-moon-background-image: url('https://res.cloudinary.com/b789b130931413a/image/upload/v1634475224/solar-system-img/neptune-moon_iadlzm.jpg'),
+    neptune-moon-rotateZ: $neptune-moon-tilt *1deg,
+    neptune-moon-animation-duration: $neptune-moon-day*$hoursToDays*$TU,
+    neptune-moon-orbit-x: $neptune-moon-orbit*$orbitMoonZoom*$DU,
+    neptune-moon-orbit-y: $neptune-moon-orbit*$orbitMoonZoom*$elipse-orbit-coefficient*$DU,
+    neptune-moon-orbit-period: $neptune-moon-year*$TU,
+    neptune-moon-z-index: 0.1,  
+);

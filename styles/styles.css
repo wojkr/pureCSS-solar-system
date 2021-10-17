@@ -1,0 +1,5163 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  background-color: #000;
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+}
+
+@-webkit-keyframes rot {
+  0% {
+    background-position-x: 200%;
+  }
+  100% {
+    background-position-x: 0%;
+  }
+}
+
+@keyframes rot {
+  0% {
+    background-position-x: 200%;
+  }
+  100% {
+    background-position-x: 0%;
+  }
+}
+
+@-webkit-keyframes rotBackground {
+  0% {
+    -webkit-transform: rotateZ(0deg);
+            transform: rotateZ(0deg);
+  }
+  100% {
+    -webkit-transform: rotateZ(360deg);
+            transform: rotateZ(360deg);
+  }
+}
+
+@keyframes rotBackground {
+  0% {
+    -webkit-transform: rotateZ(0deg);
+            transform: rotateZ(0deg);
+  }
+  100% {
+    -webkit-transform: rotateZ(360deg);
+            transform: rotateZ(360deg);
+  }
+}
+
+.solar-system {
+  position: relative;
+  overflow: hidden;
+}
+
+.space {
+  position: absolute;
+  width: 60rem;
+  height: 25rem;
+  top: 50%;
+  left: 50%;
+  border-radius: 3.75rem;
+  -webkit-transform: translate3d(-50%, -50%, 0);
+          transform: translate3d(-50%, -50%, 0);
+  overflow: hidden;
+}
+
+.space img {
+  position: absolute;
+  top: -18.7rem;
+  left: -1.2rem;
+  width: 62.4rem;
+  height: 62.4rem;
+  -webkit-filter: opacity(0.4);
+          filter: opacity(0.4);
+  -webkit-transform-origin: center;
+          transform-origin: center;
+  -webkit-animation: rotBackground 500s linear -10s infinite;
+          animation: rotBackground 500s linear -10s infinite;
+}
+
+.solar-system-container {
+  position: relative;
+  width: 60rem;
+  height: 25rem;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+}
+
+.solar-system-container::after {
+  content: '';
+  display: inline-block;
+  position: absolute;
+  width: 60rem;
+  height: 25rem;
+  border-radius: 3.75rem;
+  -webkit-transform: translateZ(10rem);
+          transform: translateZ(10rem);
+  -webkit-box-shadow: inset 0 0 2.5rem #000, inset 0 0 3.57143rem #000, inset 0 0 2.5rem 1.66667rem #000;
+          box-shadow: inset 0 0 2.5rem #000, inset 0 0 3.57143rem #000, inset 0 0 2.5rem 1.66667rem #000;
+}
+
+body .sun {
+  position: absolute;
+  top: 8.18033rem;
+  left: 25.68033rem;
+  -webkit-animation: orbitZsun 80s steps(1, start) infinite;
+          animation: orbitZsun 80s steps(1, start) infinite;
+}
+
+@-webkit-keyframes orbitZsun {
+  0% {
+    -webkit-transform: translateZ(-0rem);
+            transform: translateZ(-0rem);
+  }
+  50% {
+    -webkit-transform: translateZ(0rem);
+            transform: translateZ(0rem);
+  }
+  100% {
+    -webkit-transform: translateZ(-0rem);
+            transform: translateZ(-0rem);
+  }
+}
+
+@keyframes orbitZsun {
+  0% {
+    -webkit-transform: translateZ(-0rem);
+            transform: translateZ(-0rem);
+  }
+  50% {
+    -webkit-transform: translateZ(0rem);
+            transform: translateZ(0rem);
+  }
+  100% {
+    -webkit-transform: translateZ(-0rem);
+            transform: translateZ(-0rem);
+  }
+}
+
+body .sun-style {
+  background-size: auto 100%;
+  border-radius: 50%;
+  background-repeat: repeat-x;
+  -webkit-animation: rot 1s linear 0s infinite normal;
+          animation: rot 1s linear 0s infinite normal;
+  width: 8.63934rem;
+  height: 8.63934rem;
+  background-color: #ff0;
+  -webkit-transform: rotateZ(7.3deg);
+          transform: rotateZ(7.3deg);
+  background-image: url("https://res.cloudinary.com/b789b130931413a/image/upload/v1634475224/solar-system-img/sun_ottvmh.jpg");
+  -webkit-animation-duration: 20s;
+          animation-duration: 20s;
+  -webkit-box-shadow: inset 0 0 0.86393rem #ff0c;
+          box-shadow: inset 0 0 0.86393rem #ff0c;
+}
+
+body .sun-style::after {
+  -webkit-transform: rotateZ(-7.3deg);
+          transform: rotateZ(-7.3deg);
+  content: '';
+  display: inline-block;
+  position: absolute;
+  width: 8.63934rem;
+  height: 8.63934rem;
+  border-radius: 50%;
+  background-color: transparent;
+  -webkit-animation: shineAnimation 80s linear 0s infinite;
+          animation: shineAnimation 80s linear 0s infinite;
+}
+
+@-webkit-keyframes shineAnimation {
+  0% {
+    -webkit-box-shadow: 0.0432rem 0.0144rem 1.72787rem #ff0;
+            box-shadow: 0.0432rem 0.0144rem 1.72787rem #ff0;
+  }
+  2.5% {
+    -webkit-box-shadow: 0.0216rem 0.21598rem 2.5918rem #ff0;
+            box-shadow: 0.0216rem 0.21598rem 2.5918rem #ff0;
+  }
+  7.5% {
+    -webkit-box-shadow: 0rem 0.10799rem 0.86393rem #ff0;
+            box-shadow: 0rem 0.10799rem 0.86393rem #ff0;
+  }
+  25.01% {
+    -webkit-box-shadow: 0.0432rem 0.0432rem 1.72787rem #ff0;
+            box-shadow: 0.0432rem 0.0432rem 1.72787rem #ff0;
+  }
+  40% {
+    -webkit-box-shadow: -0.0432rem 0.0144rem 0.86393rem #ff0;
+            box-shadow: -0.0432rem 0.0144rem 0.86393rem #ff0;
+  }
+  100% {
+    -webkit-box-shadow: 0.43197rem 0.28798rem 1.72787rem #ff0;
+            box-shadow: 0.43197rem 0.28798rem 1.72787rem #ff0;
+  }
+}
+
+@keyframes shineAnimation {
+  0% {
+    -webkit-box-shadow: 0.0432rem 0.0144rem 1.72787rem #ff0;
+            box-shadow: 0.0432rem 0.0144rem 1.72787rem #ff0;
+  }
+  2.5% {
+    -webkit-box-shadow: 0.0216rem 0.21598rem 2.5918rem #ff0;
+            box-shadow: 0.0216rem 0.21598rem 2.5918rem #ff0;
+  }
+  7.5% {
+    -webkit-box-shadow: 0rem 0.10799rem 0.86393rem #ff0;
+            box-shadow: 0rem 0.10799rem 0.86393rem #ff0;
+  }
+  25.01% {
+    -webkit-box-shadow: 0.0432rem 0.0432rem 1.72787rem #ff0;
+            box-shadow: 0.0432rem 0.0432rem 1.72787rem #ff0;
+  }
+  40% {
+    -webkit-box-shadow: -0.0432rem 0.0144rem 0.86393rem #ff0;
+            box-shadow: -0.0432rem 0.0144rem 0.86393rem #ff0;
+  }
+  100% {
+    -webkit-box-shadow: 0.43197rem 0.28798rem 1.72787rem #ff0;
+            box-shadow: 0.43197rem 0.28798rem 1.72787rem #ff0;
+  }
+}
+
+body .mercury-style {
+  background-size: auto 100%;
+  border-radius: 50%;
+  background-repeat: repeat-x;
+  -webkit-animation: rot 1s linear 0s infinite normal;
+          animation: rot 1s linear 0s infinite normal;
+  width: 0.60238rem;
+  height: 0.60238rem;
+  background-color: #f00;
+  -webkit-transform: rotateZ(2deg);
+          transform: rotateZ(2deg);
+  background-image: url("https://res.cloudinary.com/b789b130931413a/image/upload/v1634475223/solar-system-img/mercury-light_ohlqdb.jpg");
+  -webkit-animation-duration: 9.28s;
+          animation-duration: 9.28s;
+  -webkit-box-shadow: inset 0 0 0.06024rem #000;
+          box-shadow: inset 0 0 0.06024rem #000;
+}
+
+body .mercury-style::after {
+  -webkit-transform: rotateZ(-2deg);
+          transform: rotateZ(-2deg);
+  content: '';
+  display: inline-block;
+  position: absolute;
+  width: 0.60238rem;
+  height: 0.60238rem;
+  border-radius: 50%;
+  background-color: transparent;
+  -webkit-animation: shadowAnimationmercury 3.52s linear 0s infinite;
+          animation: shadowAnimationmercury 3.52s linear 0s infinite;
+}
+
+@-webkit-keyframes shadowAnimationmercury {
+  0% {
+    /* LEFT */
+    -webkit-box-shadow: inset 0.18071rem 0rem 0.1004rem #000e;
+            box-shadow: inset 0.18071rem 0rem 0.1004rem #000e;
+  }
+  25% {
+    /* BOTTOM */
+    -webkit-box-shadow: inset 0.69273rem -0.12048rem 0.20079rem #000e;
+            box-shadow: inset 0.69273rem -0.12048rem 0.20079rem #000e;
+  }
+  25.01% {
+    /* BOTTOM */
+    -webkit-box-shadow: inset -0.69273rem -0.12048rem 0.20079rem #000e;
+            box-shadow: inset -0.69273rem -0.12048rem 0.20079rem #000e;
+  }
+  50% {
+    /* RIGHT */
+    -webkit-box-shadow: inset -0.18071rem 0rem 0.1004rem #000e;
+            box-shadow: inset -0.18071rem 0rem 0.1004rem #000e;
+  }
+  75% {
+    /* TOP */
+    -webkit-box-shadow: inset 0rem 0.03012rem 0.0502rem #000e;
+            box-shadow: inset 0rem 0.03012rem 0.0502rem #000e;
+  }
+  100% {
+    /* LEFT */
+    -webkit-box-shadow: inset 0.18071rem 0rem 0.1004rem #000e;
+            box-shadow: inset 0.18071rem 0rem 0.1004rem #000e;
+  }
+}
+
+@keyframes shadowAnimationmercury {
+  0% {
+    /* LEFT */
+    -webkit-box-shadow: inset 0.18071rem 0rem 0.1004rem #000e;
+            box-shadow: inset 0.18071rem 0rem 0.1004rem #000e;
+  }
+  25% {
+    /* BOTTOM */
+    -webkit-box-shadow: inset 0.69273rem -0.12048rem 0.20079rem #000e;
+            box-shadow: inset 0.69273rem -0.12048rem 0.20079rem #000e;
+  }
+  25.01% {
+    /* BOTTOM */
+    -webkit-box-shadow: inset -0.69273rem -0.12048rem 0.20079rem #000e;
+            box-shadow: inset -0.69273rem -0.12048rem 0.20079rem #000e;
+  }
+  50% {
+    /* RIGHT */
+    -webkit-box-shadow: inset -0.18071rem 0rem 0.1004rem #000e;
+            box-shadow: inset -0.18071rem 0rem 0.1004rem #000e;
+  }
+  75% {
+    /* TOP */
+    -webkit-box-shadow: inset 0rem 0.03012rem 0.0502rem #000e;
+            box-shadow: inset 0rem 0.03012rem 0.0502rem #000e;
+  }
+  100% {
+    /* LEFT */
+    -webkit-box-shadow: inset 0.18071rem 0rem 0.1004rem #000e;
+            box-shadow: inset 0.18071rem 0rem 0.1004rem #000e;
+  }
+}
+
+body .mercury-orbit-x {
+  width: 0;
+  -webkit-animation: orbitXmercury 3.52s cubic-bezier(0.3642, 0, 0.6358, 1) 0s infinite;
+          animation: orbitXmercury 3.52s cubic-bezier(0.3642, 0, 0.6358, 1) 0s infinite;
+}
+
+@-webkit-keyframes orbitXmercury {
+  0% {
+    -webkit-transform: translateX(-4.68rem);
+            transform: translateX(-4.68rem);
+  }
+  50% {
+    -webkit-transform: translate(4.68rem);
+            transform: translate(4.68rem);
+  }
+  100% {
+    -webkit-transform: translateX(-4.68rem);
+            transform: translateX(-4.68rem);
+  }
+}
+
+@keyframes orbitXmercury {
+  0% {
+    -webkit-transform: translateX(-4.68rem);
+            transform: translateX(-4.68rem);
+  }
+  50% {
+    -webkit-transform: translate(4.68rem);
+            transform: translate(4.68rem);
+  }
+  100% {
+    -webkit-transform: translateX(-4.68rem);
+            transform: translateX(-4.68rem);
+  }
+}
+
+body .mercury-orbit-y {
+  width: 0;
+  -webkit-animation: orbitYmercury 3.52s cubic-bezier(0.3642, 0, 0.6358, 1)-2.64s infinite;
+          animation: orbitYmercury 3.52s cubic-bezier(0.3642, 0, 0.6358, 1)-2.64s infinite;
+}
+
+@-webkit-keyframes orbitYmercury {
+  0% {
+    -webkit-transform: translateY(0.936rem);
+            transform: translateY(0.936rem);
+  }
+  50% {
+    -webkit-transform: translateY(-0.936rem);
+            transform: translateY(-0.936rem);
+  }
+  100% {
+    -webkit-transform: translateY(0.936rem);
+            transform: translateY(0.936rem);
+  }
+}
+
+@keyframes orbitYmercury {
+  0% {
+    -webkit-transform: translateY(0.936rem);
+            transform: translateY(0.936rem);
+  }
+  50% {
+    -webkit-transform: translateY(-0.936rem);
+            transform: translateY(-0.936rem);
+  }
+  100% {
+    -webkit-transform: translateY(0.936rem);
+            transform: translateY(0.936rem);
+  }
+}
+
+body .mercury-orbit-z {
+  position: absolute;
+  top: 12.19881rem;
+  left: 29.69881rem;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  -webkit-animation: orbitZmercury 3.52s steps(1, start) infinite;
+          animation: orbitZmercury 3.52s steps(1, start) infinite;
+}
+
+@-webkit-keyframes orbitZmercury {
+  0% {
+    -webkit-transform: translateZ(-2rem);
+            transform: translateZ(-2rem);
+  }
+  50% {
+    -webkit-transform: translateZ(2rem);
+            transform: translateZ(2rem);
+  }
+  100% {
+    -webkit-transform: translateZ(-2rem);
+            transform: translateZ(-2rem);
+  }
+}
+
+@keyframes orbitZmercury {
+  0% {
+    -webkit-transform: translateZ(-2rem);
+            transform: translateZ(-2rem);
+  }
+  50% {
+    -webkit-transform: translateZ(2rem);
+            transform: translateZ(2rem);
+  }
+  100% {
+    -webkit-transform: translateZ(-2rem);
+            transform: translateZ(-2rem);
+  }
+}
+
+body .venus-style {
+  background-size: auto 100%;
+  border-radius: 50%;
+  background-repeat: repeat-x;
+  -webkit-animation: rot 1s linear 0s infinite normal;
+          animation: rot 1s linear 0s infinite normal;
+  width: 1.50594rem;
+  height: 1.50594rem;
+  background-color: #00f;
+  -webkit-transform: rotateZ(2.6deg);
+          transform: rotateZ(2.6deg);
+  background-image: url("https://res.cloudinary.com/b789b130931413a/image/upload/v1634475222/solar-system-img/venus_uey10e.jpg");
+  -webkit-animation-duration: 46.72s;
+          animation-duration: 46.72s;
+  -webkit-box-shadow: inset 0 0 0.15059rem #000;
+          box-shadow: inset 0 0 0.15059rem #000;
+}
+
+body .venus-style::after {
+  -webkit-transform: rotateZ(-2.6deg);
+          transform: rotateZ(-2.6deg);
+  content: '';
+  display: inline-block;
+  position: absolute;
+  width: 1.50594rem;
+  height: 1.50594rem;
+  border-radius: 50%;
+  background-color: transparent;
+  -webkit-animation: shadowAnimationvenus 9s linear 0s infinite;
+          animation: shadowAnimationvenus 9s linear 0s infinite;
+}
+
+@-webkit-keyframes shadowAnimationvenus {
+  0% {
+    /* LEFT */
+    -webkit-box-shadow: inset 0.45178rem 0rem 0.25099rem #000e;
+            box-shadow: inset 0.45178rem 0rem 0.25099rem #000e;
+  }
+  25% {
+    /* BOTTOM */
+    -webkit-box-shadow: inset 1.73183rem -0.30119rem 0.50198rem #000e;
+            box-shadow: inset 1.73183rem -0.30119rem 0.50198rem #000e;
+  }
+  25.01% {
+    /* BOTTOM */
+    -webkit-box-shadow: inset -1.73183rem -0.30119rem 0.50198rem #000e;
+            box-shadow: inset -1.73183rem -0.30119rem 0.50198rem #000e;
+  }
+  50% {
+    /* RIGHT */
+    -webkit-box-shadow: inset -0.45178rem 0rem 0.25099rem #000e;
+            box-shadow: inset -0.45178rem 0rem 0.25099rem #000e;
+  }
+  75% {
+    /* TOP */
+    -webkit-box-shadow: inset 0rem 0.0753rem 0.12549rem #000e;
+            box-shadow: inset 0rem 0.0753rem 0.12549rem #000e;
+  }
+  100% {
+    /* LEFT */
+    -webkit-box-shadow: inset 0.45178rem 0rem 0.25099rem #000e;
+            box-shadow: inset 0.45178rem 0rem 0.25099rem #000e;
+  }
+}
+
+@keyframes shadowAnimationvenus {
+  0% {
+    /* LEFT */
+    -webkit-box-shadow: inset 0.45178rem 0rem 0.25099rem #000e;
+            box-shadow: inset 0.45178rem 0rem 0.25099rem #000e;
+  }
+  25% {
+    /* BOTTOM */
+    -webkit-box-shadow: inset 1.73183rem -0.30119rem 0.50198rem #000e;
+            box-shadow: inset 1.73183rem -0.30119rem 0.50198rem #000e;
+  }
+  25.01% {
+    /* BOTTOM */
+    -webkit-box-shadow: inset -1.73183rem -0.30119rem 0.50198rem #000e;
+            box-shadow: inset -1.73183rem -0.30119rem 0.50198rem #000e;
+  }
+  50% {
+    /* RIGHT */
+    -webkit-box-shadow: inset -0.45178rem 0rem 0.25099rem #000e;
+            box-shadow: inset -0.45178rem 0rem 0.25099rem #000e;
+  }
+  75% {
+    /* TOP */
+    -webkit-box-shadow: inset 0rem 0.0753rem 0.12549rem #000e;
+            box-shadow: inset 0rem 0.0753rem 0.12549rem #000e;
+  }
+  100% {
+    /* LEFT */
+    -webkit-box-shadow: inset 0.45178rem 0rem 0.25099rem #000e;
+            box-shadow: inset 0.45178rem 0rem 0.25099rem #000e;
+  }
+}
+
+body .venus-orbit-x {
+  width: 0;
+  -webkit-animation: orbitXvenus 9s cubic-bezier(0.3642, 0, 0.6358, 1) 0s infinite;
+          animation: orbitXvenus 9s cubic-bezier(0.3642, 0, 0.6358, 1) 0s infinite;
+}
+
+@-webkit-keyframes orbitXvenus {
+  0% {
+    -webkit-transform: translateX(-6.097rem);
+            transform: translateX(-6.097rem);
+  }
+  50% {
+    -webkit-transform: translate(6.097rem);
+            transform: translate(6.097rem);
+  }
+  100% {
+    -webkit-transform: translateX(-6.097rem);
+            transform: translateX(-6.097rem);
+  }
+}
+
+@keyframes orbitXvenus {
+  0% {
+    -webkit-transform: translateX(-6.097rem);
+            transform: translateX(-6.097rem);
+  }
+  50% {
+    -webkit-transform: translate(6.097rem);
+            transform: translate(6.097rem);
+  }
+  100% {
+    -webkit-transform: translateX(-6.097rem);
+            transform: translateX(-6.097rem);
+  }
+}
+
+body .venus-orbit-y {
+  width: 0;
+  -webkit-animation: orbitYvenus 9s cubic-bezier(0.3642, 0, 0.6358, 1)-6.75s infinite;
+          animation: orbitYvenus 9s cubic-bezier(0.3642, 0, 0.6358, 1)-6.75s infinite;
+}
+
+@-webkit-keyframes orbitYvenus {
+  0% {
+    -webkit-transform: translateY(1.2194rem);
+            transform: translateY(1.2194rem);
+  }
+  50% {
+    -webkit-transform: translateY(-1.2194rem);
+            transform: translateY(-1.2194rem);
+  }
+  100% {
+    -webkit-transform: translateY(1.2194rem);
+            transform: translateY(1.2194rem);
+  }
+}
+
+@keyframes orbitYvenus {
+  0% {
+    -webkit-transform: translateY(1.2194rem);
+            transform: translateY(1.2194rem);
+  }
+  50% {
+    -webkit-transform: translateY(-1.2194rem);
+            transform: translateY(-1.2194rem);
+  }
+  100% {
+    -webkit-transform: translateY(1.2194rem);
+            transform: translateY(1.2194rem);
+  }
+}
+
+body .venus-orbit-z {
+  position: absolute;
+  top: 11.74703rem;
+  left: 29.24703rem;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  -webkit-animation: orbitZvenus 9s steps(1, start) infinite;
+          animation: orbitZvenus 9s steps(1, start) infinite;
+}
+
+@-webkit-keyframes orbitZvenus {
+  0% {
+    -webkit-transform: translateZ(-3rem);
+            transform: translateZ(-3rem);
+  }
+  50% {
+    -webkit-transform: translateZ(3rem);
+            transform: translateZ(3rem);
+  }
+  100% {
+    -webkit-transform: translateZ(-3rem);
+            transform: translateZ(-3rem);
+  }
+}
+
+@keyframes orbitZvenus {
+  0% {
+    -webkit-transform: translateZ(-3rem);
+            transform: translateZ(-3rem);
+  }
+  50% {
+    -webkit-transform: translateZ(3rem);
+            transform: translateZ(3rem);
+  }
+  100% {
+    -webkit-transform: translateZ(-3rem);
+            transform: translateZ(-3rem);
+  }
+}
+
+body .earth-style {
+  background-size: auto 100%;
+  border-radius: 50%;
+  background-repeat: repeat-x;
+  -webkit-animation: rot 1s linear 0s infinite normal;
+          animation: rot 1s linear 0s infinite normal;
+  width: 1.5852rem;
+  height: 1.5852rem;
+  background-color: #00f;
+  -webkit-transform: rotateZ(23.5deg);
+          transform: rotateZ(23.5deg);
+  background-image: url("https://res.cloudinary.com/b789b130931413a/image/upload/v1634475222/solar-system-img/earth_egmisg.jpg");
+  -webkit-animation-duration: 1.92s;
+          animation-duration: 1.92s;
+  -webkit-box-shadow: inset 0 0 0.15852rem #000;
+          box-shadow: inset 0 0 0.15852rem #000;
+}
+
+body .earth-style::after {
+  -webkit-transform: rotateZ(-23.5deg);
+          transform: rotateZ(-23.5deg);
+  content: '';
+  display: inline-block;
+  position: absolute;
+  width: 1.5852rem;
+  height: 1.5852rem;
+  border-radius: 50%;
+  background-color: transparent;
+  -webkit-animation: shadowAnimationearth 14.6s linear 0s infinite;
+          animation: shadowAnimationearth 14.6s linear 0s infinite;
+}
+
+@-webkit-keyframes shadowAnimationearth {
+  0% {
+    /* LEFT */
+    -webkit-box-shadow: inset 0.47556rem 0rem 0.2642rem #000e;
+            box-shadow: inset 0.47556rem 0rem 0.2642rem #000e;
+  }
+  25% {
+    /* BOTTOM */
+    -webkit-box-shadow: inset 1.82298rem -0.31704rem 0.5284rem #000e;
+            box-shadow: inset 1.82298rem -0.31704rem 0.5284rem #000e;
+  }
+  25.01% {
+    /* BOTTOM */
+    -webkit-box-shadow: inset -1.82298rem -0.31704rem 0.5284rem #000e;
+            box-shadow: inset -1.82298rem -0.31704rem 0.5284rem #000e;
+  }
+  50% {
+    /* RIGHT */
+    -webkit-box-shadow: inset -0.47556rem 0rem 0.2642rem #000e;
+            box-shadow: inset -0.47556rem 0rem 0.2642rem #000e;
+  }
+  75% {
+    /* TOP */
+    -webkit-box-shadow: inset 0rem 0.07926rem 0.1321rem #000e;
+            box-shadow: inset 0rem 0.07926rem 0.1321rem #000e;
+  }
+  100% {
+    /* LEFT */
+    -webkit-box-shadow: inset 0.47556rem 0rem 0.2642rem #000e;
+            box-shadow: inset 0.47556rem 0rem 0.2642rem #000e;
+  }
+}
+
+@keyframes shadowAnimationearth {
+  0% {
+    /* LEFT */
+    -webkit-box-shadow: inset 0.47556rem 0rem 0.2642rem #000e;
+            box-shadow: inset 0.47556rem 0rem 0.2642rem #000e;
+  }
+  25% {
+    /* BOTTOM */
+    -webkit-box-shadow: inset 1.82298rem -0.31704rem 0.5284rem #000e;
+            box-shadow: inset 1.82298rem -0.31704rem 0.5284rem #000e;
+  }
+  25.01% {
+    /* BOTTOM */
+    -webkit-box-shadow: inset -1.82298rem -0.31704rem 0.5284rem #000e;
+            box-shadow: inset -1.82298rem -0.31704rem 0.5284rem #000e;
+  }
+  50% {
+    /* RIGHT */
+    -webkit-box-shadow: inset -0.47556rem 0rem 0.2642rem #000e;
+            box-shadow: inset -0.47556rem 0rem 0.2642rem #000e;
+  }
+  75% {
+    /* TOP */
+    -webkit-box-shadow: inset 0rem 0.07926rem 0.1321rem #000e;
+            box-shadow: inset 0rem 0.07926rem 0.1321rem #000e;
+  }
+  100% {
+    /* LEFT */
+    -webkit-box-shadow: inset 0.47556rem 0rem 0.2642rem #000e;
+            box-shadow: inset 0.47556rem 0rem 0.2642rem #000e;
+  }
+}
+
+body .earth-orbit-x {
+  width: 0;
+  -webkit-animation: orbitXearth 14.6s cubic-bezier(0.3642, 0, 0.6358, 1) 0s infinite;
+          animation: orbitXearth 14.6s cubic-bezier(0.3642, 0, 0.6358, 1) 0s infinite;
+}
+
+@-webkit-keyframes orbitXearth {
+  0% {
+    -webkit-transform: translateX(-8.1003rem);
+            transform: translateX(-8.1003rem);
+  }
+  50% {
+    -webkit-transform: translate(8.1003rem);
+            transform: translate(8.1003rem);
+  }
+  100% {
+    -webkit-transform: translateX(-8.1003rem);
+            transform: translateX(-8.1003rem);
+  }
+}
+
+@keyframes orbitXearth {
+  0% {
+    -webkit-transform: translateX(-8.1003rem);
+            transform: translateX(-8.1003rem);
+  }
+  50% {
+    -webkit-transform: translate(8.1003rem);
+            transform: translate(8.1003rem);
+  }
+  100% {
+    -webkit-transform: translateX(-8.1003rem);
+            transform: translateX(-8.1003rem);
+  }
+}
+
+body .earth-orbit-y {
+  width: 0;
+  -webkit-animation: orbitYearth 14.6s cubic-bezier(0.3642, 0, 0.6358, 1)-10.95s infinite;
+          animation: orbitYearth 14.6s cubic-bezier(0.3642, 0, 0.6358, 1)-10.95s infinite;
+}
+
+@-webkit-keyframes orbitYearth {
+  0% {
+    -webkit-transform: translateY(1.62006rem);
+            transform: translateY(1.62006rem);
+  }
+  50% {
+    -webkit-transform: translateY(-1.62006rem);
+            transform: translateY(-1.62006rem);
+  }
+  100% {
+    -webkit-transform: translateY(1.62006rem);
+            transform: translateY(1.62006rem);
+  }
+}
+
+@keyframes orbitYearth {
+  0% {
+    -webkit-transform: translateY(1.62006rem);
+            transform: translateY(1.62006rem);
+  }
+  50% {
+    -webkit-transform: translateY(-1.62006rem);
+            transform: translateY(-1.62006rem);
+  }
+  100% {
+    -webkit-transform: translateY(1.62006rem);
+            transform: translateY(1.62006rem);
+  }
+}
+
+body .earth-orbit-z {
+  position: absolute;
+  top: 11.7074rem;
+  left: 29.2074rem;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  -webkit-animation: orbitZearth 14.6s steps(1, start) infinite;
+          animation: orbitZearth 14.6s steps(1, start) infinite;
+}
+
+@-webkit-keyframes orbitZearth {
+  0% {
+    -webkit-transform: translateZ(-4rem);
+            transform: translateZ(-4rem);
+  }
+  50% {
+    -webkit-transform: translateZ(4rem);
+            transform: translateZ(4rem);
+  }
+  100% {
+    -webkit-transform: translateZ(-4rem);
+            transform: translateZ(-4rem);
+  }
+}
+
+@keyframes orbitZearth {
+  0% {
+    -webkit-transform: translateZ(-4rem);
+            transform: translateZ(-4rem);
+  }
+  50% {
+    -webkit-transform: translateZ(4rem);
+            transform: translateZ(4rem);
+  }
+  100% {
+    -webkit-transform: translateZ(-4rem);
+            transform: translateZ(-4rem);
+  }
+}
+
+body .earth-moon-style {
+  background-size: auto 100%;
+  border-radius: 50%;
+  background-repeat: repeat-x;
+  -webkit-animation: rot 1s linear 0s infinite normal;
+          animation: rot 1s linear 0s infinite normal;
+  width: 0.428rem;
+  height: 0.428rem;
+  background-color: #00f;
+  -webkit-transform: rotateZ(23.5deg);
+          transform: rotateZ(23.5deg);
+  background-image: url("https://res.cloudinary.com/b789b130931413a/image/upload/v1634475223/solar-system-img/earth-moon_keme45.jpg");
+  -webkit-animation-duration: 52.416s;
+          animation-duration: 52.416s;
+}
+
+body .earth-moon-style::after {
+  -webkit-transform: rotateZ(-23.5deg);
+          transform: rotateZ(-23.5deg);
+  content: '';
+  display: inline-block;
+  position: absolute;
+  width: 0.428rem;
+  height: 0.428rem;
+  border-radius: 50%;
+  background-color: transparent;
+  -webkit-animation: shadowMoonAnimationearth 14.6s linear 0s infinite;
+          animation: shadowMoonAnimationearth 14.6s linear 0s infinite;
+}
+
+@-webkit-keyframes shadowMoonAnimationearth {
+  0% {
+    /* LEFT */
+    -webkit-box-shadow: inset 0.1284rem 0rem 0.07133rem #000d;
+            box-shadow: inset 0.1284rem 0rem 0.07133rem #000d;
+  }
+  25% {
+    /* BOTTOM */
+    -webkit-box-shadow: inset 0.4922rem -0.0856rem 0.14267rem #000d;
+            box-shadow: inset 0.4922rem -0.0856rem 0.14267rem #000d;
+  }
+  25.01% {
+    /* BOTTOM */
+    -webkit-box-shadow: inset -0.4922rem -0.0856rem 0.14267rem #000d;
+            box-shadow: inset -0.4922rem -0.0856rem 0.14267rem #000d;
+  }
+  50% {
+    /* RIGHT */
+    -webkit-box-shadow: inset -0.1284rem 0rem 0.07133rem #000d;
+            box-shadow: inset -0.1284rem 0rem 0.07133rem #000d;
+  }
+  75% {
+    /* TOP */
+    -webkit-box-shadow: inset 0rem 0.0214rem 0.03567rem #000d;
+            box-shadow: inset 0rem 0.0214rem 0.03567rem #000d;
+  }
+  100% {
+    /* LEFT */
+    -webkit-box-shadow: inset 0.1284rem 0rem 0.07133rem #000d;
+            box-shadow: inset 0.1284rem 0rem 0.07133rem #000d;
+  }
+}
+
+@keyframes shadowMoonAnimationearth {
+  0% {
+    /* LEFT */
+    -webkit-box-shadow: inset 0.1284rem 0rem 0.07133rem #000d;
+            box-shadow: inset 0.1284rem 0rem 0.07133rem #000d;
+  }
+  25% {
+    /* BOTTOM */
+    -webkit-box-shadow: inset 0.4922rem -0.0856rem 0.14267rem #000d;
+            box-shadow: inset 0.4922rem -0.0856rem 0.14267rem #000d;
+  }
+  25.01% {
+    /* BOTTOM */
+    -webkit-box-shadow: inset -0.4922rem -0.0856rem 0.14267rem #000d;
+            box-shadow: inset -0.4922rem -0.0856rem 0.14267rem #000d;
+  }
+  50% {
+    /* RIGHT */
+    -webkit-box-shadow: inset -0.1284rem 0rem 0.07133rem #000d;
+            box-shadow: inset -0.1284rem 0rem 0.07133rem #000d;
+  }
+  75% {
+    /* TOP */
+    -webkit-box-shadow: inset 0rem 0.0214rem 0.03567rem #000d;
+            box-shadow: inset 0rem 0.0214rem 0.03567rem #000d;
+  }
+  100% {
+    /* LEFT */
+    -webkit-box-shadow: inset 0.1284rem 0rem 0.07133rem #000d;
+            box-shadow: inset 0.1284rem 0rem 0.07133rem #000d;
+  }
+}
+
+body .earth-moon-orbit-x {
+  -webkit-animation: orbitMoonXearth 1.092s cubic-bezier(0.3642, 0, 0.6358, 1) 0s infinite;
+          animation: orbitMoonXearth 1.092s cubic-bezier(0.3642, 0, 0.6358, 1) 0s infinite;
+}
+
+@-webkit-keyframes orbitMoonXearth {
+  0% {
+    -webkit-transform: translateX(-1.05894rem);
+            transform: translateX(-1.05894rem);
+  }
+  50% {
+    -webkit-transform: translateX(1.05894rem);
+            transform: translateX(1.05894rem);
+  }
+  100% {
+    -webkit-transform: translateX(-1.05894rem);
+            transform: translateX(-1.05894rem);
+  }
+}
+
+@keyframes orbitMoonXearth {
+  0% {
+    -webkit-transform: translateX(-1.05894rem);
+            transform: translateX(-1.05894rem);
+  }
+  50% {
+    -webkit-transform: translateX(1.05894rem);
+            transform: translateX(1.05894rem);
+  }
+  100% {
+    -webkit-transform: translateX(-1.05894rem);
+            transform: translateX(-1.05894rem);
+  }
+}
+
+body .earth-moon-orbit-y {
+  -webkit-animation: orbitMoonYearth 1.092s cubic-bezier(0.3642, 0, 0.6358, 1)-0.819s infinite;
+          animation: orbitMoonYearth 1.092s cubic-bezier(0.3642, 0, 0.6358, 1)-0.819s infinite;
+}
+
+@-webkit-keyframes orbitMoonYearth {
+  0% {
+    -webkit-transform: translateY(0.21179rem);
+            transform: translateY(0.21179rem);
+  }
+  50% {
+    -webkit-transform: translateY(-0.21179rem);
+            transform: translateY(-0.21179rem);
+  }
+  100% {
+    -webkit-transform: translateY(0.21179rem);
+            transform: translateY(0.21179rem);
+  }
+}
+
+@keyframes orbitMoonYearth {
+  0% {
+    -webkit-transform: translateY(0.21179rem);
+            transform: translateY(0.21179rem);
+  }
+  50% {
+    -webkit-transform: translateY(-0.21179rem);
+            transform: translateY(-0.21179rem);
+  }
+  100% {
+    -webkit-transform: translateY(0.21179rem);
+            transform: translateY(0.21179rem);
+  }
+}
+
+body .earth-moon-orbit-z {
+  position: absolute;
+  top: 0.5786rem;
+  left: 0.5786rem;
+  -webkit-animation: orbitMoonZearth 1.092s steps(1, start) infinite;
+          animation: orbitMoonZearth 1.092s steps(1, start) infinite;
+}
+
+@-webkit-keyframes orbitMoonZearth {
+  0% {
+    -webkit-transform: translateZ(-0.1rem);
+            transform: translateZ(-0.1rem);
+  }
+  50% {
+    -webkit-transform: translateZ(0.1rem);
+            transform: translateZ(0.1rem);
+  }
+  100% {
+    -webkit-transform: translateZ(-0.1rem);
+            transform: translateZ(-0.1rem);
+  }
+}
+
+@keyframes orbitMoonZearth {
+  0% {
+    -webkit-transform: translateZ(-0.1rem);
+            transform: translateZ(-0.1rem);
+  }
+  50% {
+    -webkit-transform: translateZ(0.1rem);
+            transform: translateZ(0.1rem);
+  }
+  100% {
+    -webkit-transform: translateZ(-0.1rem);
+            transform: translateZ(-0.1rem);
+  }
+}
+
+body .mars-style {
+  background-size: auto 100%;
+  border-radius: 50%;
+  background-repeat: repeat-x;
+  -webkit-animation: rot 1s linear 0s infinite normal;
+          animation: rot 1s linear 0s infinite normal;
+  width: 0.84016rem;
+  height: 0.84016rem;
+  background-color: #f00;
+  -webkit-transform: rotateZ(25deg);
+          transform: rotateZ(25deg);
+  background-image: url("https://res.cloudinary.com/b789b130931413a/image/upload/v1634475223/solar-system-img/mars_cc6mgs.jpg");
+  -webkit-animation-duration: 1.9728s;
+          animation-duration: 1.9728s;
+  -webkit-box-shadow: inset 0 0 0.08402rem #000;
+          box-shadow: inset 0 0 0.08402rem #000;
+}
+
+body .mars-style::after {
+  -webkit-transform: rotateZ(-25deg);
+          transform: rotateZ(-25deg);
+  content: '';
+  display: inline-block;
+  position: absolute;
+  width: 0.84016rem;
+  height: 0.84016rem;
+  border-radius: 50%;
+  background-color: transparent;
+  -webkit-animation: shadowAnimationmars 27.48s linear 0s infinite;
+          animation: shadowAnimationmars 27.48s linear 0s infinite;
+}
+
+@-webkit-keyframes shadowAnimationmars {
+  0% {
+    /* LEFT */
+    -webkit-box-shadow: inset 0.25205rem 0rem 0.14003rem #000e;
+            box-shadow: inset 0.25205rem 0rem 0.14003rem #000e;
+  }
+  25% {
+    /* BOTTOM */
+    -webkit-box-shadow: inset 0.96618rem -0.16803rem 0.28005rem #000e;
+            box-shadow: inset 0.96618rem -0.16803rem 0.28005rem #000e;
+  }
+  25.01% {
+    /* BOTTOM */
+    -webkit-box-shadow: inset -0.96618rem -0.16803rem 0.28005rem #000e;
+            box-shadow: inset -0.96618rem -0.16803rem 0.28005rem #000e;
+  }
+  50% {
+    /* RIGHT */
+    -webkit-box-shadow: inset -0.25205rem 0rem 0.14003rem #000e;
+            box-shadow: inset -0.25205rem 0rem 0.14003rem #000e;
+  }
+  75% {
+    /* TOP */
+    -webkit-box-shadow: inset 0rem 0.04201rem 0.07001rem #000e;
+            box-shadow: inset 0rem 0.04201rem 0.07001rem #000e;
+  }
+  100% {
+    /* LEFT */
+    -webkit-box-shadow: inset 0.25205rem 0rem 0.14003rem #000e;
+            box-shadow: inset 0.25205rem 0rem 0.14003rem #000e;
+  }
+}
+
+@keyframes shadowAnimationmars {
+  0% {
+    /* LEFT */
+    -webkit-box-shadow: inset 0.25205rem 0rem 0.14003rem #000e;
+            box-shadow: inset 0.25205rem 0rem 0.14003rem #000e;
+  }
+  25% {
+    /* BOTTOM */
+    -webkit-box-shadow: inset 0.96618rem -0.16803rem 0.28005rem #000e;
+            box-shadow: inset 0.96618rem -0.16803rem 0.28005rem #000e;
+  }
+  25.01% {
+    /* BOTTOM */
+    -webkit-box-shadow: inset -0.96618rem -0.16803rem 0.28005rem #000e;
+            box-shadow: inset -0.96618rem -0.16803rem 0.28005rem #000e;
+  }
+  50% {
+    /* RIGHT */
+    -webkit-box-shadow: inset -0.25205rem 0rem 0.14003rem #000e;
+            box-shadow: inset -0.25205rem 0rem 0.14003rem #000e;
+  }
+  75% {
+    /* TOP */
+    -webkit-box-shadow: inset 0rem 0.04201rem 0.07001rem #000e;
+            box-shadow: inset 0rem 0.04201rem 0.07001rem #000e;
+  }
+  100% {
+    /* LEFT */
+    -webkit-box-shadow: inset 0.25205rem 0rem 0.14003rem #000e;
+            box-shadow: inset 0.25205rem 0rem 0.14003rem #000e;
+  }
+}
+
+body .mars-orbit-x {
+  width: 0;
+  -webkit-animation: orbitXmars 27.48s cubic-bezier(0.3642, 0, 0.6358, 1) 0s infinite;
+          animation: orbitXmars 27.48s cubic-bezier(0.3642, 0, 0.6358, 1) 0s infinite;
+}
+
+@-webkit-keyframes orbitXmars {
+  0% {
+    -webkit-transform: translateX(-9.7838rem);
+            transform: translateX(-9.7838rem);
+  }
+  50% {
+    -webkit-transform: translate(9.7838rem);
+            transform: translate(9.7838rem);
+  }
+  100% {
+    -webkit-transform: translateX(-9.7838rem);
+            transform: translateX(-9.7838rem);
+  }
+}
+
+@keyframes orbitXmars {
+  0% {
+    -webkit-transform: translateX(-9.7838rem);
+            transform: translateX(-9.7838rem);
+  }
+  50% {
+    -webkit-transform: translate(9.7838rem);
+            transform: translate(9.7838rem);
+  }
+  100% {
+    -webkit-transform: translateX(-9.7838rem);
+            transform: translateX(-9.7838rem);
+  }
+}
+
+body .mars-orbit-y {
+  width: 0;
+  -webkit-animation: orbitYmars 27.48s cubic-bezier(0.3642, 0, 0.6358, 1)-20.61s infinite;
+          animation: orbitYmars 27.48s cubic-bezier(0.3642, 0, 0.6358, 1)-20.61s infinite;
+}
+
+@-webkit-keyframes orbitYmars {
+  0% {
+    -webkit-transform: translateY(1.95676rem);
+            transform: translateY(1.95676rem);
+  }
+  50% {
+    -webkit-transform: translateY(-1.95676rem);
+            transform: translateY(-1.95676rem);
+  }
+  100% {
+    -webkit-transform: translateY(1.95676rem);
+            transform: translateY(1.95676rem);
+  }
+}
+
+@keyframes orbitYmars {
+  0% {
+    -webkit-transform: translateY(1.95676rem);
+            transform: translateY(1.95676rem);
+  }
+  50% {
+    -webkit-transform: translateY(-1.95676rem);
+            transform: translateY(-1.95676rem);
+  }
+  100% {
+    -webkit-transform: translateY(1.95676rem);
+            transform: translateY(1.95676rem);
+  }
+}
+
+body .mars-orbit-z {
+  position: absolute;
+  top: 12.07992rem;
+  left: 29.57992rem;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  -webkit-animation: orbitZmars 27.48s steps(1, start) infinite;
+          animation: orbitZmars 27.48s steps(1, start) infinite;
+}
+
+@-webkit-keyframes orbitZmars {
+  0% {
+    -webkit-transform: translateZ(-5rem);
+            transform: translateZ(-5rem);
+  }
+  50% {
+    -webkit-transform: translateZ(5rem);
+            transform: translateZ(5rem);
+  }
+  100% {
+    -webkit-transform: translateZ(-5rem);
+            transform: translateZ(-5rem);
+  }
+}
+
+@keyframes orbitZmars {
+  0% {
+    -webkit-transform: translateZ(-5rem);
+            transform: translateZ(-5rem);
+  }
+  50% {
+    -webkit-transform: translateZ(5rem);
+            transform: translateZ(5rem);
+  }
+  100% {
+    -webkit-transform: translateZ(-5rem);
+            transform: translateZ(-5rem);
+  }
+}
+
+body .mars-moon-style {
+  background-size: auto 100%;
+  border-radius: 50%;
+  background-repeat: repeat-x;
+  -webkit-animation: rot 1s linear 0s infinite normal;
+          animation: rot 1s linear 0s infinite normal;
+  width: 0.16803rem;
+  height: 0.16803rem;
+  background-color: #fff;
+  -webkit-transform: rotateZ(25deg);
+          transform: rotateZ(25deg);
+  background-image: url("https://res.cloudinary.com/b789b130931413a/image/upload/v1634475223/solar-system-img/mars-moon_mr40tt.jpg");
+  -webkit-animation-duration: 38.4s;
+          animation-duration: 38.4s;
+}
+
+body .mars-moon-style::after {
+  -webkit-transform: rotateZ(-25deg);
+          transform: rotateZ(-25deg);
+  content: '';
+  display: inline-block;
+  position: absolute;
+  width: 0.16803rem;
+  height: 0.16803rem;
+  border-radius: 50%;
+  background-color: transparent;
+  -webkit-animation: shadowMoonAnimationmars 27.48s linear 0s infinite;
+          animation: shadowMoonAnimationmars 27.48s linear 0s infinite;
+}
+
+@-webkit-keyframes shadowMoonAnimationmars {
+  0% {
+    /* LEFT */
+    -webkit-box-shadow: inset 0.05041rem 0rem 0.02801rem #000d;
+            box-shadow: inset 0.05041rem 0rem 0.02801rem #000d;
+  }
+  25% {
+    /* BOTTOM */
+    -webkit-box-shadow: inset 0.19324rem -0.03361rem 0.05601rem #000d;
+            box-shadow: inset 0.19324rem -0.03361rem 0.05601rem #000d;
+  }
+  25.01% {
+    /* BOTTOM */
+    -webkit-box-shadow: inset -0.19324rem -0.03361rem 0.05601rem #000d;
+            box-shadow: inset -0.19324rem -0.03361rem 0.05601rem #000d;
+  }
+  50% {
+    /* RIGHT */
+    -webkit-box-shadow: inset -0.05041rem 0rem 0.02801rem #000d;
+            box-shadow: inset -0.05041rem 0rem 0.02801rem #000d;
+  }
+  75% {
+    /* TOP */
+    -webkit-box-shadow: inset 0rem 0.0084rem 0.014rem #000d;
+            box-shadow: inset 0rem 0.0084rem 0.014rem #000d;
+  }
+  100% {
+    /* LEFT */
+    -webkit-box-shadow: inset 0.05041rem 0rem 0.02801rem #000d;
+            box-shadow: inset 0.05041rem 0rem 0.02801rem #000d;
+  }
+}
+
+@keyframes shadowMoonAnimationmars {
+  0% {
+    /* LEFT */
+    -webkit-box-shadow: inset 0.05041rem 0rem 0.02801rem #000d;
+            box-shadow: inset 0.05041rem 0rem 0.02801rem #000d;
+  }
+  25% {
+    /* BOTTOM */
+    -webkit-box-shadow: inset 0.19324rem -0.03361rem 0.05601rem #000d;
+            box-shadow: inset 0.19324rem -0.03361rem 0.05601rem #000d;
+  }
+  25.01% {
+    /* BOTTOM */
+    -webkit-box-shadow: inset -0.19324rem -0.03361rem 0.05601rem #000d;
+            box-shadow: inset -0.19324rem -0.03361rem 0.05601rem #000d;
+  }
+  50% {
+    /* RIGHT */
+    -webkit-box-shadow: inset -0.05041rem 0rem 0.02801rem #000d;
+            box-shadow: inset -0.05041rem 0rem 0.02801rem #000d;
+  }
+  75% {
+    /* TOP */
+    -webkit-box-shadow: inset 0rem 0.0084rem 0.014rem #000d;
+            box-shadow: inset 0rem 0.0084rem 0.014rem #000d;
+  }
+  100% {
+    /* LEFT */
+    -webkit-box-shadow: inset 0.05041rem 0rem 0.02801rem #000d;
+            box-shadow: inset 0.05041rem 0rem 0.02801rem #000d;
+  }
+}
+
+body .mars-moon-orbit-x {
+  -webkit-animation: orbitMoonXmars 1.56s cubic-bezier(0.3642, 0, 0.6358, 1) 0s infinite;
+          animation: orbitMoonXmars 1.56s cubic-bezier(0.3642, 0, 0.6358, 1) 0s infinite;
+}
+
+@-webkit-keyframes orbitMoonXmars {
+  0% {
+    -webkit-transform: translateX(-0.58811rem);
+            transform: translateX(-0.58811rem);
+  }
+  50% {
+    -webkit-transform: translateX(0.58811rem);
+            transform: translateX(0.58811rem);
+  }
+  100% {
+    -webkit-transform: translateX(-0.58811rem);
+            transform: translateX(-0.58811rem);
+  }
+}
+
+@keyframes orbitMoonXmars {
+  0% {
+    -webkit-transform: translateX(-0.58811rem);
+            transform: translateX(-0.58811rem);
+  }
+  50% {
+    -webkit-transform: translateX(0.58811rem);
+            transform: translateX(0.58811rem);
+  }
+  100% {
+    -webkit-transform: translateX(-0.58811rem);
+            transform: translateX(-0.58811rem);
+  }
+}
+
+body .mars-moon-orbit-y {
+  -webkit-animation: orbitMoonYmars 1.56s cubic-bezier(0.3642, 0, 0.6358, 1)-1.17s infinite;
+          animation: orbitMoonYmars 1.56s cubic-bezier(0.3642, 0, 0.6358, 1)-1.17s infinite;
+}
+
+@-webkit-keyframes orbitMoonYmars {
+  0% {
+    -webkit-transform: translateY(0.11762rem);
+            transform: translateY(0.11762rem);
+  }
+  50% {
+    -webkit-transform: translateY(-0.11762rem);
+            transform: translateY(-0.11762rem);
+  }
+  100% {
+    -webkit-transform: translateY(0.11762rem);
+            transform: translateY(0.11762rem);
+  }
+}
+
+@keyframes orbitMoonYmars {
+  0% {
+    -webkit-transform: translateY(0.11762rem);
+            transform: translateY(0.11762rem);
+  }
+  50% {
+    -webkit-transform: translateY(-0.11762rem);
+            transform: translateY(-0.11762rem);
+  }
+  100% {
+    -webkit-transform: translateY(0.11762rem);
+            transform: translateY(0.11762rem);
+  }
+}
+
+body .mars-moon-orbit-z {
+  position: absolute;
+  top: 0.33606rem;
+  left: 0.33606rem;
+  -webkit-animation: orbitMoonZmars 1.56s steps(1, start) infinite;
+          animation: orbitMoonZmars 1.56s steps(1, start) infinite;
+}
+
+@-webkit-keyframes orbitMoonZmars {
+  0% {
+    -webkit-transform: translateZ(-0.2rem);
+            transform: translateZ(-0.2rem);
+  }
+  50% {
+    -webkit-transform: translateZ(0.2rem);
+            transform: translateZ(0.2rem);
+  }
+  100% {
+    -webkit-transform: translateZ(-0.2rem);
+            transform: translateZ(-0.2rem);
+  }
+}
+
+@keyframes orbitMoonZmars {
+  0% {
+    -webkit-transform: translateZ(-0.2rem);
+            transform: translateZ(-0.2rem);
+  }
+  50% {
+    -webkit-transform: translateZ(0.2rem);
+            transform: translateZ(0.2rem);
+  }
+  100% {
+    -webkit-transform: translateZ(-0.2rem);
+            transform: translateZ(-0.2rem);
+  }
+}
+
+body .mars-2-moon-style {
+  background-size: auto 100%;
+  border-radius: 50%;
+  background-repeat: repeat-x;
+  -webkit-animation: rot 1s linear 0s infinite normal;
+          animation: rot 1s linear 0s infinite normal;
+  width: 0.25205rem;
+  height: 0.25205rem;
+  background-color: #fff;
+  -webkit-transform: rotateZ(25deg);
+          transform: rotateZ(25deg);
+  background-image: url("https://res.cloudinary.com/b789b130931413a/image/upload/v1634475223/solar-system-img/mars-2-moon_aegpyv.jpg");
+  -webkit-animation-duration: 48s;
+          animation-duration: 48s;
+}
+
+body .mars-2-moon-style::after {
+  -webkit-transform: rotateZ(-25deg);
+          transform: rotateZ(-25deg);
+  content: '';
+  display: inline-block;
+  position: absolute;
+  width: 0.25205rem;
+  height: 0.25205rem;
+  border-radius: 50%;
+  background-color: transparent;
+  -webkit-animation: shadowMoonAnimationmars-2 27.48s linear 0s infinite;
+          animation: shadowMoonAnimationmars-2 27.48s linear 0s infinite;
+}
+
+@-webkit-keyframes shadowMoonAnimationmars-2 {
+  0% {
+    /* LEFT */
+    -webkit-box-shadow: inset 0.07561rem 0rem 0.04201rem #000d;
+            box-shadow: inset 0.07561rem 0rem 0.04201rem #000d;
+  }
+  25% {
+    /* BOTTOM */
+    -webkit-box-shadow: inset 0.28985rem -0.05041rem 0.08402rem #000d;
+            box-shadow: inset 0.28985rem -0.05041rem 0.08402rem #000d;
+  }
+  25.01% {
+    /* BOTTOM */
+    -webkit-box-shadow: inset -0.28985rem -0.05041rem 0.08402rem #000d;
+            box-shadow: inset -0.28985rem -0.05041rem 0.08402rem #000d;
+  }
+  50% {
+    /* RIGHT */
+    -webkit-box-shadow: inset -0.07561rem 0rem 0.04201rem #000d;
+            box-shadow: inset -0.07561rem 0rem 0.04201rem #000d;
+  }
+  75% {
+    /* TOP */
+    -webkit-box-shadow: inset 0rem 0.0126rem 0.021rem #000d;
+            box-shadow: inset 0rem 0.0126rem 0.021rem #000d;
+  }
+  100% {
+    /* LEFT */
+    -webkit-box-shadow: inset 0.07561rem 0rem 0.04201rem #000d;
+            box-shadow: inset 0.07561rem 0rem 0.04201rem #000d;
+  }
+}
+
+@keyframes shadowMoonAnimationmars-2 {
+  0% {
+    /* LEFT */
+    -webkit-box-shadow: inset 0.07561rem 0rem 0.04201rem #000d;
+            box-shadow: inset 0.07561rem 0rem 0.04201rem #000d;
+  }
+  25% {
+    /* BOTTOM */
+    -webkit-box-shadow: inset 0.28985rem -0.05041rem 0.08402rem #000d;
+            box-shadow: inset 0.28985rem -0.05041rem 0.08402rem #000d;
+  }
+  25.01% {
+    /* BOTTOM */
+    -webkit-box-shadow: inset -0.28985rem -0.05041rem 0.08402rem #000d;
+            box-shadow: inset -0.28985rem -0.05041rem 0.08402rem #000d;
+  }
+  50% {
+    /* RIGHT */
+    -webkit-box-shadow: inset -0.07561rem 0rem 0.04201rem #000d;
+            box-shadow: inset -0.07561rem 0rem 0.04201rem #000d;
+  }
+  75% {
+    /* TOP */
+    -webkit-box-shadow: inset 0rem 0.0126rem 0.021rem #000d;
+            box-shadow: inset 0rem 0.0126rem 0.021rem #000d;
+  }
+  100% {
+    /* LEFT */
+    -webkit-box-shadow: inset 0.07561rem 0rem 0.04201rem #000d;
+            box-shadow: inset 0.07561rem 0rem 0.04201rem #000d;
+  }
+}
+
+body .mars-2-moon-orbit-x {
+  -webkit-animation: orbitMoonXmars-2 2s cubic-bezier(0.3642, 0, 0.6358, 1) 0s infinite;
+          animation: orbitMoonXmars-2 2s cubic-bezier(0.3642, 0, 0.6358, 1) 0s infinite;
+}
+
+@-webkit-keyframes orbitMoonXmars-2 {
+  0% {
+    -webkit-transform: translateX(-0.58895rem);
+            transform: translateX(-0.58895rem);
+  }
+  50% {
+    -webkit-transform: translateX(0.58895rem);
+            transform: translateX(0.58895rem);
+  }
+  100% {
+    -webkit-transform: translateX(-0.58895rem);
+            transform: translateX(-0.58895rem);
+  }
+}
+
+@keyframes orbitMoonXmars-2 {
+  0% {
+    -webkit-transform: translateX(-0.58895rem);
+            transform: translateX(-0.58895rem);
+  }
+  50% {
+    -webkit-transform: translateX(0.58895rem);
+            transform: translateX(0.58895rem);
+  }
+  100% {
+    -webkit-transform: translateX(-0.58895rem);
+            transform: translateX(-0.58895rem);
+  }
+}
+
+body .mars-2-moon-orbit-y {
+  -webkit-animation: orbitMoonYmars-2 2s cubic-bezier(0.3642, 0, 0.6358, 1)-1.5s infinite;
+          animation: orbitMoonYmars-2 2s cubic-bezier(0.3642, 0, 0.6358, 1)-1.5s infinite;
+}
+
+@-webkit-keyframes orbitMoonYmars-2 {
+  0% {
+    -webkit-transform: translateY(0.11779rem);
+            transform: translateY(0.11779rem);
+  }
+  50% {
+    -webkit-transform: translateY(-0.11779rem);
+            transform: translateY(-0.11779rem);
+  }
+  100% {
+    -webkit-transform: translateY(0.11779rem);
+            transform: translateY(0.11779rem);
+  }
+}
+
+@keyframes orbitMoonYmars-2 {
+  0% {
+    -webkit-transform: translateY(0.11779rem);
+            transform: translateY(0.11779rem);
+  }
+  50% {
+    -webkit-transform: translateY(-0.11779rem);
+            transform: translateY(-0.11779rem);
+  }
+  100% {
+    -webkit-transform: translateY(0.11779rem);
+            transform: translateY(0.11779rem);
+  }
+}
+
+body .mars-2-moon-orbit-z {
+  position: absolute;
+  top: 0.29405rem;
+  left: 0.29405rem;
+  -webkit-animation: orbitMoonZmars-2 2s steps(1, start) infinite;
+          animation: orbitMoonZmars-2 2s steps(1, start) infinite;
+}
+
+@-webkit-keyframes orbitMoonZmars-2 {
+  0% {
+    -webkit-transform: translateZ(-0.1rem);
+            transform: translateZ(-0.1rem);
+  }
+  50% {
+    -webkit-transform: translateZ(0.1rem);
+            transform: translateZ(0.1rem);
+  }
+  100% {
+    -webkit-transform: translateZ(-0.1rem);
+            transform: translateZ(-0.1rem);
+  }
+}
+
+@keyframes orbitMoonZmars-2 {
+  0% {
+    -webkit-transform: translateZ(-0.1rem);
+            transform: translateZ(-0.1rem);
+  }
+  50% {
+    -webkit-transform: translateZ(0.1rem);
+            transform: translateZ(0.1rem);
+  }
+  100% {
+    -webkit-transform: translateZ(-0.1rem);
+            transform: translateZ(-0.1rem);
+  }
+}
+
+body .jupiter-style {
+  background-size: auto 100%;
+  border-radius: 50%;
+  background-repeat: repeat-x;
+  -webkit-animation: rot 1s linear 0s infinite normal;
+          animation: rot 1s linear 0s infinite normal;
+  width: 4.43856rem;
+  height: 4.43856rem;
+  background-color: #f00;
+  -webkit-transform: rotateZ(3.13deg);
+          transform: rotateZ(3.13deg);
+  background-image: url("https://res.cloudinary.com/b789b130931413a/image/upload/v1634475223/solar-system-img/jupiter_oxdbeg.jpg");
+  -webkit-animation-duration: 0.7944s;
+          animation-duration: 0.7944s;
+  -webkit-box-shadow: inset 0 0 0.44386rem #000;
+          box-shadow: inset 0 0 0.44386rem #000;
+}
+
+body .jupiter-style::after {
+  -webkit-transform: rotateZ(-3.13deg);
+          transform: rotateZ(-3.13deg);
+  content: '';
+  display: inline-block;
+  position: absolute;
+  width: 4.43856rem;
+  height: 4.43856rem;
+  border-radius: 50%;
+  background-color: transparent;
+  -webkit-animation: shadowAnimationjupiter 52.212s linear 0s infinite;
+          animation: shadowAnimationjupiter 52.212s linear 0s infinite;
+}
+
+@-webkit-keyframes shadowAnimationjupiter {
+  0% {
+    /* LEFT */
+    -webkit-box-shadow: inset 1.33157rem 0rem 0.73976rem #000e;
+            box-shadow: inset 1.33157rem 0rem 0.73976rem #000e;
+  }
+  25% {
+    /* BOTTOM */
+    -webkit-box-shadow: inset 5.10434rem -0.88771rem 1.47952rem #000e;
+            box-shadow: inset 5.10434rem -0.88771rem 1.47952rem #000e;
+  }
+  25.01% {
+    /* BOTTOM */
+    -webkit-box-shadow: inset -5.10434rem -0.88771rem 1.47952rem #000e;
+            box-shadow: inset -5.10434rem -0.88771rem 1.47952rem #000e;
+  }
+  50% {
+    /* RIGHT */
+    -webkit-box-shadow: inset -1.33157rem 0rem 0.73976rem #000e;
+            box-shadow: inset -1.33157rem 0rem 0.73976rem #000e;
+  }
+  75% {
+    /* TOP */
+    -webkit-box-shadow: inset 0rem 0.22193rem 0.36988rem #000e;
+            box-shadow: inset 0rem 0.22193rem 0.36988rem #000e;
+  }
+  100% {
+    /* LEFT */
+    -webkit-box-shadow: inset 1.33157rem 0rem 0.73976rem #000e;
+            box-shadow: inset 1.33157rem 0rem 0.73976rem #000e;
+  }
+}
+
+@keyframes shadowAnimationjupiter {
+  0% {
+    /* LEFT */
+    -webkit-box-shadow: inset 1.33157rem 0rem 0.73976rem #000e;
+            box-shadow: inset 1.33157rem 0rem 0.73976rem #000e;
+  }
+  25% {
+    /* BOTTOM */
+    -webkit-box-shadow: inset 5.10434rem -0.88771rem 1.47952rem #000e;
+            box-shadow: inset 5.10434rem -0.88771rem 1.47952rem #000e;
+  }
+  25.01% {
+    /* BOTTOM */
+    -webkit-box-shadow: inset -5.10434rem -0.88771rem 1.47952rem #000e;
+            box-shadow: inset -5.10434rem -0.88771rem 1.47952rem #000e;
+  }
+  50% {
+    /* RIGHT */
+    -webkit-box-shadow: inset -1.33157rem 0rem 0.73976rem #000e;
+            box-shadow: inset -1.33157rem 0rem 0.73976rem #000e;
+  }
+  75% {
+    /* TOP */
+    -webkit-box-shadow: inset 0rem 0.22193rem 0.36988rem #000e;
+            box-shadow: inset 0rem 0.22193rem 0.36988rem #000e;
+  }
+  100% {
+    /* LEFT */
+    -webkit-box-shadow: inset 1.33157rem 0rem 0.73976rem #000e;
+            box-shadow: inset 1.33157rem 0rem 0.73976rem #000e;
+  }
+}
+
+body .jupiter-orbit-x {
+  width: 0;
+  -webkit-animation: orbitXjupiter 52.212s cubic-bezier(0.3642, 0, 0.6358, 1) 0s infinite;
+          animation: orbitXjupiter 52.212s cubic-bezier(0.3642, 0, 0.6358, 1) 0s infinite;
+}
+
+@-webkit-keyframes orbitXjupiter {
+  0% {
+    -webkit-transform: translateX(-15.6975rem);
+            transform: translateX(-15.6975rem);
+  }
+  50% {
+    -webkit-transform: translate(15.6975rem);
+            transform: translate(15.6975rem);
+  }
+  100% {
+    -webkit-transform: translateX(-15.6975rem);
+            transform: translateX(-15.6975rem);
+  }
+}
+
+@keyframes orbitXjupiter {
+  0% {
+    -webkit-transform: translateX(-15.6975rem);
+            transform: translateX(-15.6975rem);
+  }
+  50% {
+    -webkit-transform: translate(15.6975rem);
+            transform: translate(15.6975rem);
+  }
+  100% {
+    -webkit-transform: translateX(-15.6975rem);
+            transform: translateX(-15.6975rem);
+  }
+}
+
+body .jupiter-orbit-y {
+  width: 0;
+  -webkit-animation: orbitYjupiter 52.212s cubic-bezier(0.3642, 0, 0.6358, 1)-39.159s infinite;
+          animation: orbitYjupiter 52.212s cubic-bezier(0.3642, 0, 0.6358, 1)-39.159s infinite;
+}
+
+@-webkit-keyframes orbitYjupiter {
+  0% {
+    -webkit-transform: translateY(3.1395rem);
+            transform: translateY(3.1395rem);
+  }
+  50% {
+    -webkit-transform: translateY(-3.1395rem);
+            transform: translateY(-3.1395rem);
+  }
+  100% {
+    -webkit-transform: translateY(3.1395rem);
+            transform: translateY(3.1395rem);
+  }
+}
+
+@keyframes orbitYjupiter {
+  0% {
+    -webkit-transform: translateY(3.1395rem);
+            transform: translateY(3.1395rem);
+  }
+  50% {
+    -webkit-transform: translateY(-3.1395rem);
+            transform: translateY(-3.1395rem);
+  }
+  100% {
+    -webkit-transform: translateY(3.1395rem);
+            transform: translateY(3.1395rem);
+  }
+}
+
+body .jupiter-orbit-z {
+  position: absolute;
+  top: 10.28072rem;
+  left: 27.78072rem;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  -webkit-animation: orbitZjupiter 52.212s steps(1, start) infinite;
+          animation: orbitZjupiter 52.212s steps(1, start) infinite;
+}
+
+@-webkit-keyframes orbitZjupiter {
+  0% {
+    -webkit-transform: translateZ(-6rem);
+            transform: translateZ(-6rem);
+  }
+  50% {
+    -webkit-transform: translateZ(6rem);
+            transform: translateZ(6rem);
+  }
+  100% {
+    -webkit-transform: translateZ(-6rem);
+            transform: translateZ(-6rem);
+  }
+}
+
+@keyframes orbitZjupiter {
+  0% {
+    -webkit-transform: translateZ(-6rem);
+            transform: translateZ(-6rem);
+  }
+  50% {
+    -webkit-transform: translateZ(6rem);
+            transform: translateZ(6rem);
+  }
+  100% {
+    -webkit-transform: translateZ(-6rem);
+            transform: translateZ(-6rem);
+  }
+}
+
+body .jupiter-moon-style {
+  background-size: auto 100%;
+  border-radius: 50%;
+  background-repeat: repeat-x;
+  -webkit-animation: rot 1s linear 0s infinite normal;
+          animation: rot 1s linear 0s infinite normal;
+  width: 0.64201rem;
+  height: 0.64201rem;
+  background-color: #fff;
+  -webkit-transform: rotateZ(3.13deg);
+          transform: rotateZ(3.13deg);
+  background-image: url("https://res.cloudinary.com/b789b130931413a/image/upload/v1634475223/solar-system-img/jupiter-moon_sucefr.jpg");
+  -webkit-animation-duration: 96s;
+          animation-duration: 96s;
+}
+
+body .jupiter-moon-style::after {
+  -webkit-transform: rotateZ(-3.13deg);
+          transform: rotateZ(-3.13deg);
+  content: '';
+  display: inline-block;
+  position: absolute;
+  width: 0.64201rem;
+  height: 0.64201rem;
+  border-radius: 50%;
+  background-color: transparent;
+  -webkit-animation: shadowMoonAnimationjupiter 52.212s linear 0s infinite;
+          animation: shadowMoonAnimationjupiter 52.212s linear 0s infinite;
+}
+
+@-webkit-keyframes shadowMoonAnimationjupiter {
+  0% {
+    /* LEFT */
+    -webkit-box-shadow: inset 0.1926rem 0rem 0.107rem #000d;
+            box-shadow: inset 0.1926rem 0rem 0.107rem #000d;
+  }
+  25% {
+    /* BOTTOM */
+    -webkit-box-shadow: inset 0.73831rem -0.1284rem 0.214rem #000d;
+            box-shadow: inset 0.73831rem -0.1284rem 0.214rem #000d;
+  }
+  25.01% {
+    /* BOTTOM */
+    -webkit-box-shadow: inset -0.73831rem -0.1284rem 0.214rem #000d;
+            box-shadow: inset -0.73831rem -0.1284rem 0.214rem #000d;
+  }
+  50% {
+    /* RIGHT */
+    -webkit-box-shadow: inset -0.1926rem 0rem 0.107rem #000d;
+            box-shadow: inset -0.1926rem 0rem 0.107rem #000d;
+  }
+  75% {
+    /* TOP */
+    -webkit-box-shadow: inset 0rem 0.0321rem 0.0535rem #000d;
+            box-shadow: inset 0rem 0.0321rem 0.0535rem #000d;
+  }
+  100% {
+    /* LEFT */
+    -webkit-box-shadow: inset 0.1926rem 0rem 0.107rem #000d;
+            box-shadow: inset 0.1926rem 0rem 0.107rem #000d;
+  }
+}
+
+@keyframes shadowMoonAnimationjupiter {
+  0% {
+    /* LEFT */
+    -webkit-box-shadow: inset 0.1926rem 0rem 0.107rem #000d;
+            box-shadow: inset 0.1926rem 0rem 0.107rem #000d;
+  }
+  25% {
+    /* BOTTOM */
+    -webkit-box-shadow: inset 0.73831rem -0.1284rem 0.214rem #000d;
+            box-shadow: inset 0.73831rem -0.1284rem 0.214rem #000d;
+  }
+  25.01% {
+    /* BOTTOM */
+    -webkit-box-shadow: inset -0.73831rem -0.1284rem 0.214rem #000d;
+            box-shadow: inset -0.73831rem -0.1284rem 0.214rem #000d;
+  }
+  50% {
+    /* RIGHT */
+    -webkit-box-shadow: inset -0.1926rem 0rem 0.107rem #000d;
+            box-shadow: inset -0.1926rem 0rem 0.107rem #000d;
+  }
+  75% {
+    /* TOP */
+    -webkit-box-shadow: inset 0rem 0.0321rem 0.0535rem #000d;
+            box-shadow: inset 0rem 0.0321rem 0.0535rem #000d;
+  }
+  100% {
+    /* LEFT */
+    -webkit-box-shadow: inset 0.1926rem 0rem 0.107rem #000d;
+            box-shadow: inset 0.1926rem 0rem 0.107rem #000d;
+  }
+}
+
+body .jupiter-moon-orbit-x {
+  -webkit-animation: orbitMoonXjupiter 2s cubic-bezier(0.3642, 0, 0.6358, 1) 0s infinite;
+          animation: orbitMoonXjupiter 2s cubic-bezier(0.3642, 0, 0.6358, 1) 0s infinite;
+}
+
+@-webkit-keyframes orbitMoonXjupiter {
+  0% {
+    -webkit-transform: translateX(-2.86129rem);
+            transform: translateX(-2.86129rem);
+  }
+  50% {
+    -webkit-transform: translateX(2.86129rem);
+            transform: translateX(2.86129rem);
+  }
+  100% {
+    -webkit-transform: translateX(-2.86129rem);
+            transform: translateX(-2.86129rem);
+  }
+}
+
+@keyframes orbitMoonXjupiter {
+  0% {
+    -webkit-transform: translateX(-2.86129rem);
+            transform: translateX(-2.86129rem);
+  }
+  50% {
+    -webkit-transform: translateX(2.86129rem);
+            transform: translateX(2.86129rem);
+  }
+  100% {
+    -webkit-transform: translateX(-2.86129rem);
+            transform: translateX(-2.86129rem);
+  }
+}
+
+body .jupiter-moon-orbit-y {
+  -webkit-animation: orbitMoonYjupiter 2s cubic-bezier(0.3642, 0, 0.6358, 1)-1.5s infinite;
+          animation: orbitMoonYjupiter 2s cubic-bezier(0.3642, 0, 0.6358, 1)-1.5s infinite;
+}
+
+@-webkit-keyframes orbitMoonYjupiter {
+  0% {
+    -webkit-transform: translateY(0.57226rem);
+            transform: translateY(0.57226rem);
+  }
+  50% {
+    -webkit-transform: translateY(-0.57226rem);
+            transform: translateY(-0.57226rem);
+  }
+  100% {
+    -webkit-transform: translateY(0.57226rem);
+            transform: translateY(0.57226rem);
+  }
+}
+
+@keyframes orbitMoonYjupiter {
+  0% {
+    -webkit-transform: translateY(0.57226rem);
+            transform: translateY(0.57226rem);
+  }
+  50% {
+    -webkit-transform: translateY(-0.57226rem);
+            transform: translateY(-0.57226rem);
+  }
+  100% {
+    -webkit-transform: translateY(0.57226rem);
+            transform: translateY(0.57226rem);
+  }
+}
+
+body .jupiter-moon-orbit-z {
+  position: absolute;
+  top: 1.89828rem;
+  left: 1.89828rem;
+  -webkit-animation: orbitMoonZjupiter 2s steps(1, start) infinite;
+          animation: orbitMoonZjupiter 2s steps(1, start) infinite;
+}
+
+@-webkit-keyframes orbitMoonZjupiter {
+  0% {
+    -webkit-transform: translateZ(-0.1rem);
+            transform: translateZ(-0.1rem);
+  }
+  50% {
+    -webkit-transform: translateZ(0.1rem);
+            transform: translateZ(0.1rem);
+  }
+  100% {
+    -webkit-transform: translateZ(-0.1rem);
+            transform: translateZ(-0.1rem);
+  }
+}
+
+@keyframes orbitMoonZjupiter {
+  0% {
+    -webkit-transform: translateZ(-0.1rem);
+            transform: translateZ(-0.1rem);
+  }
+  50% {
+    -webkit-transform: translateZ(0.1rem);
+            transform: translateZ(0.1rem);
+  }
+  100% {
+    -webkit-transform: translateZ(-0.1rem);
+            transform: translateZ(-0.1rem);
+  }
+}
+
+body .jupiter-2-moon-style {
+  background-size: auto 100%;
+  border-radius: 50%;
+  background-repeat: repeat-x;
+  -webkit-animation: rot 1s linear 0s infinite normal;
+          animation: rot 1s linear 0s infinite normal;
+  width: 0.59921rem;
+  height: 0.59921rem;
+  background-color: #fff;
+  -webkit-transform: rotateZ(3.13deg);
+          transform: rotateZ(3.13deg);
+  background-image: url("https://res.cloudinary.com/b789b130931413a/image/upload/v1634475223/solar-system-img/jupiter-2-moon_ryhfps.jpg");
+  -webkit-animation-duration: 105.6s;
+          animation-duration: 105.6s;
+}
+
+body .jupiter-2-moon-style::after {
+  -webkit-transform: rotateZ(-3.13deg);
+          transform: rotateZ(-3.13deg);
+  content: '';
+  display: inline-block;
+  position: absolute;
+  width: 0.59921rem;
+  height: 0.59921rem;
+  border-radius: 50%;
+  background-color: transparent;
+  -webkit-animation: shadowMoonAnimationjupiter-2 52.212s linear 0s infinite;
+          animation: shadowMoonAnimationjupiter-2 52.212s linear 0s infinite;
+}
+
+@-webkit-keyframes shadowMoonAnimationjupiter-2 {
+  0% {
+    /* LEFT */
+    -webkit-box-shadow: inset 0.17976rem 0rem 0.09987rem #000d;
+            box-shadow: inset 0.17976rem 0rem 0.09987rem #000d;
+  }
+  25% {
+    /* BOTTOM */
+    -webkit-box-shadow: inset 0.68909rem -0.11984rem 0.19974rem #000d;
+            box-shadow: inset 0.68909rem -0.11984rem 0.19974rem #000d;
+  }
+  25.01% {
+    /* BOTTOM */
+    -webkit-box-shadow: inset -0.68909rem -0.11984rem 0.19974rem #000d;
+            box-shadow: inset -0.68909rem -0.11984rem 0.19974rem #000d;
+  }
+  50% {
+    /* RIGHT */
+    -webkit-box-shadow: inset -0.17976rem 0rem 0.09987rem #000d;
+            box-shadow: inset -0.17976rem 0rem 0.09987rem #000d;
+  }
+  75% {
+    /* TOP */
+    -webkit-box-shadow: inset 0rem 0.02996rem 0.04993rem #000d;
+            box-shadow: inset 0rem 0.02996rem 0.04993rem #000d;
+  }
+  100% {
+    /* LEFT */
+    -webkit-box-shadow: inset 0.17976rem 0rem 0.09987rem #000d;
+            box-shadow: inset 0.17976rem 0rem 0.09987rem #000d;
+  }
+}
+
+@keyframes shadowMoonAnimationjupiter-2 {
+  0% {
+    /* LEFT */
+    -webkit-box-shadow: inset 0.17976rem 0rem 0.09987rem #000d;
+            box-shadow: inset 0.17976rem 0rem 0.09987rem #000d;
+  }
+  25% {
+    /* BOTTOM */
+    -webkit-box-shadow: inset 0.68909rem -0.11984rem 0.19974rem #000d;
+            box-shadow: inset 0.68909rem -0.11984rem 0.19974rem #000d;
+  }
+  25.01% {
+    /* BOTTOM */
+    -webkit-box-shadow: inset -0.68909rem -0.11984rem 0.19974rem #000d;
+            box-shadow: inset -0.68909rem -0.11984rem 0.19974rem #000d;
+  }
+  50% {
+    /* RIGHT */
+    -webkit-box-shadow: inset -0.17976rem 0rem 0.09987rem #000d;
+            box-shadow: inset -0.17976rem 0rem 0.09987rem #000d;
+  }
+  75% {
+    /* TOP */
+    -webkit-box-shadow: inset 0rem 0.02996rem 0.04993rem #000d;
+            box-shadow: inset 0rem 0.02996rem 0.04993rem #000d;
+  }
+  100% {
+    /* LEFT */
+    -webkit-box-shadow: inset 0.17976rem 0rem 0.09987rem #000d;
+            box-shadow: inset 0.17976rem 0rem 0.09987rem #000d;
+  }
+}
+
+body .jupiter-2-moon-orbit-x {
+  -webkit-animation: orbitMoonXjupiter-2 2.2s cubic-bezier(0.3642, 0, 0.6358, 1) 0s infinite;
+          animation: orbitMoonXjupiter-2 2.2s cubic-bezier(0.3642, 0, 0.6358, 1) 0s infinite;
+}
+
+@-webkit-keyframes orbitMoonXjupiter-2 {
+  0% {
+    -webkit-transform: translateX(-3.50329rem);
+            transform: translateX(-3.50329rem);
+  }
+  50% {
+    -webkit-transform: translateX(3.50329rem);
+            transform: translateX(3.50329rem);
+  }
+  100% {
+    -webkit-transform: translateX(-3.50329rem);
+            transform: translateX(-3.50329rem);
+  }
+}
+
+@keyframes orbitMoonXjupiter-2 {
+  0% {
+    -webkit-transform: translateX(-3.50329rem);
+            transform: translateX(-3.50329rem);
+  }
+  50% {
+    -webkit-transform: translateX(3.50329rem);
+            transform: translateX(3.50329rem);
+  }
+  100% {
+    -webkit-transform: translateX(-3.50329rem);
+            transform: translateX(-3.50329rem);
+  }
+}
+
+body .jupiter-2-moon-orbit-y {
+  -webkit-animation: orbitMoonYjupiter-2 2.2s cubic-bezier(0.3642, 0, 0.6358, 1)-1.65s infinite;
+          animation: orbitMoonYjupiter-2 2.2s cubic-bezier(0.3642, 0, 0.6358, 1)-1.65s infinite;
+}
+
+@-webkit-keyframes orbitMoonYjupiter-2 {
+  0% {
+    -webkit-transform: translateY(0.70066rem);
+            transform: translateY(0.70066rem);
+  }
+  50% {
+    -webkit-transform: translateY(-0.70066rem);
+            transform: translateY(-0.70066rem);
+  }
+  100% {
+    -webkit-transform: translateY(0.70066rem);
+            transform: translateY(0.70066rem);
+  }
+}
+
+@keyframes orbitMoonYjupiter-2 {
+  0% {
+    -webkit-transform: translateY(0.70066rem);
+            transform: translateY(0.70066rem);
+  }
+  50% {
+    -webkit-transform: translateY(-0.70066rem);
+            transform: translateY(-0.70066rem);
+  }
+  100% {
+    -webkit-transform: translateY(0.70066rem);
+            transform: translateY(0.70066rem);
+  }
+}
+
+body .jupiter-2-moon-orbit-z {
+  position: absolute;
+  top: 1.91968rem;
+  left: 1.91968rem;
+  -webkit-animation: orbitMoonZjupiter-2 2.2s steps(1, start) infinite;
+          animation: orbitMoonZjupiter-2 2.2s steps(1, start) infinite;
+}
+
+@-webkit-keyframes orbitMoonZjupiter-2 {
+  0% {
+    -webkit-transform: translateZ(-0.2rem);
+            transform: translateZ(-0.2rem);
+  }
+  50% {
+    -webkit-transform: translateZ(0.2rem);
+            transform: translateZ(0.2rem);
+  }
+  100% {
+    -webkit-transform: translateZ(-0.2rem);
+            transform: translateZ(-0.2rem);
+  }
+}
+
+@keyframes orbitMoonZjupiter-2 {
+  0% {
+    -webkit-transform: translateZ(-0.2rem);
+            transform: translateZ(-0.2rem);
+  }
+  50% {
+    -webkit-transform: translateZ(0.2rem);
+            transform: translateZ(0.2rem);
+  }
+  100% {
+    -webkit-transform: translateZ(-0.2rem);
+            transform: translateZ(-0.2rem);
+  }
+}
+
+body .jupiter-3-moon-style {
+  background-size: auto 100%;
+  border-radius: 50%;
+  background-repeat: repeat-x;
+  -webkit-animation: rot 1s linear 0s infinite normal;
+          animation: rot 1s linear 0s infinite normal;
+  width: 0.98441rem;
+  height: 0.98441rem;
+  background-color: #fff;
+  -webkit-transform: rotateZ(3.13deg);
+          transform: rotateZ(3.13deg);
+  background-image: url("https://res.cloudinary.com/b789b130931413a/image/upload/v1634475223/solar-system-img/jupiter-3-moon_vvvjuc.jpg");
+  -webkit-animation-duration: 117.12s;
+          animation-duration: 117.12s;
+}
+
+body .jupiter-3-moon-style::after {
+  -webkit-transform: rotateZ(-3.13deg);
+          transform: rotateZ(-3.13deg);
+  content: '';
+  display: inline-block;
+  position: absolute;
+  width: 0.98441rem;
+  height: 0.98441rem;
+  border-radius: 50%;
+  background-color: transparent;
+  -webkit-animation: shadowMoonAnimationjupiter-3 52.212s linear 0s infinite;
+          animation: shadowMoonAnimationjupiter-3 52.212s linear 0s infinite;
+}
+
+@-webkit-keyframes shadowMoonAnimationjupiter-3 {
+  0% {
+    /* LEFT */
+    -webkit-box-shadow: inset 0.29532rem 0rem 0.16407rem #000d;
+            box-shadow: inset 0.29532rem 0rem 0.16407rem #000d;
+  }
+  25% {
+    /* BOTTOM */
+    -webkit-box-shadow: inset 1.13207rem -0.19688rem 0.32814rem #000d;
+            box-shadow: inset 1.13207rem -0.19688rem 0.32814rem #000d;
+  }
+  25.01% {
+    /* BOTTOM */
+    -webkit-box-shadow: inset -1.13207rem -0.19688rem 0.32814rem #000d;
+            box-shadow: inset -1.13207rem -0.19688rem 0.32814rem #000d;
+  }
+  50% {
+    /* RIGHT */
+    -webkit-box-shadow: inset -0.29532rem 0rem 0.16407rem #000d;
+            box-shadow: inset -0.29532rem 0rem 0.16407rem #000d;
+  }
+  75% {
+    /* TOP */
+    -webkit-box-shadow: inset 0rem 0.04922rem 0.08203rem #000d;
+            box-shadow: inset 0rem 0.04922rem 0.08203rem #000d;
+  }
+  100% {
+    /* LEFT */
+    -webkit-box-shadow: inset 0.29532rem 0rem 0.16407rem #000d;
+            box-shadow: inset 0.29532rem 0rem 0.16407rem #000d;
+  }
+}
+
+@keyframes shadowMoonAnimationjupiter-3 {
+  0% {
+    /* LEFT */
+    -webkit-box-shadow: inset 0.29532rem 0rem 0.16407rem #000d;
+            box-shadow: inset 0.29532rem 0rem 0.16407rem #000d;
+  }
+  25% {
+    /* BOTTOM */
+    -webkit-box-shadow: inset 1.13207rem -0.19688rem 0.32814rem #000d;
+            box-shadow: inset 1.13207rem -0.19688rem 0.32814rem #000d;
+  }
+  25.01% {
+    /* BOTTOM */
+    -webkit-box-shadow: inset -1.13207rem -0.19688rem 0.32814rem #000d;
+            box-shadow: inset -1.13207rem -0.19688rem 0.32814rem #000d;
+  }
+  50% {
+    /* RIGHT */
+    -webkit-box-shadow: inset -0.29532rem 0rem 0.16407rem #000d;
+            box-shadow: inset -0.29532rem 0rem 0.16407rem #000d;
+  }
+  75% {
+    /* TOP */
+    -webkit-box-shadow: inset 0rem 0.04922rem 0.08203rem #000d;
+            box-shadow: inset 0rem 0.04922rem 0.08203rem #000d;
+  }
+  100% {
+    /* LEFT */
+    -webkit-box-shadow: inset 0.29532rem 0rem 0.16407rem #000d;
+            box-shadow: inset 0.29532rem 0rem 0.16407rem #000d;
+  }
+}
+
+body .jupiter-3-moon-orbit-x {
+  -webkit-animation: orbitMoonXjupiter-3 2.44s cubic-bezier(0.3642, 0, 0.6358, 1) 0s infinite;
+          animation: orbitMoonXjupiter-3 2.44s cubic-bezier(0.3642, 0, 0.6358, 1) 0s infinite;
+}
+
+@-webkit-keyframes orbitMoonXjupiter-3 {
+  0% {
+    -webkit-transform: translateX(-4.1453rem);
+            transform: translateX(-4.1453rem);
+  }
+  50% {
+    -webkit-transform: translateX(4.1453rem);
+            transform: translateX(4.1453rem);
+  }
+  100% {
+    -webkit-transform: translateX(-4.1453rem);
+            transform: translateX(-4.1453rem);
+  }
+}
+
+@keyframes orbitMoonXjupiter-3 {
+  0% {
+    -webkit-transform: translateX(-4.1453rem);
+            transform: translateX(-4.1453rem);
+  }
+  50% {
+    -webkit-transform: translateX(4.1453rem);
+            transform: translateX(4.1453rem);
+  }
+  100% {
+    -webkit-transform: translateX(-4.1453rem);
+            transform: translateX(-4.1453rem);
+  }
+}
+
+body .jupiter-3-moon-orbit-y {
+  -webkit-animation: orbitMoonYjupiter-3 2.44s cubic-bezier(0.3642, 0, 0.6358, 1)-1.83s infinite;
+          animation: orbitMoonYjupiter-3 2.44s cubic-bezier(0.3642, 0, 0.6358, 1)-1.83s infinite;
+}
+
+@-webkit-keyframes orbitMoonYjupiter-3 {
+  0% {
+    -webkit-transform: translateY(0.82906rem);
+            transform: translateY(0.82906rem);
+  }
+  50% {
+    -webkit-transform: translateY(-0.82906rem);
+            transform: translateY(-0.82906rem);
+  }
+  100% {
+    -webkit-transform: translateY(0.82906rem);
+            transform: translateY(0.82906rem);
+  }
+}
+
+@keyframes orbitMoonYjupiter-3 {
+  0% {
+    -webkit-transform: translateY(0.82906rem);
+            transform: translateY(0.82906rem);
+  }
+  50% {
+    -webkit-transform: translateY(-0.82906rem);
+            transform: translateY(-0.82906rem);
+  }
+  100% {
+    -webkit-transform: translateY(0.82906rem);
+            transform: translateY(0.82906rem);
+  }
+}
+
+body .jupiter-3-moon-orbit-z {
+  position: absolute;
+  top: 1.72708rem;
+  left: 1.72708rem;
+  -webkit-animation: orbitMoonZjupiter-3 2.44s steps(1, start) infinite;
+          animation: orbitMoonZjupiter-3 2.44s steps(1, start) infinite;
+}
+
+@-webkit-keyframes orbitMoonZjupiter-3 {
+  0% {
+    -webkit-transform: translateZ(-0.3rem);
+            transform: translateZ(-0.3rem);
+  }
+  50% {
+    -webkit-transform: translateZ(0.3rem);
+            transform: translateZ(0.3rem);
+  }
+  100% {
+    -webkit-transform: translateZ(-0.3rem);
+            transform: translateZ(-0.3rem);
+  }
+}
+
+@keyframes orbitMoonZjupiter-3 {
+  0% {
+    -webkit-transform: translateZ(-0.3rem);
+            transform: translateZ(-0.3rem);
+  }
+  50% {
+    -webkit-transform: translateZ(0.3rem);
+            transform: translateZ(0.3rem);
+  }
+  100% {
+    -webkit-transform: translateZ(-0.3rem);
+            transform: translateZ(-0.3rem);
+  }
+}
+
+body .jupiter-4-moon-style {
+  background-size: auto 100%;
+  border-radius: 50%;
+  background-repeat: repeat-x;
+  -webkit-animation: rot 1s linear 0s infinite normal;
+          animation: rot 1s linear 0s infinite normal;
+  width: 0.85601rem;
+  height: 0.85601rem;
+  background-color: #fff;
+  -webkit-transform: rotateZ(3.13deg);
+          transform: rotateZ(3.13deg);
+  background-image: url("https://res.cloudinary.com/b789b130931413a/image/upload/v1634475223/solar-system-img/jupiter-4-moon_jlazz4.jpg");
+  -webkit-animation-duration: 190.08s;
+          animation-duration: 190.08s;
+}
+
+body .jupiter-4-moon-style::after {
+  -webkit-transform: rotateZ(-3.13deg);
+          transform: rotateZ(-3.13deg);
+  content: '';
+  display: inline-block;
+  position: absolute;
+  width: 0.85601rem;
+  height: 0.85601rem;
+  border-radius: 50%;
+  background-color: transparent;
+  -webkit-animation: shadowMoonAnimationjupiter-4 52.212s linear 0s infinite;
+          animation: shadowMoonAnimationjupiter-4 52.212s linear 0s infinite;
+}
+
+@-webkit-keyframes shadowMoonAnimationjupiter-4 {
+  0% {
+    /* LEFT */
+    -webkit-box-shadow: inset 0.2568rem 0rem 0.14267rem #000d;
+            box-shadow: inset 0.2568rem 0rem 0.14267rem #000d;
+  }
+  25% {
+    /* BOTTOM */
+    -webkit-box-shadow: inset 0.98441rem -0.1712rem 0.28534rem #000d;
+            box-shadow: inset 0.98441rem -0.1712rem 0.28534rem #000d;
+  }
+  25.01% {
+    /* BOTTOM */
+    -webkit-box-shadow: inset -0.98441rem -0.1712rem 0.28534rem #000d;
+            box-shadow: inset -0.98441rem -0.1712rem 0.28534rem #000d;
+  }
+  50% {
+    /* RIGHT */
+    -webkit-box-shadow: inset -0.2568rem 0rem 0.14267rem #000d;
+            box-shadow: inset -0.2568rem 0rem 0.14267rem #000d;
+  }
+  75% {
+    /* TOP */
+    -webkit-box-shadow: inset 0rem 0.0428rem 0.07133rem #000d;
+            box-shadow: inset 0rem 0.0428rem 0.07133rem #000d;
+  }
+  100% {
+    /* LEFT */
+    -webkit-box-shadow: inset 0.2568rem 0rem 0.14267rem #000d;
+            box-shadow: inset 0.2568rem 0rem 0.14267rem #000d;
+  }
+}
+
+@keyframes shadowMoonAnimationjupiter-4 {
+  0% {
+    /* LEFT */
+    -webkit-box-shadow: inset 0.2568rem 0rem 0.14267rem #000d;
+            box-shadow: inset 0.2568rem 0rem 0.14267rem #000d;
+  }
+  25% {
+    /* BOTTOM */
+    -webkit-box-shadow: inset 0.98441rem -0.1712rem 0.28534rem #000d;
+            box-shadow: inset 0.98441rem -0.1712rem 0.28534rem #000d;
+  }
+  25.01% {
+    /* BOTTOM */
+    -webkit-box-shadow: inset -0.98441rem -0.1712rem 0.28534rem #000d;
+            box-shadow: inset -0.98441rem -0.1712rem 0.28534rem #000d;
+  }
+  50% {
+    /* RIGHT */
+    -webkit-box-shadow: inset -0.2568rem 0rem 0.14267rem #000d;
+            box-shadow: inset -0.2568rem 0rem 0.14267rem #000d;
+  }
+  75% {
+    /* TOP */
+    -webkit-box-shadow: inset 0rem 0.0428rem 0.07133rem #000d;
+            box-shadow: inset 0rem 0.0428rem 0.07133rem #000d;
+  }
+  100% {
+    /* LEFT */
+    -webkit-box-shadow: inset 0.2568rem 0rem 0.14267rem #000d;
+            box-shadow: inset 0.2568rem 0rem 0.14267rem #000d;
+  }
+}
+
+body .jupiter-4-moon-orbit-x {
+  -webkit-animation: orbitMoonXjupiter-4 3.96s cubic-bezier(0.3642, 0, 0.6358, 1) 0s infinite;
+          animation: orbitMoonXjupiter-4 3.96s cubic-bezier(0.3642, 0, 0.6358, 1) 0s infinite;
+}
+
+@-webkit-keyframes orbitMoonXjupiter-4 {
+  0% {
+    -webkit-transform: translateX(-5.42931rem);
+            transform: translateX(-5.42931rem);
+  }
+  50% {
+    -webkit-transform: translateX(5.42931rem);
+            transform: translateX(5.42931rem);
+  }
+  100% {
+    -webkit-transform: translateX(-5.42931rem);
+            transform: translateX(-5.42931rem);
+  }
+}
+
+@keyframes orbitMoonXjupiter-4 {
+  0% {
+    -webkit-transform: translateX(-5.42931rem);
+            transform: translateX(-5.42931rem);
+  }
+  50% {
+    -webkit-transform: translateX(5.42931rem);
+            transform: translateX(5.42931rem);
+  }
+  100% {
+    -webkit-transform: translateX(-5.42931rem);
+            transform: translateX(-5.42931rem);
+  }
+}
+
+body .jupiter-4-moon-orbit-y {
+  -webkit-animation: orbitMoonYjupiter-4 3.96s cubic-bezier(0.3642, 0, 0.6358, 1)-2.97s infinite;
+          animation: orbitMoonYjupiter-4 3.96s cubic-bezier(0.3642, 0, 0.6358, 1)-2.97s infinite;
+}
+
+@-webkit-keyframes orbitMoonYjupiter-4 {
+  0% {
+    -webkit-transform: translateY(1.08586rem);
+            transform: translateY(1.08586rem);
+  }
+  50% {
+    -webkit-transform: translateY(-1.08586rem);
+            transform: translateY(-1.08586rem);
+  }
+  100% {
+    -webkit-transform: translateY(1.08586rem);
+            transform: translateY(1.08586rem);
+  }
+}
+
+@keyframes orbitMoonYjupiter-4 {
+  0% {
+    -webkit-transform: translateY(1.08586rem);
+            transform: translateY(1.08586rem);
+  }
+  50% {
+    -webkit-transform: translateY(-1.08586rem);
+            transform: translateY(-1.08586rem);
+  }
+  100% {
+    -webkit-transform: translateY(1.08586rem);
+            transform: translateY(1.08586rem);
+  }
+}
+
+body .jupiter-4-moon-orbit-z {
+  position: absolute;
+  top: 1.79128rem;
+  left: 1.79128rem;
+  -webkit-animation: orbitMoonZjupiter-4 3.96s steps(1, start) infinite;
+          animation: orbitMoonZjupiter-4 3.96s steps(1, start) infinite;
+}
+
+@-webkit-keyframes orbitMoonZjupiter-4 {
+  0% {
+    -webkit-transform: translateZ(-0.4rem);
+            transform: translateZ(-0.4rem);
+  }
+  50% {
+    -webkit-transform: translateZ(0.4rem);
+            transform: translateZ(0.4rem);
+  }
+  100% {
+    -webkit-transform: translateZ(-0.4rem);
+            transform: translateZ(-0.4rem);
+  }
+}
+
+@keyframes orbitMoonZjupiter-4 {
+  0% {
+    -webkit-transform: translateZ(-0.4rem);
+            transform: translateZ(-0.4rem);
+  }
+  50% {
+    -webkit-transform: translateZ(0.4rem);
+            transform: translateZ(0.4rem);
+  }
+  100% {
+    -webkit-transform: translateZ(-0.4rem);
+            transform: translateZ(-0.4rem);
+  }
+}
+
+body .saturn-style {
+  background-size: auto 100%;
+  border-radius: 50%;
+  background-repeat: repeat-x;
+  -webkit-animation: rot 1s linear 0s infinite normal;
+          animation: rot 1s linear 0s infinite normal;
+  width: 3.74504rem;
+  height: 3.74504rem;
+  background-color: #f00;
+  -webkit-transform: rotateZ(26.73deg);
+          transform: rotateZ(26.73deg);
+  background-image: url("https://res.cloudinary.com/b789b130931413a/image/upload/v1634475224/solar-system-img/saturn_uxjic5.jpg");
+  -webkit-animation-duration: 0.86s;
+          animation-duration: 0.86s;
+  -webkit-box-shadow: inset 0 0 0.3745rem #000;
+          box-shadow: inset 0 0 0.3745rem #000;
+}
+
+body .saturn-style::after {
+  -webkit-transform: rotateZ(-26.73deg);
+          transform: rotateZ(-26.73deg);
+  content: '';
+  display: inline-block;
+  position: absolute;
+  width: 3.74504rem;
+  height: 3.74504rem;
+  border-radius: 50%;
+  background-color: transparent;
+  -webkit-animation: shadowAnimationsaturn 62.6544s linear 0s infinite;
+          animation: shadowAnimationsaturn 62.6544s linear 0s infinite;
+}
+
+@-webkit-keyframes shadowAnimationsaturn {
+  0% {
+    /* LEFT */
+    -webkit-box-shadow: inset 1.12351rem 0rem 0.62417rem #000e;
+            box-shadow: inset 1.12351rem 0rem 0.62417rem #000e;
+  }
+  25% {
+    /* BOTTOM */
+    -webkit-box-shadow: inset 4.30679rem -0.74901rem 1.24835rem #000e;
+            box-shadow: inset 4.30679rem -0.74901rem 1.24835rem #000e;
+  }
+  25.01% {
+    /* BOTTOM */
+    -webkit-box-shadow: inset -4.30679rem -0.74901rem 1.24835rem #000e;
+            box-shadow: inset -4.30679rem -0.74901rem 1.24835rem #000e;
+  }
+  50% {
+    /* RIGHT */
+    -webkit-box-shadow: inset -1.12351rem 0rem 0.62417rem #000e;
+            box-shadow: inset -1.12351rem 0rem 0.62417rem #000e;
+  }
+  75% {
+    /* TOP */
+    -webkit-box-shadow: inset 0rem 0.18725rem 0.31209rem #000e;
+            box-shadow: inset 0rem 0.18725rem 0.31209rem #000e;
+  }
+  100% {
+    /* LEFT */
+    -webkit-box-shadow: inset 1.12351rem 0rem 0.62417rem #000e;
+            box-shadow: inset 1.12351rem 0rem 0.62417rem #000e;
+  }
+}
+
+@keyframes shadowAnimationsaturn {
+  0% {
+    /* LEFT */
+    -webkit-box-shadow: inset 1.12351rem 0rem 0.62417rem #000e;
+            box-shadow: inset 1.12351rem 0rem 0.62417rem #000e;
+  }
+  25% {
+    /* BOTTOM */
+    -webkit-box-shadow: inset 4.30679rem -0.74901rem 1.24835rem #000e;
+            box-shadow: inset 4.30679rem -0.74901rem 1.24835rem #000e;
+  }
+  25.01% {
+    /* BOTTOM */
+    -webkit-box-shadow: inset -4.30679rem -0.74901rem 1.24835rem #000e;
+            box-shadow: inset -4.30679rem -0.74901rem 1.24835rem #000e;
+  }
+  50% {
+    /* RIGHT */
+    -webkit-box-shadow: inset -1.12351rem 0rem 0.62417rem #000e;
+            box-shadow: inset -1.12351rem 0rem 0.62417rem #000e;
+  }
+  75% {
+    /* TOP */
+    -webkit-box-shadow: inset 0rem 0.18725rem 0.31209rem #000e;
+            box-shadow: inset 0rem 0.18725rem 0.31209rem #000e;
+  }
+  100% {
+    /* LEFT */
+    -webkit-box-shadow: inset 1.12351rem 0rem 0.62417rem #000e;
+            box-shadow: inset 1.12351rem 0rem 0.62417rem #000e;
+  }
+}
+
+body .saturn-orbit-x {
+  width: 0;
+  -webkit-animation: orbitXsaturn 62.6544s cubic-bezier(0.3642, 0, 0.6358, 1) 0s infinite;
+          animation: orbitXsaturn 62.6544s cubic-bezier(0.3642, 0, 0.6358, 1) 0s infinite;
+}
+
+@-webkit-keyframes orbitXsaturn {
+  0% {
+    -webkit-transform: translateX(-21.7516rem);
+            transform: translateX(-21.7516rem);
+  }
+  50% {
+    -webkit-transform: translate(21.7516rem);
+            transform: translate(21.7516rem);
+  }
+  100% {
+    -webkit-transform: translateX(-21.7516rem);
+            transform: translateX(-21.7516rem);
+  }
+}
+
+@keyframes orbitXsaturn {
+  0% {
+    -webkit-transform: translateX(-21.7516rem);
+            transform: translateX(-21.7516rem);
+  }
+  50% {
+    -webkit-transform: translate(21.7516rem);
+            transform: translate(21.7516rem);
+  }
+  100% {
+    -webkit-transform: translateX(-21.7516rem);
+            transform: translateX(-21.7516rem);
+  }
+}
+
+body .saturn-orbit-y {
+  width: 0;
+  -webkit-animation: orbitYsaturn 62.6544s cubic-bezier(0.3642, 0, 0.6358, 1)-46.9908s infinite;
+          animation: orbitYsaturn 62.6544s cubic-bezier(0.3642, 0, 0.6358, 1)-46.9908s infinite;
+}
+
+@-webkit-keyframes orbitYsaturn {
+  0% {
+    -webkit-transform: translateY(4.35032rem);
+            transform: translateY(4.35032rem);
+  }
+  50% {
+    -webkit-transform: translateY(-4.35032rem);
+            transform: translateY(-4.35032rem);
+  }
+  100% {
+    -webkit-transform: translateY(4.35032rem);
+            transform: translateY(4.35032rem);
+  }
+}
+
+@keyframes orbitYsaturn {
+  0% {
+    -webkit-transform: translateY(4.35032rem);
+            transform: translateY(4.35032rem);
+  }
+  50% {
+    -webkit-transform: translateY(-4.35032rem);
+            transform: translateY(-4.35032rem);
+  }
+  100% {
+    -webkit-transform: translateY(4.35032rem);
+            transform: translateY(4.35032rem);
+  }
+}
+
+body .saturn-orbit-z {
+  position: absolute;
+  top: 10.62748rem;
+  left: 28.12748rem;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  -webkit-animation: orbitZsaturn 62.6544s steps(1, start) infinite;
+          animation: orbitZsaturn 62.6544s steps(1, start) infinite;
+}
+
+@-webkit-keyframes orbitZsaturn {
+  0% {
+    -webkit-transform: translateZ(-7rem);
+            transform: translateZ(-7rem);
+  }
+  50% {
+    -webkit-transform: translateZ(7rem);
+            transform: translateZ(7rem);
+  }
+  100% {
+    -webkit-transform: translateZ(-7rem);
+            transform: translateZ(-7rem);
+  }
+}
+
+@keyframes orbitZsaturn {
+  0% {
+    -webkit-transform: translateZ(-7rem);
+            transform: translateZ(-7rem);
+  }
+  50% {
+    -webkit-transform: translateZ(7rem);
+            transform: translateZ(7rem);
+  }
+  100% {
+    -webkit-transform: translateZ(-7rem);
+            transform: translateZ(-7rem);
+  }
+}
+
+body .saturn-ring-container * {
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
+}
+
+body .saturn-ring-container {
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  position: absolute;
+  left: 1.87252rem;
+  top: 1.87252rem;
+  -webkit-transform: scale(0.31209) rotateZ(26.73deg);
+          transform: scale(0.31209) rotateZ(26.73deg);
+}
+
+body .saturn-ring-container-half {
+  position: absolute;
+  top: 0rem;
+  left: -20rem;
+  margin: 0;
+  width: 40rem;
+  height: 10rem;
+  overflow: hidden;
+}
+
+body .saturn-ring {
+  position: absolute;
+  left: 5rem;
+  width: 20rem;
+  height: 10rem;
+  background-color: transparent;
+  border-radius: 100%/50%;
+  border: #fffab229 solid 5rem;
+  border-bottom: #fffab229 solid 0.6rem;
+  border-top: transparent;
+  -webkit-box-shadow: 0 0 1rem #fffab229, inset 0 0 1rem #fffab229;
+          box-shadow: 0 0 1rem #fffab229, inset 0 0 1rem #fffab229;
+  top: -7.98rem;
+}
+
+body .saturn-ring-bottom {
+  position: absolute;
+  height: 12rem;
+  top: -9.9rem;
+  border-bottom-width: 1.2rem;
+}
+
+body .saturn-ring-pos-top {
+  z-index: -1;
+}
+
+body .saturn-ring-pos-bottom {
+  z-index: 1;
+}
+
+body .saturn-ring-container-top {
+  /* visibility: hidden;  */
+  -webkit-transform: rotateZ(180deg);
+          transform: rotateZ(180deg);
+  -webkit-transform-origin: top;
+          transform-origin: top;
+}
+
+body .saturn-ring-small {
+  position: absolute;
+  left: 8rem;
+  width: 22rem;
+  height: 9rem;
+  background-color: transparent;
+  border-radius: 100%/50%;
+  border: #0009 solid 1rem;
+  border-bottom: #0009 solid 0.1rem;
+  border-top: transparent;
+  /* box-shadow: 0 0 0.3rem #000; */
+  /* inset 0 0 0.3rem #000; */
+  top: -6.83rem;
+}
+
+body .saturn-ring-small-bottom {
+  right: 8rem;
+  height: 10.4rem;
+  border-bottom-width: 0.2rem;
+  top: -7.96rem;
+}
+
+body .saturn-tilt-orbit {
+  -webkit-transform: rotateZ(26.73deg);
+          transform: rotateZ(26.73deg);
+  position: absolute;
+}
+
+body .saturn-reverse-tilt-orbit {
+  -webkit-transform: rotateZ(-26.73deg);
+          transform: rotateZ(-26.73deg);
+}
+
+body .saturn-moon-style {
+  background-size: auto 100%;
+  border-radius: 50%;
+  background-repeat: repeat-x;
+  -webkit-animation: rot 1s linear 0s infinite normal;
+          animation: rot 1s linear 0s infinite normal;
+  width: 0.214rem;
+  height: 0.214rem;
+  background-color: #fff;
+  -webkit-transform: rotateZ(26.73deg);
+          transform: rotateZ(26.73deg);
+  background-image: url("https://res.cloudinary.com/b789b130931413a/image/upload/v1634475224/solar-system-img/saturn-moon_eiiwkc.jpg");
+  -webkit-animation-duration: 96s;
+          animation-duration: 96s;
+}
+
+body .saturn-moon-style::after {
+  -webkit-transform: rotateZ(-26.73deg);
+          transform: rotateZ(-26.73deg);
+  content: '';
+  display: inline-block;
+  position: absolute;
+  width: 0.214rem;
+  height: 0.214rem;
+  border-radius: 50%;
+  background-color: transparent;
+  -webkit-animation: shadowMoonAnimationsaturn 62.6544s linear 0s infinite;
+          animation: shadowMoonAnimationsaturn 62.6544s linear 0s infinite;
+}
+
+@-webkit-keyframes shadowMoonAnimationsaturn {
+  0% {
+    /* LEFT */
+    -webkit-box-shadow: inset 0.0642rem 0rem 0.03567rem #000d;
+            box-shadow: inset 0.0642rem 0rem 0.03567rem #000d;
+  }
+  25% {
+    /* BOTTOM */
+    -webkit-box-shadow: inset 0.2461rem -0.0428rem 0.07133rem #000d;
+            box-shadow: inset 0.2461rem -0.0428rem 0.07133rem #000d;
+  }
+  25.01% {
+    /* BOTTOM */
+    -webkit-box-shadow: inset -0.2461rem -0.0428rem 0.07133rem #000d;
+            box-shadow: inset -0.2461rem -0.0428rem 0.07133rem #000d;
+  }
+  50% {
+    /* RIGHT */
+    -webkit-box-shadow: inset -0.0642rem 0rem 0.03567rem #000d;
+            box-shadow: inset -0.0642rem 0rem 0.03567rem #000d;
+  }
+  75% {
+    /* TOP */
+    -webkit-box-shadow: inset 0rem 0.0107rem 0.01783rem #000d;
+            box-shadow: inset 0rem 0.0107rem 0.01783rem #000d;
+  }
+  100% {
+    /* LEFT */
+    -webkit-box-shadow: inset 0.0642rem 0rem 0.03567rem #000d;
+            box-shadow: inset 0.0642rem 0rem 0.03567rem #000d;
+  }
+}
+
+@keyframes shadowMoonAnimationsaturn {
+  0% {
+    /* LEFT */
+    -webkit-box-shadow: inset 0.0642rem 0rem 0.03567rem #000d;
+            box-shadow: inset 0.0642rem 0rem 0.03567rem #000d;
+  }
+  25% {
+    /* BOTTOM */
+    -webkit-box-shadow: inset 0.2461rem -0.0428rem 0.07133rem #000d;
+            box-shadow: inset 0.2461rem -0.0428rem 0.07133rem #000d;
+  }
+  25.01% {
+    /* BOTTOM */
+    -webkit-box-shadow: inset -0.2461rem -0.0428rem 0.07133rem #000d;
+            box-shadow: inset -0.2461rem -0.0428rem 0.07133rem #000d;
+  }
+  50% {
+    /* RIGHT */
+    -webkit-box-shadow: inset -0.0642rem 0rem 0.03567rem #000d;
+            box-shadow: inset -0.0642rem 0rem 0.03567rem #000d;
+  }
+  75% {
+    /* TOP */
+    -webkit-box-shadow: inset 0rem 0.0107rem 0.01783rem #000d;
+            box-shadow: inset 0rem 0.0107rem 0.01783rem #000d;
+  }
+  100% {
+    /* LEFT */
+    -webkit-box-shadow: inset 0.0642rem 0rem 0.03567rem #000d;
+            box-shadow: inset 0.0642rem 0rem 0.03567rem #000d;
+  }
+}
+
+body .saturn-moon-orbit-x {
+  -webkit-animation: orbitMoonXsaturn 1.76s cubic-bezier(0.3642, 0, 0.6358, 1) 0s infinite;
+          animation: orbitMoonXsaturn 1.76s cubic-bezier(0.3642, 0, 0.6358, 1) 0s infinite;
+}
+
+@-webkit-keyframes orbitMoonXsaturn {
+  0% {
+    -webkit-transform: translateX(-2.08652rem);
+            transform: translateX(-2.08652rem);
+  }
+  50% {
+    -webkit-transform: translateX(2.08652rem);
+            transform: translateX(2.08652rem);
+  }
+  100% {
+    -webkit-transform: translateX(-2.08652rem);
+            transform: translateX(-2.08652rem);
+  }
+}
+
+@keyframes orbitMoonXsaturn {
+  0% {
+    -webkit-transform: translateX(-2.08652rem);
+            transform: translateX(-2.08652rem);
+  }
+  50% {
+    -webkit-transform: translateX(2.08652rem);
+            transform: translateX(2.08652rem);
+  }
+  100% {
+    -webkit-transform: translateX(-2.08652rem);
+            transform: translateX(-2.08652rem);
+  }
+}
+
+body .saturn-moon-orbit-y {
+  -webkit-animation: orbitMoonYsaturn 1.76s cubic-bezier(0.3642, 0, 0.6358, 1)-1.32s infinite;
+          animation: orbitMoonYsaturn 1.76s cubic-bezier(0.3642, 0, 0.6358, 1)-1.32s infinite;
+}
+
+@-webkit-keyframes orbitMoonYsaturn {
+  0% {
+    -webkit-transform: translateY(0.4173rem);
+            transform: translateY(0.4173rem);
+  }
+  50% {
+    -webkit-transform: translateY(-0.4173rem);
+            transform: translateY(-0.4173rem);
+  }
+  100% {
+    -webkit-transform: translateY(0.4173rem);
+            transform: translateY(0.4173rem);
+  }
+}
+
+@keyframes orbitMoonYsaturn {
+  0% {
+    -webkit-transform: translateY(0.4173rem);
+            transform: translateY(0.4173rem);
+  }
+  50% {
+    -webkit-transform: translateY(-0.4173rem);
+            transform: translateY(-0.4173rem);
+  }
+  100% {
+    -webkit-transform: translateY(0.4173rem);
+            transform: translateY(0.4173rem);
+  }
+}
+
+body .saturn-moon-orbit-z {
+  position: absolute;
+  top: 1.76552rem;
+  left: 1.76552rem;
+  -webkit-animation: orbitMoonZsaturn 1.76s steps(1, start) infinite;
+          animation: orbitMoonZsaturn 1.76s steps(1, start) infinite;
+}
+
+@-webkit-keyframes orbitMoonZsaturn {
+  0% {
+    -webkit-transform: translateZ(-0.1rem);
+            transform: translateZ(-0.1rem);
+  }
+  50% {
+    -webkit-transform: translateZ(0.1rem);
+            transform: translateZ(0.1rem);
+  }
+  100% {
+    -webkit-transform: translateZ(-0.1rem);
+            transform: translateZ(-0.1rem);
+  }
+}
+
+@keyframes orbitMoonZsaturn {
+  0% {
+    -webkit-transform: translateZ(-0.1rem);
+            transform: translateZ(-0.1rem);
+  }
+  50% {
+    -webkit-transform: translateZ(0.1rem);
+            transform: translateZ(0.1rem);
+  }
+  100% {
+    -webkit-transform: translateZ(-0.1rem);
+            transform: translateZ(-0.1rem);
+  }
+}
+
+body .saturn-2-moon-style {
+  background-size: auto 100%;
+  border-radius: 50%;
+  background-repeat: repeat-x;
+  -webkit-animation: rot 1s linear 0s infinite normal;
+          animation: rot 1s linear 0s infinite normal;
+  width: 0.3852rem;
+  height: 0.3852rem;
+  background-color: #fff;
+  -webkit-transform: rotateZ(26.73deg);
+          transform: rotateZ(26.73deg);
+  background-image: url("https://res.cloudinary.com/b789b130931413a/image/upload/v1634475222/solar-system-img/saturn-2-moon_urffpw.jpg");
+  -webkit-animation-duration: 105.6s;
+          animation-duration: 105.6s;
+}
+
+body .saturn-2-moon-style::after {
+  -webkit-transform: rotateZ(-26.73deg);
+          transform: rotateZ(-26.73deg);
+  content: '';
+  display: inline-block;
+  position: absolute;
+  width: 0.3852rem;
+  height: 0.3852rem;
+  border-radius: 50%;
+  background-color: transparent;
+  -webkit-animation: shadowMoonAnimationsaturn-2 62.6544s linear 0s infinite;
+          animation: shadowMoonAnimationsaturn-2 62.6544s linear 0s infinite;
+}
+
+@-webkit-keyframes shadowMoonAnimationsaturn-2 {
+  0% {
+    /* LEFT */
+    -webkit-box-shadow: inset 0.11556rem 0rem 0.0642rem #000d;
+            box-shadow: inset 0.11556rem 0rem 0.0642rem #000d;
+  }
+  25% {
+    /* BOTTOM */
+    -webkit-box-shadow: inset 0.44298rem -0.07704rem 0.1284rem #000d;
+            box-shadow: inset 0.44298rem -0.07704rem 0.1284rem #000d;
+  }
+  25.01% {
+    /* BOTTOM */
+    -webkit-box-shadow: inset -0.44298rem -0.07704rem 0.1284rem #000d;
+            box-shadow: inset -0.44298rem -0.07704rem 0.1284rem #000d;
+  }
+  50% {
+    /* RIGHT */
+    -webkit-box-shadow: inset -0.11556rem 0rem 0.0642rem #000d;
+            box-shadow: inset -0.11556rem 0rem 0.0642rem #000d;
+  }
+  75% {
+    /* TOP */
+    -webkit-box-shadow: inset 0rem 0.01926rem 0.0321rem #000d;
+            box-shadow: inset 0rem 0.01926rem 0.0321rem #000d;
+  }
+  100% {
+    /* LEFT */
+    -webkit-box-shadow: inset 0.11556rem 0rem 0.0642rem #000d;
+            box-shadow: inset 0.11556rem 0rem 0.0642rem #000d;
+  }
+}
+
+@keyframes shadowMoonAnimationsaturn-2 {
+  0% {
+    /* LEFT */
+    -webkit-box-shadow: inset 0.11556rem 0rem 0.0642rem #000d;
+            box-shadow: inset 0.11556rem 0rem 0.0642rem #000d;
+  }
+  25% {
+    /* BOTTOM */
+    -webkit-box-shadow: inset 0.44298rem -0.07704rem 0.1284rem #000d;
+            box-shadow: inset 0.44298rem -0.07704rem 0.1284rem #000d;
+  }
+  25.01% {
+    /* BOTTOM */
+    -webkit-box-shadow: inset -0.44298rem -0.07704rem 0.1284rem #000d;
+            box-shadow: inset -0.44298rem -0.07704rem 0.1284rem #000d;
+  }
+  50% {
+    /* RIGHT */
+    -webkit-box-shadow: inset -0.11556rem 0rem 0.0642rem #000d;
+            box-shadow: inset -0.11556rem 0rem 0.0642rem #000d;
+  }
+  75% {
+    /* TOP */
+    -webkit-box-shadow: inset 0rem 0.01926rem 0.0321rem #000d;
+            box-shadow: inset 0rem 0.01926rem 0.0321rem #000d;
+  }
+  100% {
+    /* LEFT */
+    -webkit-box-shadow: inset 0.11556rem 0rem 0.0642rem #000d;
+            box-shadow: inset 0.11556rem 0rem 0.0642rem #000d;
+  }
+}
+
+body .saturn-2-moon-orbit-x {
+  -webkit-animation: orbitMoonXsaturn-2 2.2s cubic-bezier(0.3642, 0, 0.6358, 1) 0s infinite;
+          animation: orbitMoonXsaturn-2 2.2s cubic-bezier(0.3642, 0, 0.6358, 1) 0s infinite;
+}
+
+@-webkit-keyframes orbitMoonXsaturn-2 {
+  0% {
+    -webkit-transform: translateX(-3.15653rem);
+            transform: translateX(-3.15653rem);
+  }
+  50% {
+    -webkit-transform: translateX(3.15653rem);
+            transform: translateX(3.15653rem);
+  }
+  100% {
+    -webkit-transform: translateX(-3.15653rem);
+            transform: translateX(-3.15653rem);
+  }
+}
+
+@keyframes orbitMoonXsaturn-2 {
+  0% {
+    -webkit-transform: translateX(-3.15653rem);
+            transform: translateX(-3.15653rem);
+  }
+  50% {
+    -webkit-transform: translateX(3.15653rem);
+            transform: translateX(3.15653rem);
+  }
+  100% {
+    -webkit-transform: translateX(-3.15653rem);
+            transform: translateX(-3.15653rem);
+  }
+}
+
+body .saturn-2-moon-orbit-y {
+  -webkit-animation: orbitMoonYsaturn-2 2.2s cubic-bezier(0.3642, 0, 0.6358, 1)-1.65s infinite;
+          animation: orbitMoonYsaturn-2 2.2s cubic-bezier(0.3642, 0, 0.6358, 1)-1.65s infinite;
+}
+
+@-webkit-keyframes orbitMoonYsaturn-2 {
+  0% {
+    -webkit-transform: translateY(0.63131rem);
+            transform: translateY(0.63131rem);
+  }
+  50% {
+    -webkit-transform: translateY(-0.63131rem);
+            transform: translateY(-0.63131rem);
+  }
+  100% {
+    -webkit-transform: translateY(0.63131rem);
+            transform: translateY(0.63131rem);
+  }
+}
+
+@keyframes orbitMoonYsaturn-2 {
+  0% {
+    -webkit-transform: translateY(0.63131rem);
+            transform: translateY(0.63131rem);
+  }
+  50% {
+    -webkit-transform: translateY(-0.63131rem);
+            transform: translateY(-0.63131rem);
+  }
+  100% {
+    -webkit-transform: translateY(0.63131rem);
+            transform: translateY(0.63131rem);
+  }
+}
+
+body .saturn-2-moon-orbit-z {
+  position: absolute;
+  top: 1.67992rem;
+  left: 1.67992rem;
+  -webkit-animation: orbitMoonZsaturn-2 2.2s steps(1, start) infinite;
+          animation: orbitMoonZsaturn-2 2.2s steps(1, start) infinite;
+}
+
+@-webkit-keyframes orbitMoonZsaturn-2 {
+  0% {
+    -webkit-transform: translateZ(-0.2rem);
+            transform: translateZ(-0.2rem);
+  }
+  50% {
+    -webkit-transform: translateZ(0.2rem);
+            transform: translateZ(0.2rem);
+  }
+  100% {
+    -webkit-transform: translateZ(-0.2rem);
+            transform: translateZ(-0.2rem);
+  }
+}
+
+@keyframes orbitMoonZsaturn-2 {
+  0% {
+    -webkit-transform: translateZ(-0.2rem);
+            transform: translateZ(-0.2rem);
+  }
+  50% {
+    -webkit-transform: translateZ(0.2rem);
+            transform: translateZ(0.2rem);
+  }
+  100% {
+    -webkit-transform: translateZ(-0.2rem);
+            transform: translateZ(-0.2rem);
+  }
+}
+
+body .saturn-3-moon-style {
+  background-size: auto 100%;
+  border-radius: 50%;
+  background-repeat: repeat-x;
+  -webkit-animation: rot 1s linear 0s infinite normal;
+          animation: rot 1s linear 0s infinite normal;
+  width: 0.428rem;
+  height: 0.428rem;
+  background-color: #fff;
+  -webkit-transform: rotateZ(26.73deg);
+          transform: rotateZ(26.73deg);
+  background-image: url("https://res.cloudinary.com/b789b130931413a/image/upload/v1634475222/solar-system-img/saturn-3-moon_ptrwjl.jpg");
+  -webkit-animation-duration: 96s;
+          animation-duration: 96s;
+}
+
+body .saturn-3-moon-style::after {
+  -webkit-transform: rotateZ(-26.73deg);
+          transform: rotateZ(-26.73deg);
+  content: '';
+  display: inline-block;
+  position: absolute;
+  width: 0.428rem;
+  height: 0.428rem;
+  border-radius: 50%;
+  background-color: transparent;
+  -webkit-animation: shadowMoonAnimationsaturn-3 62.6544s linear 0s infinite;
+          animation: shadowMoonAnimationsaturn-3 62.6544s linear 0s infinite;
+}
+
+@-webkit-keyframes shadowMoonAnimationsaturn-3 {
+  0% {
+    /* LEFT */
+    -webkit-box-shadow: inset 0.1284rem 0rem 0.07133rem #000d;
+            box-shadow: inset 0.1284rem 0rem 0.07133rem #000d;
+  }
+  25% {
+    /* BOTTOM */
+    -webkit-box-shadow: inset 0.4922rem -0.0856rem 0.14267rem #000d;
+            box-shadow: inset 0.4922rem -0.0856rem 0.14267rem #000d;
+  }
+  25.01% {
+    /* BOTTOM */
+    -webkit-box-shadow: inset -0.4922rem -0.0856rem 0.14267rem #000d;
+            box-shadow: inset -0.4922rem -0.0856rem 0.14267rem #000d;
+  }
+  50% {
+    /* RIGHT */
+    -webkit-box-shadow: inset -0.1284rem 0rem 0.07133rem #000d;
+            box-shadow: inset -0.1284rem 0rem 0.07133rem #000d;
+  }
+  75% {
+    /* TOP */
+    -webkit-box-shadow: inset 0rem 0.0214rem 0.03567rem #000d;
+            box-shadow: inset 0rem 0.0214rem 0.03567rem #000d;
+  }
+  100% {
+    /* LEFT */
+    -webkit-box-shadow: inset 0.1284rem 0rem 0.07133rem #000d;
+            box-shadow: inset 0.1284rem 0rem 0.07133rem #000d;
+  }
+}
+
+@keyframes shadowMoonAnimationsaturn-3 {
+  0% {
+    /* LEFT */
+    -webkit-box-shadow: inset 0.1284rem 0rem 0.07133rem #000d;
+            box-shadow: inset 0.1284rem 0rem 0.07133rem #000d;
+  }
+  25% {
+    /* BOTTOM */
+    -webkit-box-shadow: inset 0.4922rem -0.0856rem 0.14267rem #000d;
+            box-shadow: inset 0.4922rem -0.0856rem 0.14267rem #000d;
+  }
+  25.01% {
+    /* BOTTOM */
+    -webkit-box-shadow: inset -0.4922rem -0.0856rem 0.14267rem #000d;
+            box-shadow: inset -0.4922rem -0.0856rem 0.14267rem #000d;
+  }
+  50% {
+    /* RIGHT */
+    -webkit-box-shadow: inset -0.1284rem 0rem 0.07133rem #000d;
+            box-shadow: inset -0.1284rem 0rem 0.07133rem #000d;
+  }
+  75% {
+    /* TOP */
+    -webkit-box-shadow: inset 0rem 0.0214rem 0.03567rem #000d;
+            box-shadow: inset 0rem 0.0214rem 0.03567rem #000d;
+  }
+  100% {
+    /* LEFT */
+    -webkit-box-shadow: inset 0.1284rem 0rem 0.07133rem #000d;
+            box-shadow: inset 0.1284rem 0rem 0.07133rem #000d;
+  }
+}
+
+body .saturn-3-moon-orbit-x {
+  -webkit-animation: orbitMoonXsaturn-3 2.84s cubic-bezier(0.3642, 0, 0.6358, 1) 0s infinite;
+          animation: orbitMoonXsaturn-3 2.84s cubic-bezier(0.3642, 0, 0.6358, 1) 0s infinite;
+}
+
+@-webkit-keyframes orbitMoonXsaturn-3 {
+  0% {
+    -webkit-transform: translateX(-4.01254rem);
+            transform: translateX(-4.01254rem);
+  }
+  50% {
+    -webkit-transform: translateX(4.01254rem);
+            transform: translateX(4.01254rem);
+  }
+  100% {
+    -webkit-transform: translateX(-4.01254rem);
+            transform: translateX(-4.01254rem);
+  }
+}
+
+@keyframes orbitMoonXsaturn-3 {
+  0% {
+    -webkit-transform: translateX(-4.01254rem);
+            transform: translateX(-4.01254rem);
+  }
+  50% {
+    -webkit-transform: translateX(4.01254rem);
+            transform: translateX(4.01254rem);
+  }
+  100% {
+    -webkit-transform: translateX(-4.01254rem);
+            transform: translateX(-4.01254rem);
+  }
+}
+
+body .saturn-3-moon-orbit-y {
+  -webkit-animation: orbitMoonYsaturn-3 2.84s cubic-bezier(0.3642, 0, 0.6358, 1)-2.13s infinite;
+          animation: orbitMoonYsaturn-3 2.84s cubic-bezier(0.3642, 0, 0.6358, 1)-2.13s infinite;
+}
+
+@-webkit-keyframes orbitMoonYsaturn-3 {
+  0% {
+    -webkit-transform: translateY(0.80251rem);
+            transform: translateY(0.80251rem);
+  }
+  50% {
+    -webkit-transform: translateY(-0.80251rem);
+            transform: translateY(-0.80251rem);
+  }
+  100% {
+    -webkit-transform: translateY(0.80251rem);
+            transform: translateY(0.80251rem);
+  }
+}
+
+@keyframes orbitMoonYsaturn-3 {
+  0% {
+    -webkit-transform: translateY(0.80251rem);
+            transform: translateY(0.80251rem);
+  }
+  50% {
+    -webkit-transform: translateY(-0.80251rem);
+            transform: translateY(-0.80251rem);
+  }
+  100% {
+    -webkit-transform: translateY(0.80251rem);
+            transform: translateY(0.80251rem);
+  }
+}
+
+body .saturn-3-moon-orbit-z {
+  position: absolute;
+  top: 1.65852rem;
+  left: 1.65852rem;
+  -webkit-animation: orbitMoonZsaturn-3 2.84s steps(1, start) infinite;
+          animation: orbitMoonZsaturn-3 2.84s steps(1, start) infinite;
+}
+
+@-webkit-keyframes orbitMoonZsaturn-3 {
+  0% {
+    -webkit-transform: translateZ(-0.3rem);
+            transform: translateZ(-0.3rem);
+  }
+  50% {
+    -webkit-transform: translateZ(0.3rem);
+            transform: translateZ(0.3rem);
+  }
+  100% {
+    -webkit-transform: translateZ(-0.3rem);
+            transform: translateZ(-0.3rem);
+  }
+}
+
+@keyframes orbitMoonZsaturn-3 {
+  0% {
+    -webkit-transform: translateZ(-0.3rem);
+            transform: translateZ(-0.3rem);
+  }
+  50% {
+    -webkit-transform: translateZ(0.3rem);
+            transform: translateZ(0.3rem);
+  }
+  100% {
+    -webkit-transform: translateZ(-0.3rem);
+            transform: translateZ(-0.3rem);
+  }
+}
+
+body .saturn-4-moon-style {
+  background-size: auto 100%;
+  border-radius: 50%;
+  background-repeat: repeat-x;
+  -webkit-animation: rot 1s linear 0s infinite normal;
+          animation: rot 1s linear 0s infinite normal;
+  width: 0.85601rem;
+  height: 0.85601rem;
+  background-color: #fff;
+  -webkit-transform: rotateZ(26.73deg);
+          transform: rotateZ(26.73deg);
+  background-image: url("https://res.cloudinary.com/b789b130931413a/image/upload/v1634475222/solar-system-img/saturn-4-moon_nuny9a.jpg");
+  -webkit-animation-duration: 149.76s;
+          animation-duration: 149.76s;
+}
+
+body .saturn-4-moon-style::after {
+  -webkit-transform: rotateZ(-26.73deg);
+          transform: rotateZ(-26.73deg);
+  content: '';
+  display: inline-block;
+  position: absolute;
+  width: 0.85601rem;
+  height: 0.85601rem;
+  border-radius: 50%;
+  background-color: transparent;
+  -webkit-animation: shadowMoonAnimationsaturn-4 62.6544s linear 0s infinite;
+          animation: shadowMoonAnimationsaturn-4 62.6544s linear 0s infinite;
+}
+
+@-webkit-keyframes shadowMoonAnimationsaturn-4 {
+  0% {
+    /* LEFT */
+    -webkit-box-shadow: inset 0.2568rem 0rem 0.14267rem #000d;
+            box-shadow: inset 0.2568rem 0rem 0.14267rem #000d;
+  }
+  25% {
+    /* BOTTOM */
+    -webkit-box-shadow: inset 0.98441rem -0.1712rem 0.28534rem #000d;
+            box-shadow: inset 0.98441rem -0.1712rem 0.28534rem #000d;
+  }
+  25.01% {
+    /* BOTTOM */
+    -webkit-box-shadow: inset -0.98441rem -0.1712rem 0.28534rem #000d;
+            box-shadow: inset -0.98441rem -0.1712rem 0.28534rem #000d;
+  }
+  50% {
+    /* RIGHT */
+    -webkit-box-shadow: inset -0.2568rem 0rem 0.14267rem #000d;
+            box-shadow: inset -0.2568rem 0rem 0.14267rem #000d;
+  }
+  75% {
+    /* TOP */
+    -webkit-box-shadow: inset 0rem 0.0428rem 0.07133rem #000d;
+            box-shadow: inset 0rem 0.0428rem 0.07133rem #000d;
+  }
+  100% {
+    /* LEFT */
+    -webkit-box-shadow: inset 0.2568rem 0rem 0.14267rem #000d;
+            box-shadow: inset 0.2568rem 0rem 0.14267rem #000d;
+  }
+}
+
+@keyframes shadowMoonAnimationsaturn-4 {
+  0% {
+    /* LEFT */
+    -webkit-box-shadow: inset 0.2568rem 0rem 0.14267rem #000d;
+            box-shadow: inset 0.2568rem 0rem 0.14267rem #000d;
+  }
+  25% {
+    /* BOTTOM */
+    -webkit-box-shadow: inset 0.98441rem -0.1712rem 0.28534rem #000d;
+            box-shadow: inset 0.98441rem -0.1712rem 0.28534rem #000d;
+  }
+  25.01% {
+    /* BOTTOM */
+    -webkit-box-shadow: inset -0.98441rem -0.1712rem 0.28534rem #000d;
+            box-shadow: inset -0.98441rem -0.1712rem 0.28534rem #000d;
+  }
+  50% {
+    /* RIGHT */
+    -webkit-box-shadow: inset -0.2568rem 0rem 0.14267rem #000d;
+            box-shadow: inset -0.2568rem 0rem 0.14267rem #000d;
+  }
+  75% {
+    /* TOP */
+    -webkit-box-shadow: inset 0rem 0.0428rem 0.07133rem #000d;
+            box-shadow: inset 0rem 0.0428rem 0.07133rem #000d;
+  }
+  100% {
+    /* LEFT */
+    -webkit-box-shadow: inset 0.2568rem 0rem 0.14267rem #000d;
+            box-shadow: inset 0.2568rem 0rem 0.14267rem #000d;
+  }
+}
+
+body .saturn-4-moon-orbit-x {
+  -webkit-animation: orbitMoonXsaturn-4 3.56s cubic-bezier(0.3642, 0, 0.6358, 1) 0s infinite;
+          animation: orbitMoonXsaturn-4 3.56s cubic-bezier(0.3642, 0, 0.6358, 1) 0s infinite;
+}
+
+@-webkit-keyframes orbitMoonXsaturn-4 {
+  0% {
+    -webkit-transform: translateX(-5.29655rem);
+            transform: translateX(-5.29655rem);
+  }
+  50% {
+    -webkit-transform: translateX(5.29655rem);
+            transform: translateX(5.29655rem);
+  }
+  100% {
+    -webkit-transform: translateX(-5.29655rem);
+            transform: translateX(-5.29655rem);
+  }
+}
+
+@keyframes orbitMoonXsaturn-4 {
+  0% {
+    -webkit-transform: translateX(-5.29655rem);
+            transform: translateX(-5.29655rem);
+  }
+  50% {
+    -webkit-transform: translateX(5.29655rem);
+            transform: translateX(5.29655rem);
+  }
+  100% {
+    -webkit-transform: translateX(-5.29655rem);
+            transform: translateX(-5.29655rem);
+  }
+}
+
+body .saturn-4-moon-orbit-y {
+  -webkit-animation: orbitMoonYsaturn-4 3.56s cubic-bezier(0.3642, 0, 0.6358, 1)-2.67s infinite;
+          animation: orbitMoonYsaturn-4 3.56s cubic-bezier(0.3642, 0, 0.6358, 1)-2.67s infinite;
+}
+
+@-webkit-keyframes orbitMoonYsaturn-4 {
+  0% {
+    -webkit-transform: translateY(1.05931rem);
+            transform: translateY(1.05931rem);
+  }
+  50% {
+    -webkit-transform: translateY(-1.05931rem);
+            transform: translateY(-1.05931rem);
+  }
+  100% {
+    -webkit-transform: translateY(1.05931rem);
+            transform: translateY(1.05931rem);
+  }
+}
+
+@keyframes orbitMoonYsaturn-4 {
+  0% {
+    -webkit-transform: translateY(1.05931rem);
+            transform: translateY(1.05931rem);
+  }
+  50% {
+    -webkit-transform: translateY(-1.05931rem);
+            transform: translateY(-1.05931rem);
+  }
+  100% {
+    -webkit-transform: translateY(1.05931rem);
+            transform: translateY(1.05931rem);
+  }
+}
+
+body .saturn-4-moon-orbit-z {
+  position: absolute;
+  top: 1.44451rem;
+  left: 1.44451rem;
+  -webkit-animation: orbitMoonZsaturn-4 3.56s steps(1, start) infinite;
+          animation: orbitMoonZsaturn-4 3.56s steps(1, start) infinite;
+}
+
+@-webkit-keyframes orbitMoonZsaturn-4 {
+  0% {
+    -webkit-transform: translateZ(-0.4rem);
+            transform: translateZ(-0.4rem);
+  }
+  50% {
+    -webkit-transform: translateZ(0.4rem);
+            transform: translateZ(0.4rem);
+  }
+  100% {
+    -webkit-transform: translateZ(-0.4rem);
+            transform: translateZ(-0.4rem);
+  }
+}
+
+@keyframes orbitMoonZsaturn-4 {
+  0% {
+    -webkit-transform: translateZ(-0.4rem);
+            transform: translateZ(-0.4rem);
+  }
+  50% {
+    -webkit-transform: translateZ(0.4rem);
+            transform: translateZ(0.4rem);
+  }
+  100% {
+    -webkit-transform: translateZ(-0.4rem);
+            transform: translateZ(-0.4rem);
+  }
+}
+
+body .saturn-5-moon-style {
+  background-size: auto 100%;
+  border-radius: 50%;
+  background-repeat: repeat-x;
+  -webkit-animation: rot 1s linear 0s infinite normal;
+          animation: rot 1s linear 0s infinite normal;
+  width: 0.428rem;
+  height: 0.428rem;
+  background-color: #fff;
+  -webkit-transform: rotateZ(26.73deg);
+          transform: rotateZ(26.73deg);
+  background-image: url("https://res.cloudinary.com/b789b130931413a/image/upload/v1634475222/solar-system-img/saturn-5-moon_erfwpq.jpg");
+  -webkit-animation-duration: 134.4s;
+          animation-duration: 134.4s;
+}
+
+body .saturn-5-moon-style::after {
+  -webkit-transform: rotateZ(-26.73deg);
+          transform: rotateZ(-26.73deg);
+  content: '';
+  display: inline-block;
+  position: absolute;
+  width: 0.428rem;
+  height: 0.428rem;
+  border-radius: 50%;
+  background-color: transparent;
+  -webkit-animation: shadowMoonAnimationsaturn-5 62.6544s linear 0s infinite;
+          animation: shadowMoonAnimationsaturn-5 62.6544s linear 0s infinite;
+}
+
+@-webkit-keyframes shadowMoonAnimationsaturn-5 {
+  0% {
+    /* LEFT */
+    -webkit-box-shadow: inset 0.1284rem 0rem 0.07133rem #000d;
+            box-shadow: inset 0.1284rem 0rem 0.07133rem #000d;
+  }
+  25% {
+    /* BOTTOM */
+    -webkit-box-shadow: inset 0.4922rem -0.0856rem 0.14267rem #000d;
+            box-shadow: inset 0.4922rem -0.0856rem 0.14267rem #000d;
+  }
+  25.01% {
+    /* BOTTOM */
+    -webkit-box-shadow: inset -0.4922rem -0.0856rem 0.14267rem #000d;
+            box-shadow: inset -0.4922rem -0.0856rem 0.14267rem #000d;
+  }
+  50% {
+    /* RIGHT */
+    -webkit-box-shadow: inset -0.1284rem 0rem 0.07133rem #000d;
+            box-shadow: inset -0.1284rem 0rem 0.07133rem #000d;
+  }
+  75% {
+    /* TOP */
+    -webkit-box-shadow: inset 0rem 0.0214rem 0.03567rem #000d;
+            box-shadow: inset 0rem 0.0214rem 0.03567rem #000d;
+  }
+  100% {
+    /* LEFT */
+    -webkit-box-shadow: inset 0.1284rem 0rem 0.07133rem #000d;
+            box-shadow: inset 0.1284rem 0rem 0.07133rem #000d;
+  }
+}
+
+@keyframes shadowMoonAnimationsaturn-5 {
+  0% {
+    /* LEFT */
+    -webkit-box-shadow: inset 0.1284rem 0rem 0.07133rem #000d;
+            box-shadow: inset 0.1284rem 0rem 0.07133rem #000d;
+  }
+  25% {
+    /* BOTTOM */
+    -webkit-box-shadow: inset 0.4922rem -0.0856rem 0.14267rem #000d;
+            box-shadow: inset 0.4922rem -0.0856rem 0.14267rem #000d;
+  }
+  25.01% {
+    /* BOTTOM */
+    -webkit-box-shadow: inset -0.4922rem -0.0856rem 0.14267rem #000d;
+            box-shadow: inset -0.4922rem -0.0856rem 0.14267rem #000d;
+  }
+  50% {
+    /* RIGHT */
+    -webkit-box-shadow: inset -0.1284rem 0rem 0.07133rem #000d;
+            box-shadow: inset -0.1284rem 0rem 0.07133rem #000d;
+  }
+  75% {
+    /* TOP */
+    -webkit-box-shadow: inset 0rem 0.0214rem 0.03567rem #000d;
+            box-shadow: inset 0rem 0.0214rem 0.03567rem #000d;
+  }
+  100% {
+    /* LEFT */
+    -webkit-box-shadow: inset 0.1284rem 0rem 0.07133rem #000d;
+            box-shadow: inset 0.1284rem 0rem 0.07133rem #000d;
+  }
+}
+
+body .saturn-5-moon-orbit-x {
+  -webkit-animation: orbitMoonXsaturn-5 3.8s cubic-bezier(0.3642, 0, 0.6358, 1) 0s infinite;
+          animation: orbitMoonXsaturn-5 3.8s cubic-bezier(0.3642, 0, 0.6358, 1) 0s infinite;
+}
+
+@-webkit-keyframes orbitMoonXsaturn-5 {
+  0% {
+    -webkit-transform: translateX(-6.15256rem);
+            transform: translateX(-6.15256rem);
+  }
+  50% {
+    -webkit-transform: translateX(6.15256rem);
+            transform: translateX(6.15256rem);
+  }
+  100% {
+    -webkit-transform: translateX(-6.15256rem);
+            transform: translateX(-6.15256rem);
+  }
+}
+
+@keyframes orbitMoonXsaturn-5 {
+  0% {
+    -webkit-transform: translateX(-6.15256rem);
+            transform: translateX(-6.15256rem);
+  }
+  50% {
+    -webkit-transform: translateX(6.15256rem);
+            transform: translateX(6.15256rem);
+  }
+  100% {
+    -webkit-transform: translateX(-6.15256rem);
+            transform: translateX(-6.15256rem);
+  }
+}
+
+body .saturn-5-moon-orbit-y {
+  -webkit-animation: orbitMoonYsaturn-5 3.8s cubic-bezier(0.3642, 0, 0.6358, 1)-2.85s infinite;
+          animation: orbitMoonYsaturn-5 3.8s cubic-bezier(0.3642, 0, 0.6358, 1)-2.85s infinite;
+}
+
+@-webkit-keyframes orbitMoonYsaturn-5 {
+  0% {
+    -webkit-transform: translateY(1.23051rem);
+            transform: translateY(1.23051rem);
+  }
+  50% {
+    -webkit-transform: translateY(-1.23051rem);
+            transform: translateY(-1.23051rem);
+  }
+  100% {
+    -webkit-transform: translateY(1.23051rem);
+            transform: translateY(1.23051rem);
+  }
+}
+
+@keyframes orbitMoonYsaturn-5 {
+  0% {
+    -webkit-transform: translateY(1.23051rem);
+            transform: translateY(1.23051rem);
+  }
+  50% {
+    -webkit-transform: translateY(-1.23051rem);
+            transform: translateY(-1.23051rem);
+  }
+  100% {
+    -webkit-transform: translateY(1.23051rem);
+            transform: translateY(1.23051rem);
+  }
+}
+
+body .saturn-5-moon-orbit-z {
+  position: absolute;
+  top: 1.65852rem;
+  left: 1.65852rem;
+  -webkit-animation: orbitMoonZsaturn-5 3.8s steps(1, start) infinite;
+          animation: orbitMoonZsaturn-5 3.8s steps(1, start) infinite;
+}
+
+@-webkit-keyframes orbitMoonZsaturn-5 {
+  0% {
+    -webkit-transform: translateZ(-0.5rem);
+            transform: translateZ(-0.5rem);
+  }
+  50% {
+    -webkit-transform: translateZ(0.5rem);
+            transform: translateZ(0.5rem);
+  }
+  100% {
+    -webkit-transform: translateZ(-0.5rem);
+            transform: translateZ(-0.5rem);
+  }
+}
+
+@keyframes orbitMoonZsaturn-5 {
+  0% {
+    -webkit-transform: translateZ(-0.5rem);
+            transform: translateZ(-0.5rem);
+  }
+  50% {
+    -webkit-transform: translateZ(0.5rem);
+            transform: translateZ(0.5rem);
+  }
+  100% {
+    -webkit-transform: translateZ(-0.5rem);
+            transform: translateZ(-0.5rem);
+  }
+}
+
+body .uranus-style {
+  background-size: auto 100%;
+  border-radius: 50%;
+  background-repeat: repeat-x;
+  -webkit-animation: rot 1s linear 0s infinite normal;
+          animation: rot 1s linear 0s infinite normal;
+  width: 2.1136rem;
+  height: 2.1136rem;
+  background-color: #00f;
+  -webkit-transform: rotateZ(97.7deg);
+          transform: rotateZ(97.7deg);
+  background-image: url("https://res.cloudinary.com/b789b130931413a/image/upload/v1634475223/solar-system-img/uranus_nd5opg.jpg");
+  -webkit-animation-duration: 1.38s;
+          animation-duration: 1.38s;
+  -webkit-box-shadow: inset 0 0 0.21136rem #000;
+          box-shadow: inset 0 0 0.21136rem #000;
+}
+
+body .uranus-style::after {
+  -webkit-transform: rotateZ(-97.7deg);
+          transform: rotateZ(-97.7deg);
+  content: '';
+  display: inline-block;
+  position: absolute;
+  width: 2.1136rem;
+  height: 2.1136rem;
+  border-radius: 50%;
+  background-color: transparent;
+  -webkit-animation: shadowAnimationuranus 75.18528s linear 0s infinite;
+          animation: shadowAnimationuranus 75.18528s linear 0s infinite;
+}
+
+@-webkit-keyframes shadowAnimationuranus {
+  0% {
+    /* LEFT */
+    -webkit-box-shadow: inset 0.63408rem 0rem 0.35227rem #000e;
+            box-shadow: inset 0.63408rem 0rem 0.35227rem #000e;
+  }
+  25% {
+    /* BOTTOM */
+    -webkit-box-shadow: inset 2.43064rem -0.42272rem 0.70453rem #000e;
+            box-shadow: inset 2.43064rem -0.42272rem 0.70453rem #000e;
+  }
+  25.01% {
+    /* BOTTOM */
+    -webkit-box-shadow: inset -2.43064rem -0.42272rem 0.70453rem #000e;
+            box-shadow: inset -2.43064rem -0.42272rem 0.70453rem #000e;
+  }
+  50% {
+    /* RIGHT */
+    -webkit-box-shadow: inset -0.63408rem 0rem 0.35227rem #000e;
+            box-shadow: inset -0.63408rem 0rem 0.35227rem #000e;
+  }
+  75% {
+    /* TOP */
+    -webkit-box-shadow: inset 0rem 0.10568rem 0.17613rem #000e;
+            box-shadow: inset 0rem 0.10568rem 0.17613rem #000e;
+  }
+  100% {
+    /* LEFT */
+    -webkit-box-shadow: inset 0.63408rem 0rem 0.35227rem #000e;
+            box-shadow: inset 0.63408rem 0rem 0.35227rem #000e;
+  }
+}
+
+@keyframes shadowAnimationuranus {
+  0% {
+    /* LEFT */
+    -webkit-box-shadow: inset 0.63408rem 0rem 0.35227rem #000e;
+            box-shadow: inset 0.63408rem 0rem 0.35227rem #000e;
+  }
+  25% {
+    /* BOTTOM */
+    -webkit-box-shadow: inset 2.43064rem -0.42272rem 0.70453rem #000e;
+            box-shadow: inset 2.43064rem -0.42272rem 0.70453rem #000e;
+  }
+  25.01% {
+    /* BOTTOM */
+    -webkit-box-shadow: inset -2.43064rem -0.42272rem 0.70453rem #000e;
+            box-shadow: inset -2.43064rem -0.42272rem 0.70453rem #000e;
+  }
+  50% {
+    /* RIGHT */
+    -webkit-box-shadow: inset -0.63408rem 0rem 0.35227rem #000e;
+            box-shadow: inset -0.63408rem 0rem 0.35227rem #000e;
+  }
+  75% {
+    /* TOP */
+    -webkit-box-shadow: inset 0rem 0.10568rem 0.17613rem #000e;
+            box-shadow: inset 0rem 0.10568rem 0.17613rem #000e;
+  }
+  100% {
+    /* LEFT */
+    -webkit-box-shadow: inset 0.63408rem 0rem 0.35227rem #000e;
+            box-shadow: inset 0.63408rem 0rem 0.35227rem #000e;
+  }
+}
+
+body .uranus-orbit-x {
+  width: 0;
+  -webkit-animation: orbitXuranus 75.18528s cubic-bezier(0.3642, 0, 0.6358, 1) 0s infinite;
+          animation: orbitXuranus 75.18528s cubic-bezier(0.3642, 0, 0.6358, 1) 0s infinite;
+}
+
+@-webkit-keyframes orbitXuranus {
+  0% {
+    -webkit-transform: translateX(-26.85222rem);
+            transform: translateX(-26.85222rem);
+  }
+  50% {
+    -webkit-transform: translate(26.85222rem);
+            transform: translate(26.85222rem);
+  }
+  100% {
+    -webkit-transform: translateX(-26.85222rem);
+            transform: translateX(-26.85222rem);
+  }
+}
+
+@keyframes orbitXuranus {
+  0% {
+    -webkit-transform: translateX(-26.85222rem);
+            transform: translateX(-26.85222rem);
+  }
+  50% {
+    -webkit-transform: translate(26.85222rem);
+            transform: translate(26.85222rem);
+  }
+  100% {
+    -webkit-transform: translateX(-26.85222rem);
+            transform: translateX(-26.85222rem);
+  }
+}
+
+body .uranus-orbit-y {
+  width: 0;
+  -webkit-animation: orbitYuranus 75.18528s cubic-bezier(0.3642, 0, 0.6358, 1)-56.38896s infinite;
+          animation: orbitYuranus 75.18528s cubic-bezier(0.3642, 0, 0.6358, 1)-56.38896s infinite;
+}
+
+@-webkit-keyframes orbitYuranus {
+  0% {
+    -webkit-transform: translateY(5.37044rem);
+            transform: translateY(5.37044rem);
+  }
+  50% {
+    -webkit-transform: translateY(-5.37044rem);
+            transform: translateY(-5.37044rem);
+  }
+  100% {
+    -webkit-transform: translateY(5.37044rem);
+            transform: translateY(5.37044rem);
+  }
+}
+
+@keyframes orbitYuranus {
+  0% {
+    -webkit-transform: translateY(5.37044rem);
+            transform: translateY(5.37044rem);
+  }
+  50% {
+    -webkit-transform: translateY(-5.37044rem);
+            transform: translateY(-5.37044rem);
+  }
+  100% {
+    -webkit-transform: translateY(5.37044rem);
+            transform: translateY(5.37044rem);
+  }
+}
+
+body .uranus-orbit-z {
+  position: absolute;
+  top: 11.4432rem;
+  left: 28.9432rem;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  -webkit-animation: orbitZuranus 75.18528s steps(1, start) infinite;
+          animation: orbitZuranus 75.18528s steps(1, start) infinite;
+}
+
+@-webkit-keyframes orbitZuranus {
+  0% {
+    -webkit-transform: translateZ(-8rem);
+            transform: translateZ(-8rem);
+  }
+  50% {
+    -webkit-transform: translateZ(8rem);
+            transform: translateZ(8rem);
+  }
+  100% {
+    -webkit-transform: translateZ(-8rem);
+            transform: translateZ(-8rem);
+  }
+}
+
+@keyframes orbitZuranus {
+  0% {
+    -webkit-transform: translateZ(-8rem);
+            transform: translateZ(-8rem);
+  }
+  50% {
+    -webkit-transform: translateZ(8rem);
+            transform: translateZ(8rem);
+  }
+  100% {
+    -webkit-transform: translateZ(-8rem);
+            transform: translateZ(-8rem);
+  }
+}
+
+body .uranus-ring-container * {
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
+}
+
+body .uranus-ring-container {
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  position: absolute;
+  left: 1.0568rem;
+  top: 1.0568rem;
+  -webkit-transform: scale(0.17613) rotateZ(97.7deg);
+          transform: scale(0.17613) rotateZ(97.7deg);
+}
+
+body .uranus-ring-container-half {
+  position: absolute;
+  top: 0rem;
+  left: -20rem;
+  margin: 0;
+  width: 40rem;
+  height: 10rem;
+  overflow: hidden;
+}
+
+body .uranus-ring {
+  position: absolute;
+  left: 5rem;
+  width: 20rem;
+  height: 10rem;
+  background-color: transparent;
+  border-radius: 100%/50%;
+  border: transparent solid 5rem;
+  border-bottom: transparent solid 0.6rem;
+  border-top: transparent;
+  -webkit-box-shadow: 0 0 1rem transparent, inset 0 0 1rem transparent;
+          box-shadow: 0 0 1rem transparent, inset 0 0 1rem transparent;
+  top: -7.98rem;
+}
+
+body .uranus-ring-bottom {
+  position: absolute;
+  height: 12rem;
+  top: -9.9rem;
+  border-bottom-width: 1.2rem;
+}
+
+body .uranus-ring-pos-top {
+  z-index: -1;
+}
+
+body .uranus-ring-pos-bottom {
+  z-index: 1;
+}
+
+body .uranus-ring-container-top {
+  /* visibility: hidden;  */
+  -webkit-transform: rotateZ(180deg);
+          transform: rotateZ(180deg);
+  -webkit-transform-origin: top;
+          transform-origin: top;
+}
+
+body .uranus-ring-small {
+  position: absolute;
+  left: 8rem;
+  width: 22rem;
+  height: 9rem;
+  background-color: transparent;
+  border-radius: 100%/50%;
+  border: #fff4 solid 1rem;
+  border-bottom: #fff4 solid 0.1rem;
+  border-top: transparent;
+  /* box-shadow: 0 0 0.3rem #000; */
+  /* inset 0 0 0.3rem #000; */
+  top: -6.83rem;
+}
+
+body .uranus-ring-small-bottom {
+  right: 8rem;
+  height: 10.4rem;
+  border-bottom-width: 0.2rem;
+  top: -7.96rem;
+}
+
+body .uranus-tilt-orbit {
+  -webkit-transform: rotateZ(97.7deg);
+          transform: rotateZ(97.7deg);
+  position: absolute;
+}
+
+body .uranus-reverse-tilt-orbit {
+  -webkit-transform: rotateZ(-97.7deg);
+          transform: rotateZ(-97.7deg);
+}
+
+body .uranus-moon-style {
+  background-size: auto 100%;
+  border-radius: 50%;
+  background-repeat: repeat-x;
+  -webkit-animation: rot 1s linear 0s infinite normal;
+          animation: rot 1s linear 0s infinite normal;
+  width: 0.2996rem;
+  height: 0.2996rem;
+  background-color: #fff;
+  -webkit-transform: rotateZ(97.7deg);
+          transform: rotateZ(97.7deg);
+  background-image: url("https://res.cloudinary.com/b789b130931413a/image/upload/v1634475224/solar-system-img/uranus-moon_rlnqmd.jpg");
+  -webkit-animation-duration: 96s;
+          animation-duration: 96s;
+}
+
+body .uranus-moon-style::after {
+  -webkit-transform: rotateZ(-97.7deg);
+          transform: rotateZ(-97.7deg);
+  content: '';
+  display: inline-block;
+  position: absolute;
+  width: 0.2996rem;
+  height: 0.2996rem;
+  border-radius: 50%;
+  background-color: transparent;
+  -webkit-animation: shadowMoonAnimationuranus 75.18528s linear 0s infinite;
+          animation: shadowMoonAnimationuranus 75.18528s linear 0s infinite;
+}
+
+@-webkit-keyframes shadowMoonAnimationuranus {
+  0% {
+    /* LEFT */
+    -webkit-box-shadow: inset 0.08988rem 0rem 0.04993rem #000d;
+            box-shadow: inset 0.08988rem 0rem 0.04993rem #000d;
+  }
+  25% {
+    /* BOTTOM */
+    -webkit-box-shadow: inset 0.34454rem -0.05992rem 0.09987rem #000d;
+            box-shadow: inset 0.34454rem -0.05992rem 0.09987rem #000d;
+  }
+  25.01% {
+    /* BOTTOM */
+    -webkit-box-shadow: inset -0.34454rem -0.05992rem 0.09987rem #000d;
+            box-shadow: inset -0.34454rem -0.05992rem 0.09987rem #000d;
+  }
+  50% {
+    /* RIGHT */
+    -webkit-box-shadow: inset -0.08988rem 0rem 0.04993rem #000d;
+            box-shadow: inset -0.08988rem 0rem 0.04993rem #000d;
+  }
+  75% {
+    /* TOP */
+    -webkit-box-shadow: inset 0rem 0.01498rem 0.02497rem #000d;
+            box-shadow: inset 0rem 0.01498rem 0.02497rem #000d;
+  }
+  100% {
+    /* LEFT */
+    -webkit-box-shadow: inset 0.08988rem 0rem 0.04993rem #000d;
+            box-shadow: inset 0.08988rem 0rem 0.04993rem #000d;
+  }
+}
+
+@keyframes shadowMoonAnimationuranus {
+  0% {
+    /* LEFT */
+    -webkit-box-shadow: inset 0.08988rem 0rem 0.04993rem #000d;
+            box-shadow: inset 0.08988rem 0rem 0.04993rem #000d;
+  }
+  25% {
+    /* BOTTOM */
+    -webkit-box-shadow: inset 0.34454rem -0.05992rem 0.09987rem #000d;
+            box-shadow: inset 0.34454rem -0.05992rem 0.09987rem #000d;
+  }
+  25.01% {
+    /* BOTTOM */
+    -webkit-box-shadow: inset -0.34454rem -0.05992rem 0.09987rem #000d;
+            box-shadow: inset -0.34454rem -0.05992rem 0.09987rem #000d;
+  }
+  50% {
+    /* RIGHT */
+    -webkit-box-shadow: inset -0.08988rem 0rem 0.04993rem #000d;
+            box-shadow: inset -0.08988rem 0rem 0.04993rem #000d;
+  }
+  75% {
+    /* TOP */
+    -webkit-box-shadow: inset 0rem 0.01498rem 0.02497rem #000d;
+            box-shadow: inset 0rem 0.01498rem 0.02497rem #000d;
+  }
+  100% {
+    /* LEFT */
+    -webkit-box-shadow: inset 0.08988rem 0rem 0.04993rem #000d;
+            box-shadow: inset 0.08988rem 0rem 0.04993rem #000d;
+  }
+}
+
+body .uranus-moon-orbit-x {
+  -webkit-animation: orbitMoonXuranus 1.76s cubic-bezier(0.3642, 0, 0.6358, 1) 0s infinite;
+          animation: orbitMoonXuranus 1.76s cubic-bezier(0.3642, 0, 0.6358, 1) 0s infinite;
+}
+
+@-webkit-keyframes orbitMoonXuranus {
+  0% {
+    -webkit-transform: translateX(-1.41632rem);
+            transform: translateX(-1.41632rem);
+  }
+  50% {
+    -webkit-transform: translateX(1.41632rem);
+            transform: translateX(1.41632rem);
+  }
+  100% {
+    -webkit-transform: translateX(-1.41632rem);
+            transform: translateX(-1.41632rem);
+  }
+}
+
+@keyframes orbitMoonXuranus {
+  0% {
+    -webkit-transform: translateX(-1.41632rem);
+            transform: translateX(-1.41632rem);
+  }
+  50% {
+    -webkit-transform: translateX(1.41632rem);
+            transform: translateX(1.41632rem);
+  }
+  100% {
+    -webkit-transform: translateX(-1.41632rem);
+            transform: translateX(-1.41632rem);
+  }
+}
+
+body .uranus-moon-orbit-y {
+  -webkit-animation: orbitMoonYuranus 1.76s cubic-bezier(0.3642, 0, 0.6358, 1)-1.32s infinite;
+          animation: orbitMoonYuranus 1.76s cubic-bezier(0.3642, 0, 0.6358, 1)-1.32s infinite;
+}
+
+@-webkit-keyframes orbitMoonYuranus {
+  0% {
+    -webkit-transform: translateY(0.28326rem);
+            transform: translateY(0.28326rem);
+  }
+  50% {
+    -webkit-transform: translateY(-0.28326rem);
+            transform: translateY(-0.28326rem);
+  }
+  100% {
+    -webkit-transform: translateY(0.28326rem);
+            transform: translateY(0.28326rem);
+  }
+}
+
+@keyframes orbitMoonYuranus {
+  0% {
+    -webkit-transform: translateY(0.28326rem);
+            transform: translateY(0.28326rem);
+  }
+  50% {
+    -webkit-transform: translateY(-0.28326rem);
+            transform: translateY(-0.28326rem);
+  }
+  100% {
+    -webkit-transform: translateY(0.28326rem);
+            transform: translateY(0.28326rem);
+  }
+}
+
+body .uranus-moon-orbit-z {
+  position: absolute;
+  top: 0.907rem;
+  left: 0.907rem;
+  -webkit-animation: orbitMoonZuranus 1.76s steps(1, start) infinite;
+          animation: orbitMoonZuranus 1.76s steps(1, start) infinite;
+}
+
+@-webkit-keyframes orbitMoonZuranus {
+  0% {
+    -webkit-transform: translateZ(-0.1rem);
+            transform: translateZ(-0.1rem);
+  }
+  50% {
+    -webkit-transform: translateZ(0.1rem);
+            transform: translateZ(0.1rem);
+  }
+  100% {
+    -webkit-transform: translateZ(-0.1rem);
+            transform: translateZ(-0.1rem);
+  }
+}
+
+@keyframes orbitMoonZuranus {
+  0% {
+    -webkit-transform: translateZ(-0.1rem);
+            transform: translateZ(-0.1rem);
+  }
+  50% {
+    -webkit-transform: translateZ(0.1rem);
+            transform: translateZ(0.1rem);
+  }
+  100% {
+    -webkit-transform: translateZ(-0.1rem);
+            transform: translateZ(-0.1rem);
+  }
+}
+
+body .uranus-2-moon-style {
+  background-size: auto 100%;
+  border-radius: 50%;
+  background-repeat: repeat-x;
+  -webkit-animation: rot 1s linear 0s infinite normal;
+          animation: rot 1s linear 0s infinite normal;
+  width: 0.321rem;
+  height: 0.321rem;
+  background-color: #fff;
+  -webkit-transform: rotateZ(97.7deg);
+          transform: rotateZ(97.7deg);
+  background-image: url("https://res.cloudinary.com/b789b130931413a/image/upload/v1634475224/solar-system-img/uranus-2-moon_x4kecd.jpg");
+  -webkit-animation-duration: 105.6s;
+          animation-duration: 105.6s;
+}
+
+body .uranus-2-moon-style::after {
+  -webkit-transform: rotateZ(-97.7deg);
+          transform: rotateZ(-97.7deg);
+  content: '';
+  display: inline-block;
+  position: absolute;
+  width: 0.321rem;
+  height: 0.321rem;
+  border-radius: 50%;
+  background-color: transparent;
+  -webkit-animation: shadowMoonAnimationuranus-2 75.18528s linear 0s infinite;
+          animation: shadowMoonAnimationuranus-2 75.18528s linear 0s infinite;
+}
+
+@-webkit-keyframes shadowMoonAnimationuranus-2 {
+  0% {
+    /* LEFT */
+    -webkit-box-shadow: inset 0.0963rem 0rem 0.0535rem #000d;
+            box-shadow: inset 0.0963rem 0rem 0.0535rem #000d;
+  }
+  25% {
+    /* BOTTOM */
+    -webkit-box-shadow: inset 0.36915rem -0.0642rem 0.107rem #000d;
+            box-shadow: inset 0.36915rem -0.0642rem 0.107rem #000d;
+  }
+  25.01% {
+    /* BOTTOM */
+    -webkit-box-shadow: inset -0.36915rem -0.0642rem 0.107rem #000d;
+            box-shadow: inset -0.36915rem -0.0642rem 0.107rem #000d;
+  }
+  50% {
+    /* RIGHT */
+    -webkit-box-shadow: inset -0.0963rem 0rem 0.0535rem #000d;
+            box-shadow: inset -0.0963rem 0rem 0.0535rem #000d;
+  }
+  75% {
+    /* TOP */
+    -webkit-box-shadow: inset 0rem 0.01605rem 0.02675rem #000d;
+            box-shadow: inset 0rem 0.01605rem 0.02675rem #000d;
+  }
+  100% {
+    /* LEFT */
+    -webkit-box-shadow: inset 0.0963rem 0rem 0.0535rem #000d;
+            box-shadow: inset 0.0963rem 0rem 0.0535rem #000d;
+  }
+}
+
+@keyframes shadowMoonAnimationuranus-2 {
+  0% {
+    /* LEFT */
+    -webkit-box-shadow: inset 0.0963rem 0rem 0.0535rem #000d;
+            box-shadow: inset 0.0963rem 0rem 0.0535rem #000d;
+  }
+  25% {
+    /* BOTTOM */
+    -webkit-box-shadow: inset 0.36915rem -0.0642rem 0.107rem #000d;
+            box-shadow: inset 0.36915rem -0.0642rem 0.107rem #000d;
+  }
+  25.01% {
+    /* BOTTOM */
+    -webkit-box-shadow: inset -0.36915rem -0.0642rem 0.107rem #000d;
+            box-shadow: inset -0.36915rem -0.0642rem 0.107rem #000d;
+  }
+  50% {
+    /* RIGHT */
+    -webkit-box-shadow: inset -0.0963rem 0rem 0.0535rem #000d;
+            box-shadow: inset -0.0963rem 0rem 0.0535rem #000d;
+  }
+  75% {
+    /* TOP */
+    -webkit-box-shadow: inset 0rem 0.01605rem 0.02675rem #000d;
+            box-shadow: inset 0rem 0.01605rem 0.02675rem #000d;
+  }
+  100% {
+    /* LEFT */
+    -webkit-box-shadow: inset 0.0963rem 0rem 0.0535rem #000d;
+            box-shadow: inset 0.0963rem 0rem 0.0535rem #000d;
+  }
+}
+
+body .uranus-2-moon-orbit-x {
+  -webkit-animation: orbitMoonXuranus-2 2.2s cubic-bezier(0.3642, 0, 0.6358, 1) 0s infinite;
+          animation: orbitMoonXuranus-2 2.2s cubic-bezier(0.3642, 0, 0.6358, 1) 0s infinite;
+}
+
+@-webkit-keyframes orbitMoonXuranus-2 {
+  0% {
+    -webkit-transform: translateX(-2.66182rem);
+            transform: translateX(-2.66182rem);
+  }
+  50% {
+    -webkit-transform: translateX(2.66182rem);
+            transform: translateX(2.66182rem);
+  }
+  100% {
+    -webkit-transform: translateX(-2.66182rem);
+            transform: translateX(-2.66182rem);
+  }
+}
+
+@keyframes orbitMoonXuranus-2 {
+  0% {
+    -webkit-transform: translateX(-2.66182rem);
+            transform: translateX(-2.66182rem);
+  }
+  50% {
+    -webkit-transform: translateX(2.66182rem);
+            transform: translateX(2.66182rem);
+  }
+  100% {
+    -webkit-transform: translateX(-2.66182rem);
+            transform: translateX(-2.66182rem);
+  }
+}
+
+body .uranus-2-moon-orbit-y {
+  -webkit-animation: orbitMoonYuranus-2 2.2s cubic-bezier(0.3642, 0, 0.6358, 1)-1.65s infinite;
+          animation: orbitMoonYuranus-2 2.2s cubic-bezier(0.3642, 0, 0.6358, 1)-1.65s infinite;
+}
+
+@-webkit-keyframes orbitMoonYuranus-2 {
+  0% {
+    -webkit-transform: translateY(0.53236rem);
+            transform: translateY(0.53236rem);
+  }
+  50% {
+    -webkit-transform: translateY(-0.53236rem);
+            transform: translateY(-0.53236rem);
+  }
+  100% {
+    -webkit-transform: translateY(0.53236rem);
+            transform: translateY(0.53236rem);
+  }
+}
+
+@keyframes orbitMoonYuranus-2 {
+  0% {
+    -webkit-transform: translateY(0.53236rem);
+            transform: translateY(0.53236rem);
+  }
+  50% {
+    -webkit-transform: translateY(-0.53236rem);
+            transform: translateY(-0.53236rem);
+  }
+  100% {
+    -webkit-transform: translateY(0.53236rem);
+            transform: translateY(0.53236rem);
+  }
+}
+
+body .uranus-2-moon-orbit-z {
+  position: absolute;
+  top: 0.8963rem;
+  left: 0.8963rem;
+  -webkit-animation: orbitMoonZuranus-2 2.2s steps(1, start) infinite;
+          animation: orbitMoonZuranus-2 2.2s steps(1, start) infinite;
+}
+
+@-webkit-keyframes orbitMoonZuranus-2 {
+  0% {
+    -webkit-transform: translateZ(-0.2rem);
+            transform: translateZ(-0.2rem);
+  }
+  50% {
+    -webkit-transform: translateZ(0.2rem);
+            transform: translateZ(0.2rem);
+  }
+  100% {
+    -webkit-transform: translateZ(-0.2rem);
+            transform: translateZ(-0.2rem);
+  }
+}
+
+@keyframes orbitMoonZuranus-2 {
+  0% {
+    -webkit-transform: translateZ(-0.2rem);
+            transform: translateZ(-0.2rem);
+  }
+  50% {
+    -webkit-transform: translateZ(0.2rem);
+            transform: translateZ(0.2rem);
+  }
+  100% {
+    -webkit-transform: translateZ(-0.2rem);
+            transform: translateZ(-0.2rem);
+  }
+}
+
+body .neptune-style {
+  background-size: auto 100%;
+  border-radius: 50%;
+  background-repeat: repeat-x;
+  -webkit-animation: rot 1s linear 0s infinite normal;
+          animation: rot 1s linear 0s infinite normal;
+  width: 2.00792rem;
+  height: 2.00792rem;
+  background-color: #f00;
+  -webkit-transform: rotateZ(28deg);
+          transform: rotateZ(28deg);
+  background-image: url("https://res.cloudinary.com/b789b130931413a/image/upload/v1634475223/solar-system-img/neptune_pqhrab.jpg");
+  -webkit-animation-duration: 307.2s;
+          animation-duration: 307.2s;
+  -webkit-box-shadow: inset 0 0 0.20079rem #000;
+          box-shadow: inset 0 0 0.20079rem #000;
+}
+
+body .neptune-style::after {
+  -webkit-transform: rotateZ(-28deg);
+          transform: rotateZ(-28deg);
+  content: '';
+  display: inline-block;
+  position: absolute;
+  width: 2.00792rem;
+  height: 2.00792rem;
+  border-radius: 50%;
+  background-color: transparent;
+  -webkit-animation: shadowAnimationneptune 82.70381s linear 0s infinite;
+          animation: shadowAnimationneptune 82.70381s linear 0s infinite;
+}
+
+@-webkit-keyframes shadowAnimationneptune {
+  0% {
+    /* LEFT */
+    -webkit-box-shadow: inset 0.60238rem 0rem 0.33465rem #000e;
+            box-shadow: inset 0.60238rem 0rem 0.33465rem #000e;
+  }
+  25% {
+    /* BOTTOM */
+    -webkit-box-shadow: inset 2.30911rem -0.40158rem 0.66931rem #000e;
+            box-shadow: inset 2.30911rem -0.40158rem 0.66931rem #000e;
+  }
+  25.01% {
+    /* BOTTOM */
+    -webkit-box-shadow: inset -2.30911rem -0.40158rem 0.66931rem #000e;
+            box-shadow: inset -2.30911rem -0.40158rem 0.66931rem #000e;
+  }
+  50% {
+    /* RIGHT */
+    -webkit-box-shadow: inset -0.60238rem 0rem 0.33465rem #000e;
+            box-shadow: inset -0.60238rem 0rem 0.33465rem #000e;
+  }
+  75% {
+    /* TOP */
+    -webkit-box-shadow: inset 0rem 0.1004rem 0.16733rem #000e;
+            box-shadow: inset 0rem 0.1004rem 0.16733rem #000e;
+  }
+  100% {
+    /* LEFT */
+    -webkit-box-shadow: inset 0.60238rem 0rem 0.33465rem #000e;
+            box-shadow: inset 0.60238rem 0rem 0.33465rem #000e;
+  }
+}
+
+@keyframes shadowAnimationneptune {
+  0% {
+    /* LEFT */
+    -webkit-box-shadow: inset 0.60238rem 0rem 0.33465rem #000e;
+            box-shadow: inset 0.60238rem 0rem 0.33465rem #000e;
+  }
+  25% {
+    /* BOTTOM */
+    -webkit-box-shadow: inset 2.30911rem -0.40158rem 0.66931rem #000e;
+            box-shadow: inset 2.30911rem -0.40158rem 0.66931rem #000e;
+  }
+  25.01% {
+    /* BOTTOM */
+    -webkit-box-shadow: inset -2.30911rem -0.40158rem 0.66931rem #000e;
+            box-shadow: inset -2.30911rem -0.40158rem 0.66931rem #000e;
+  }
+  50% {
+    /* RIGHT */
+    -webkit-box-shadow: inset -0.60238rem 0rem 0.33465rem #000e;
+            box-shadow: inset -0.60238rem 0rem 0.33465rem #000e;
+  }
+  75% {
+    /* TOP */
+    -webkit-box-shadow: inset 0rem 0.1004rem 0.16733rem #000e;
+            box-shadow: inset 0rem 0.1004rem 0.16733rem #000e;
+  }
+  100% {
+    /* LEFT */
+    -webkit-box-shadow: inset 0.60238rem 0rem 0.33465rem #000e;
+            box-shadow: inset 0.60238rem 0rem 0.33465rem #000e;
+  }
+}
+
+body .neptune-orbit-x {
+  width: 0;
+  -webkit-animation: orbitXneptune 82.70381s cubic-bezier(0.3642, 0, 0.6358, 1) 0s infinite;
+          animation: orbitXneptune 82.70381s cubic-bezier(0.3642, 0, 0.6358, 1) 0s infinite;
+}
+
+@-webkit-keyframes orbitXneptune {
+  0% {
+    -webkit-transform: translateX(-30.31167rem);
+            transform: translateX(-30.31167rem);
+  }
+  50% {
+    -webkit-transform: translate(30.31167rem);
+            transform: translate(30.31167rem);
+  }
+  100% {
+    -webkit-transform: translateX(-30.31167rem);
+            transform: translateX(-30.31167rem);
+  }
+}
+
+@keyframes orbitXneptune {
+  0% {
+    -webkit-transform: translateX(-30.31167rem);
+            transform: translateX(-30.31167rem);
+  }
+  50% {
+    -webkit-transform: translate(30.31167rem);
+            transform: translate(30.31167rem);
+  }
+  100% {
+    -webkit-transform: translateX(-30.31167rem);
+            transform: translateX(-30.31167rem);
+  }
+}
+
+body .neptune-orbit-y {
+  width: 0;
+  -webkit-animation: orbitYneptune 82.70381s cubic-bezier(0.3642, 0, 0.6358, 1)-62.02786s infinite;
+          animation: orbitYneptune 82.70381s cubic-bezier(0.3642, 0, 0.6358, 1)-62.02786s infinite;
+}
+
+@-webkit-keyframes orbitYneptune {
+  0% {
+    -webkit-transform: translateY(6.06233rem);
+            transform: translateY(6.06233rem);
+  }
+  50% {
+    -webkit-transform: translateY(-6.06233rem);
+            transform: translateY(-6.06233rem);
+  }
+  100% {
+    -webkit-transform: translateY(6.06233rem);
+            transform: translateY(6.06233rem);
+  }
+}
+
+@keyframes orbitYneptune {
+  0% {
+    -webkit-transform: translateY(6.06233rem);
+            transform: translateY(6.06233rem);
+  }
+  50% {
+    -webkit-transform: translateY(-6.06233rem);
+            transform: translateY(-6.06233rem);
+  }
+  100% {
+    -webkit-transform: translateY(6.06233rem);
+            transform: translateY(6.06233rem);
+  }
+}
+
+body .neptune-orbit-z {
+  position: absolute;
+  top: 11.49604rem;
+  left: 28.99604rem;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  -webkit-animation: orbitZneptune 82.70381s steps(1, start) infinite;
+          animation: orbitZneptune 82.70381s steps(1, start) infinite;
+}
+
+@-webkit-keyframes orbitZneptune {
+  0% {
+    -webkit-transform: translateZ(-9rem);
+            transform: translateZ(-9rem);
+  }
+  50% {
+    -webkit-transform: translateZ(9rem);
+            transform: translateZ(9rem);
+  }
+  100% {
+    -webkit-transform: translateZ(-9rem);
+            transform: translateZ(-9rem);
+  }
+}
+
+@keyframes orbitZneptune {
+  0% {
+    -webkit-transform: translateZ(-9rem);
+            transform: translateZ(-9rem);
+  }
+  50% {
+    -webkit-transform: translateZ(9rem);
+            transform: translateZ(9rem);
+  }
+  100% {
+    -webkit-transform: translateZ(-9rem);
+            transform: translateZ(-9rem);
+  }
+}
+
+body .neptune-moon-style {
+  background-size: auto 100%;
+  border-radius: 50%;
+  background-repeat: repeat-x;
+  -webkit-animation: rot 1s linear 0s infinite normal;
+          animation: rot 1s linear 0s infinite normal;
+  width: 0.5136rem;
+  height: 0.5136rem;
+  background-color: #fff;
+  -webkit-transform: rotateZ(28deg);
+          transform: rotateZ(28deg);
+  background-image: url("https://res.cloudinary.com/b789b130931413a/image/upload/v1634475224/solar-system-img/neptune-moon_iadlzm.jpg");
+  -webkit-animation-duration: 188.16s;
+          animation-duration: 188.16s;
+}
+
+body .neptune-moon-style::after {
+  -webkit-transform: rotateZ(-28deg);
+          transform: rotateZ(-28deg);
+  content: '';
+  display: inline-block;
+  position: absolute;
+  width: 0.5136rem;
+  height: 0.5136rem;
+  border-radius: 50%;
+  background-color: transparent;
+  -webkit-animation: shadowMoonAnimationneptune 82.70381s linear 0s infinite;
+          animation: shadowMoonAnimationneptune 82.70381s linear 0s infinite;
+}
+
+@-webkit-keyframes shadowMoonAnimationneptune {
+  0% {
+    /* LEFT */
+    -webkit-box-shadow: inset 0.15408rem 0rem 0.0856rem #000d;
+            box-shadow: inset 0.15408rem 0rem 0.0856rem #000d;
+  }
+  25% {
+    /* BOTTOM */
+    -webkit-box-shadow: inset 0.59065rem -0.10272rem 0.1712rem #000d;
+            box-shadow: inset 0.59065rem -0.10272rem 0.1712rem #000d;
+  }
+  25.01% {
+    /* BOTTOM */
+    -webkit-box-shadow: inset -0.59065rem -0.10272rem 0.1712rem #000d;
+            box-shadow: inset -0.59065rem -0.10272rem 0.1712rem #000d;
+  }
+  50% {
+    /* RIGHT */
+    -webkit-box-shadow: inset -0.15408rem 0rem 0.0856rem #000d;
+            box-shadow: inset -0.15408rem 0rem 0.0856rem #000d;
+  }
+  75% {
+    /* TOP */
+    -webkit-box-shadow: inset 0rem 0.02568rem 0.0428rem #000d;
+            box-shadow: inset 0rem 0.02568rem 0.0428rem #000d;
+  }
+  100% {
+    /* LEFT */
+    -webkit-box-shadow: inset 0.15408rem 0rem 0.0856rem #000d;
+            box-shadow: inset 0.15408rem 0rem 0.0856rem #000d;
+  }
+}
+
+@keyframes shadowMoonAnimationneptune {
+  0% {
+    /* LEFT */
+    -webkit-box-shadow: inset 0.15408rem 0rem 0.0856rem #000d;
+            box-shadow: inset 0.15408rem 0rem 0.0856rem #000d;
+  }
+  25% {
+    /* BOTTOM */
+    -webkit-box-shadow: inset 0.59065rem -0.10272rem 0.1712rem #000d;
+            box-shadow: inset 0.59065rem -0.10272rem 0.1712rem #000d;
+  }
+  25.01% {
+    /* BOTTOM */
+    -webkit-box-shadow: inset -0.59065rem -0.10272rem 0.1712rem #000d;
+            box-shadow: inset -0.59065rem -0.10272rem 0.1712rem #000d;
+  }
+  50% {
+    /* RIGHT */
+    -webkit-box-shadow: inset -0.15408rem 0rem 0.0856rem #000d;
+            box-shadow: inset -0.15408rem 0rem 0.0856rem #000d;
+  }
+  75% {
+    /* TOP */
+    -webkit-box-shadow: inset 0rem 0.02568rem 0.0428rem #000d;
+            box-shadow: inset 0rem 0.02568rem 0.0428rem #000d;
+  }
+  100% {
+    /* LEFT */
+    -webkit-box-shadow: inset 0.15408rem 0rem 0.0856rem #000d;
+            box-shadow: inset 0.15408rem 0rem 0.0856rem #000d;
+  }
+}
+
+body .neptune-moon-orbit-x {
+  -webkit-animation: orbitMoonXneptune 3.92s cubic-bezier(0.3642, 0, 0.6358, 1) 0s infinite;
+          animation: orbitMoonXneptune 3.92s cubic-bezier(0.3642, 0, 0.6358, 1) 0s infinite;
+}
+
+@-webkit-keyframes orbitMoonXneptune {
+  0% {
+    -webkit-transform: translateX(-1.67165rem);
+            transform: translateX(-1.67165rem);
+  }
+  50% {
+    -webkit-transform: translateX(1.67165rem);
+            transform: translateX(1.67165rem);
+  }
+  100% {
+    -webkit-transform: translateX(-1.67165rem);
+            transform: translateX(-1.67165rem);
+  }
+}
+
+@keyframes orbitMoonXneptune {
+  0% {
+    -webkit-transform: translateX(-1.67165rem);
+            transform: translateX(-1.67165rem);
+  }
+  50% {
+    -webkit-transform: translateX(1.67165rem);
+            transform: translateX(1.67165rem);
+  }
+  100% {
+    -webkit-transform: translateX(-1.67165rem);
+            transform: translateX(-1.67165rem);
+  }
+}
+
+body .neptune-moon-orbit-y {
+  -webkit-animation: orbitMoonYneptune 3.92s cubic-bezier(0.3642, 0, 0.6358, 1)-2.94s infinite;
+          animation: orbitMoonYneptune 3.92s cubic-bezier(0.3642, 0, 0.6358, 1)-2.94s infinite;
+}
+
+@-webkit-keyframes orbitMoonYneptune {
+  0% {
+    -webkit-transform: translateY(0.33433rem);
+            transform: translateY(0.33433rem);
+  }
+  50% {
+    -webkit-transform: translateY(-0.33433rem);
+            transform: translateY(-0.33433rem);
+  }
+  100% {
+    -webkit-transform: translateY(0.33433rem);
+            transform: translateY(0.33433rem);
+  }
+}
+
+@keyframes orbitMoonYneptune {
+  0% {
+    -webkit-transform: translateY(0.33433rem);
+            transform: translateY(0.33433rem);
+  }
+  50% {
+    -webkit-transform: translateY(-0.33433rem);
+            transform: translateY(-0.33433rem);
+  }
+  100% {
+    -webkit-transform: translateY(0.33433rem);
+            transform: translateY(0.33433rem);
+  }
+}
+
+body .neptune-moon-orbit-z {
+  position: absolute;
+  top: 0.74716rem;
+  left: 0.74716rem;
+  -webkit-animation: orbitMoonZneptune 3.92s steps(1, start) infinite;
+          animation: orbitMoonZneptune 3.92s steps(1, start) infinite;
+}
+
+@-webkit-keyframes orbitMoonZneptune {
+  0% {
+    -webkit-transform: translateZ(-0.1rem);
+            transform: translateZ(-0.1rem);
+  }
+  50% {
+    -webkit-transform: translateZ(0.1rem);
+            transform: translateZ(0.1rem);
+  }
+  100% {
+    -webkit-transform: translateZ(-0.1rem);
+            transform: translateZ(-0.1rem);
+  }
+}
+
+@keyframes orbitMoonZneptune {
+  0% {
+    -webkit-transform: translateZ(-0.1rem);
+            transform: translateZ(-0.1rem);
+  }
+  50% {
+    -webkit-transform: translateZ(0.1rem);
+            transform: translateZ(0.1rem);
+  }
+  100% {
+    -webkit-transform: translateZ(-0.1rem);
+            transform: translateZ(-0.1rem);
+  }
+}
+/*# sourceMappingURL=styles.css.map */

@@ -1,0 +1,464 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #000;
+    display: grid;
+    place-items: center;
+    min-height: 100vh;
+}
+
+@mixin noSize(){
+    width: 0px !important;
+    height: 0px !important;
+    background-color: #f00;
+}
+
+@keyframes rot {
+    0%   {background-position-x: 200%;}
+    100%   {background-position-x: 0%;}
+}
+
+@keyframes rotBackground {
+    0%   {transform: rotateZ(0deg);}
+    100%   {transform: rotateZ(360deg);}
+}
+
+
+$solar-system-width: 60rem;
+$solar-system-height: 25rem;
+
+.solar-system{
+ position: relative;
+ overflow: hidden;
+
+}
+
+.space{
+    position: absolute;
+    width: $solar-system-width;
+    height: $solar-system-height;
+    top: 50%;
+    left: 50%;
+    border-radius: $solar-system-width/16;
+    transform: translate3d(-50%,-50%,0);    
+    overflow: hidden;
+}
+
+.space img{
+    position: absolute;
+    top: -($solar-system-width * 1.04 - $solar-system-height)/2;
+    left: -($solar-system-width * 1.04-$solar-system-width)/2;;
+    width: $solar-system-width * 1.04;
+    height: $solar-system-width * 1.04;
+    filter: opacity(0.4);
+    transform-origin: center;
+    animation: rotBackground 500s linear -10s infinite;
+}
+
+.solar-system-container{
+    position: relative;
+    width: $solar-system-width;
+    height: $solar-system-height;
+    transform-style: preserve-3d;
+}
+
+.solar-system-container::after{
+    content: '';
+    display: inline-block;
+    position: absolute;
+    width: $solar-system-width;
+    height: $solar-system-height;
+    border-radius: $solar-system-width/16;
+    transform: translateZ(10rem);
+    box-shadow: inset 0 0 $solar-system-height/10 #000,
+                inset 0 0 $solar-system-height/7 #000,
+                inset 0 0 $solar-system-height/10 $solar-system-height/15 #000;
+}
+
+@mixin initialPos($planet){
+    position: absolute;
+    top: ($solar-system-height - map-get($planets,$planet#{-height}))/2;
+    left: ($solar-system-width - map-get($planets,$planet#{-width}))/2;    
+}
+@mixin funcPlanetStyle($planet){
+    background-size: auto 100%;
+    border-radius: 50%;
+    background-repeat: repeat-x;    
+    animation: rot 1s linear 0s infinite normal; 
+    $size: map-get($planets,$planet#{-width});
+    $shadowColor: map-get($planets,$planet#{-antialiasing-color});    
+    width: map-get($planets,$planet#{-width});
+    height: map-get($planets,$planet#{-height});
+    background-color: map-get($planets,$planet#{-background-color});
+    transform: rotateZ(map-get($planets,$planet#{-rotateZ}));
+    background-image: map-get($planets,$planet#{-background-image});
+    animation-duration: map-get($planets,$planet#{-animation-duration}); 
+    box-shadow: inset 0 0 $size/10 $shadowColor;
+}
+
+@mixin initialMoonPos($planet,$moonNum){
+    position: absolute;
+    top: (map-get($planets,$planet#{-height}) - map-get($planets,$planet#{$moonNum}#{-moon-height}))/2;
+    left: (map-get($planets,$planet#{-width}) - map-get($planets,$planet#{$moonNum}#{-moon-width}))/2;
+}
+
+@mixin funcPlanetMoonStyle($planet,$moonNum){
+    background-size: auto 100%;
+    border-radius: 50%;
+    background-repeat: repeat-x;    
+    animation: rot 1s linear 0s infinite normal;     
+    width: map-get($planets,$planet#{$moonNum}#{-moon-width});
+    height: map-get($planets,$planet#{$moonNum}#{-moon-height});
+    background-color: map-get($planets,$planet#{$moonNum}#{-moon-background-color});
+    transform: rotateZ(map-get($planets,$planet#{-rotateZ}));
+    background-image: map-get($planets,$planet#{$moonNum}#{-moon-background-image});
+    animation-duration: map-get($planets,$planet#{$moonNum}#{-moon-animation-duration});
+}
+
+@mixin makeShadow ($planet){
+    $shadowWidth: map-get($planets,$planet#{-width});
+    $shadowHeight: map-get($planets,$planet#{-height});
+    $shadowSize: $shadowWidth/6;
+    $shadowColor: #000e;
+    $orbitPeriod: map-get($planets,$planet#{-orbit-period}); 
+    transform: rotateZ(- map-get($planets,$planet#{-rotateZ}));
+    content: '';
+    display: inline-block;
+    position: absolute;
+    width: $shadowWidth;
+    height: $shadowHeight;
+    border-radius: 50%;
+    background-color: transparent;
+    //coefficients: 
+    $topX: 0;
+    $topY: 0.05;
+    $topSize: 0.5;
+    $leftX: 0.3;
+    $leftY: 0;
+    $leftSize: 1;
+    $bottomX: 1.15;
+    $bottomY: -0.2;
+    $bottomSize: 2;
+    @keyframes shadowAnimation#{$planet} {
+        0% {/* LEFT */ box-shadow: inset $shadowWidth*$leftX $shadowHeight*$leftY $shadowSize*$leftSize $shadowColor;}
+        25% {/* BOTTOM */ box-shadow: inset $shadowWidth*$bottomX $shadowHeight*$bottomY $shadowSize*$bottomSize $shadowColor;}
+        25.01% {/* BOTTOM */ box-shadow: inset $shadowWidth*(-$bottomX) $shadowHeight*$bottomY $shadowSize*$bottomSize $shadowColor;}
+        50% {/* RIGHT */box-shadow: inset $shadowWidth*(-$leftX) $shadowHeight*(-$leftY) $shadowSize*$leftSize $shadowColor;}
+        75% {/* TOP */ box-shadow: inset $shadowWidth*$topX $shadowHeight*$topY $shadowSize*$topSize $shadowColor;}  
+        100% {/* LEFT */ box-shadow: inset $shadowWidth*$leftX $shadowHeight*$leftY $shadowSize*$leftSize $shadowColor;}
+    }
+    animation: shadowAnimation#{$planet} $orbitPeriod linear 0s infinite;  
+}
+
+@mixin makeMoonShadow ($planet,$moonNum){
+    $shadowWidth: map-get($planets,$planet#{$moonNum}#{-moon-width});
+    $shadowHeight: map-get($planets,$planet#{$moonNum}#{-moon-height});
+    $shadowSize: $shadowWidth/6;
+    $shadowColor: #000d;
+    $orbitPeriod: map-get($planets,$planet#{-orbit-period}); 
+    transform: rotateZ(- map-get($planets,$planet#{-rotateZ}));
+    content: '';
+    display: inline-block;
+    position: absolute;
+    width: $shadowWidth;
+    height: $shadowHeight;
+    border-radius: 50%;
+    background-color: transparent;
+    $topX: 0;
+    $topY: 0.05;
+    $topSize: 0.5;
+    $leftX: 0.3;
+    $leftY: 0;
+    $leftSize: 1;
+    $bottomX: 1.15;
+    $bottomY: -0.2;
+    $bottomSize: 2;
+    @keyframes shadowMoonAnimation#{$planet}#{$moonNum} {
+        0% {/* LEFT */ box-shadow: inset $shadowWidth*$leftX $shadowHeight*$leftY $shadowSize*$leftSize $shadowColor;}
+        25% {/* BOTTOM */ box-shadow: inset $shadowWidth*$bottomX $shadowHeight*$bottomY $shadowSize*$bottomSize $shadowColor;}
+        25.01% {/* BOTTOM */ box-shadow: inset $shadowWidth*(-$bottomX) $shadowHeight*$bottomY $shadowSize*$bottomSize $shadowColor;}
+        50% {/* RIGHT */box-shadow: inset $shadowWidth*(-$leftX) $shadowHeight*(-$leftY) $shadowSize*$leftSize $shadowColor;}
+        75% {/* TOP */ box-shadow: inset $shadowWidth*$topX $shadowHeight*$topY $shadowSize*$topSize $shadowColor;}  
+        100% {/* LEFT */ box-shadow: inset $shadowWidth*$leftX $shadowHeight*$leftY $shadowSize*$leftSize $shadowColor;}
+    }
+    animation: shadowMoonAnimation#{$planet}#{$moonNum} $orbitPeriod linear 0s infinite;  
+}
+    
+@mixin makeShine($planet){
+    $shineWidth: map-get($planets,$planet#{-width});
+    $shineHeight: map-get($planets,$planet#{-height});
+    $shineSize: $shineWidth/5;
+    $shineColor: #ff0;
+    $orbitPeriod: map-get($planets,$planet#{-orbit-period}); 
+    transform: rotateZ(- map-get($planets,$planet#{-rotateZ}));
+    content: '';
+    display: inline-block;
+    position: absolute;
+    width: $shineWidth;
+    height: $shineHeight;
+    border-radius: 50%;
+    background-color: transparent;
+    @keyframes shineAnimation {
+        0% { box-shadow: $shineWidth/200 $shineHeight/600 $shineSize $shineColor;}
+        2.5% {box-shadow: $shineWidth/400 $shineHeight/40 $shineSize*1.5 $shineColor;}
+        7.5% {box-shadow: $shineWidth*0 $shineHeight/80 $shineSize/2 $shineColor;}  
+        25.01% {box-shadow: $shineWidth/200 $shineHeight/200 $shineSize*1 $shineColor;}
+        40% {box-shadow: $shineWidth/-200 $shineHeight/600 $shineSize*0.5 $shineColor;}
+        100% { box-shadow: $shineWidth/20 $shineHeight/30 $shineSize $shineColor;}
+    }
+    animation: shineAnimation $orbitPeriod linear 0s infinite;  
+}
+
+@mixin makeRings($planet){    
+    $innerWidth: map-get($planets,$planet#{-size-no-DU})*2.5;
+    $setPos: map-get($planets,$planet#{-width})/2;
+    $setTilt: map-get($planets,$planet#{-rotateZ});
+    $ringColor: map-get($planets,$planet#{-ring-color});
+    $ringSmallColor: map-get($planets,$planet#{-ring-small-color});
+    .#{$planet}-ring-container *{
+    box-sizing: content-box;
+    }
+    .#{$planet}-ring-container{
+        transform-style: preserve-3d;
+        position: absolute;
+        left: $setPos;
+        top: $setPos;
+        transform: scale(1 /30 *$innerWidth) rotateZ($setTilt);
+    }
+    .#{$planet}-ring-container-half{
+        position: absolute;
+        top: 0rem;
+        left: -20rem;
+        margin: 0;
+        width: 40rem;
+        height: 10rem;
+        overflow: hidden;
+    }
+    .#{$planet}-ring{
+        position: absolute;
+        left: 5rem;
+        width: 20rem;
+        height: 10rem;
+        background-color: transparent;
+        border-radius: 100%/50%;
+        border: $ringColor solid 5rem;
+        border-bottom: $ringColor solid 0.6rem;
+        border-top: transparent;
+        box-shadow: 0 0 1rem $ringColor,
+        inset 0 0 1rem $ringColor ;
+            top: -7.98rem;
+    }
+    .#{$planet}-ring-bottom{
+        position: absolute;
+        height: 12rem;
+        top: -9.9rem;
+        border-bottom-width: 1.2rem;
+    }
+    .#{$planet}-ring-pos-top{
+        z-index:-1;
+    }
+    .#{$planet}-ring-pos-bottom{
+        z-index: 1;
+    }
+    .#{$planet}-ring-container-top{
+        /* visibility: hidden;  */
+        transform: rotateZ(180deg);
+        transform-origin: top;
+    }
+    .#{$planet}-ring-small{
+        position: absolute;
+        left: 8rem;
+        width: 22rem;
+        height: 9rem;
+        background-color: transparent;
+        border-radius: 100%/50%;
+        border: $ringSmallColor solid 1rem;
+        border-bottom: $ringSmallColor solid 0.1rem;
+        border-top: transparent;
+        /* box-shadow: 0 0 0.3rem #000; */
+        /* inset 0 0 0.3rem #000; */
+        top: -6.83rem;
+    }
+    .#{$planet}-ring-small-bottom{
+        right: 8rem;
+        height: 10.4rem;
+        border-bottom-width: 0.2rem;
+        top: -7.96rem;
+    }
+}
+
+@mixin tiltMoonOrbit($planet){
+    .#{$planet}-tilt-orbit{
+        transform: rotateZ(map-get($planets,$planet#{-rotateZ}));
+        position: absolute;
+     }
+    .#{$planet}-reverse-tilt-orbit{
+        transform: rotateZ(- map-get($planets,$planet#{-rotateZ}));
+     }
+}
+
+@mixin callX($planet){
+    width: 0;
+    $orbitX: map-get($planets,$planet#{-orbit-x});
+    $orbitPeriod: map-get($planets,$planet#{-orbit-period}); 
+    @keyframes orbitX#{$planet} {
+        0% { transform: translateX(-$orbitX);}
+        50% { transform: translate($orbitX);}
+        100% { transform: translateX(-$orbitX);}
+    }
+    animation:  orbitX#{$planet} $orbitPeriod cubic-bezier(0.3642, 0, 0.6358, 1) 0s infinite;        
+}
+
+@mixin callY($planet){
+        width: 0;
+        $orbitY: map-get($planets,$planet#{-orbit-y});
+        $orbitPeriod: map-get($planets,$planet#{-orbit-period});         
+        @keyframes orbitY#{$planet} {
+            0% { transform: translateY($orbitY);}
+            50% { transform: translateY(-$orbitY);}
+            100% { transform: translateY($orbitY);}
+        }
+        animation: orbitY#{$planet} $orbitPeriod cubic-bezier(0.3642, 0, 0.6358, 1) -$orbitPeriod*0.75 infinite;
+}
+
+@mixin callZ($planet){
+        $zIndex: map-get($planets,$planet#{-z-index});
+        $orbitPeriod: map-get($planets,$planet#{-orbit-period}); 
+        @keyframes orbitZ#{$planet} {
+            0% { transform: translateZ(-$zIndex#{rem});}
+            50% { transform: translateZ($zIndex#{rem});}
+            100% { transform:  translateZ(-$zIndex#{rem});}
+        }
+        animation:  orbitZ#{$planet} $orbitPeriod steps(1, start) infinite;
+}
+
+@mixin callMoonX($planet,$moonNum){
+    $orbitX: map-get($planets,$planet#{$moonNum}#{-moon-orbit-x});
+    $orbitPeriod: map-get($planets,$planet#{$moonNum}#{-moon-orbit-period}); 
+    @keyframes orbitMoonX#{$planet}#{$moonNum} {
+        0% { transform: translateX(-$orbitX);}
+        50% { transform: translateX($orbitX);}
+        100% { transform: translateX(-$orbitX);}
+    }
+    animation:  orbitMoonX#{$planet}#{$moonNum} $orbitPeriod cubic-bezier(0.3642, 0, 0.6358, 1) 0s infinite;        
+}
+
+@mixin callMoonY($planet,$moonNum){
+    $orbitY: map-get($planets,$planet#{$moonNum}#{-moon-orbit-y});
+    $orbitPeriod: map-get($planets,$planet#{$moonNum}#{-moon-orbit-period}); 
+    @keyframes orbitMoonY#{$planet}#{$moonNum} {
+        0% { transform: translateY($orbitY);}
+        50% { transform: translateY(-$orbitY);}
+        100% { transform: translateY($orbitY);}
+    }
+    animation: orbitMoonY#{$planet}#{$moonNum} $orbitPeriod cubic-bezier(0.3642, 0, 0.6358, 1) -$orbitPeriod*0.75 infinite;
+}
+
+@mixin callMoonZ($planet,$moonNum){
+    $orbitZ: map-get($planets,$planet#{$moonNum}#{-moon-z-index});
+    $orbitPeriod: map-get($planets,$planet#{$moonNum}#{-moon-orbit-period}); 
+    @keyframes orbitMoonZ#{$planet}#{$moonNum} {
+        0% { transform: translateZ( -$orbitZ#{rem}); }
+        50% { transform: translateZ( $orbitZ#{rem}); }
+        100% { transform:  translateZ( -$orbitZ#{rem}); }
+    }
+        animation:  orbitMoonZ#{$planet}#{$moonNum} $orbitPeriod steps(1, start) infinite;
+}
+
+@mixin createPlanetStyle ($planet){ 
+    .#{$planet}-style{
+        @include funcPlanetStyle($planet);
+        &::after{
+            @include makeShadow($planet);
+        }
+    }
+    .#{$planet}-orbit-x{
+        @include callX($planet);
+    }    
+    .#{$planet}-orbit-y{
+        @include callY($planet);
+    }
+    .#{$planet}-orbit-z{
+        @include initialPos($planet);
+        transform-style: preserve-3d;
+        @include callZ($planet);
+    }
+}
+
+@mixin createPlanetMoonStyle ($planet,$moonNum){ 
+    .#{$planet}#{$moonNum}-moon-style{
+        @include funcPlanetMoonStyle($planet,$moonNum);
+        &::after{
+            @include makeMoonShadow($planet,$moonNum);
+        }
+    }
+    .#{$planet}#{$moonNum}-moon-orbit-x{
+        @include callMoonX($planet,$moonNum);
+    }    
+    .#{$planet}#{$moonNum}-moon-orbit-y{
+        @include callMoonY($planet,$moonNum);
+    }
+    .#{$planet}#{$moonNum}-moon-orbit-z{
+        @include initialMoonPos($planet,$moonNum);
+        @include callMoonZ($planet,$moonNum);
+    }   
+}
+
+@mixin createSunStyle ($planet){ 
+    .#{$planet}{
+        @include initialPos($planet);
+        @include callZ($planet);
+    }
+    .#{$planet}-style{
+        @include funcPlanetStyle($planet);
+        &::after{
+            @include makeShine($planet);
+          }
+    }
+}
+
+@import './planets';
+
+body{
+    
+    @include createSunStyle(sun);
+    
+    @include createPlanetStyle(mercury);
+    
+    @include createPlanetStyle(venus);
+    
+    @include createPlanetStyle(earth);
+    @include createPlanetMoonStyle(earth,'');
+    
+    @include createPlanetStyle(mars);
+    @include createPlanetMoonStyle(mars,'');
+    @include createPlanetMoonStyle(mars,-2);
+    
+    @include createPlanetStyle(jupiter);
+    @include createPlanetMoonStyle(jupiter,'');
+    @include createPlanetMoonStyle(jupiter,-2);
+    @include createPlanetMoonStyle(jupiter,-3);
+    @include createPlanetMoonStyle(jupiter,-4);
+
+    @include createPlanetStyle(saturn);
+    @include makeRings(saturn);
+    @include tiltMoonOrbit(saturn);
+    @include createPlanetMoonStyle(saturn,'');
+    @include createPlanetMoonStyle(saturn,-2);
+    @include createPlanetMoonStyle(saturn,-3);
+    @include createPlanetMoonStyle(saturn,-4);
+    @include createPlanetMoonStyle(saturn,-5);
+    
+    @include createPlanetStyle(uranus);
+    @include makeRings(uranus);
+    @include tiltMoonOrbit(uranus);
+    @include createPlanetMoonStyle(uranus,'');
+    @include createPlanetMoonStyle(uranus,-2);
+
+    @include createPlanetStyle(neptune);
+    @include createPlanetMoonStyle(neptune,'');
+}
