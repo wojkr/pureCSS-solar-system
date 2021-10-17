@@ -1,4 +1,5 @@
 # pureCSS-solar-system
-Solar system animation. All planets, some moons. My first go with SASS. 
+Solar system animation. All planets, some moons. 
+My first go with <b><i>SASS</i></b>. 
 Initially I wanted to keep true planet-to-planet distance/diameter ratios. Created and attached the stylesheet to this repo. 
 Ended up with rescaling the sizes for better impression.
